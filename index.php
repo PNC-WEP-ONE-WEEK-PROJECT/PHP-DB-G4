@@ -50,7 +50,7 @@ require_once ("templates/header.php");
             <img src="images/icon-facebook.webp" alt="" width="10%">
             <div class="name">
                 <h3 class="user_name">Sauth Phouek</h3>
-                <p class="post_time">Just now</p>
+                <p class="post_time">Just now   <i class="fa fa-globe"></i></p>
             </div>
             </div>
             <div class="card-header-icon">
@@ -69,10 +69,10 @@ require_once ("templates/header.php");
         </div>
         <div class="post-footer">
             <div class="like">
-                <p>Like</p>
+                <p id="like-post"><i class="fa fa-thumbs-o-up"></i>  Like</p>
             </div>
             <div class="comment">
-                <p>Comment</p>
+                <p id="comment-post"><i class="fa fa-comment-o"></i> Comment</p>
             </div>
         </div>
 </div>

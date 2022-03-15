@@ -1,14 +1,14 @@
 
 /* body */
-
-*{
+body{
+    
+    background: hsl(0, 0%, 87%);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
 }
-
 :root{
     --border_raduis--:10px;
 }
@@ -52,9 +52,9 @@
     align-items: center;
 }
 .navbar .cicle-user{
-    background-color: rgb(194, 194, 196);
-    width: 30px;
-    height: 30px;
+    background-color: #E5E5E5;
+    width: 45px;
+    height: 45px;
     margin: 0 6px;
     border-radius: 50%;
     display: flex;
@@ -128,17 +128,21 @@
 
 .container-card .card-header .name{
     margin-left: 10px;
+    line-height: 5px;
 }
 .card-header-icon .icon{
     width: 40px;
     height: 40px;
     border-radius: 50px;
-    background: #E5E5E5;
+
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 
+}
+.card-header-icon .icon:hover{
+    background: #E5E5E5;
 }
 .card-header-icon .fa-ellipsis-h{
     font-size: 30px;
@@ -155,6 +159,10 @@
 .post-footer{
     display: flex;
     justify-content: space-between;
-    box-shadow: 0px 2px 8px 2px #aaa;
-    padding: 10px 8px ;
+    padding: 0 80px ;
+    font-size: 20px;
 }
+.post-footer .like #like-post,.post-footer .comment #comment-post{
+    cursor: pointer;
+}
+
