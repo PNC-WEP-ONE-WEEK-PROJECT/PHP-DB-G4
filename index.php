@@ -4,6 +4,7 @@
  */
 require_once ("templates/header.php");
 ?>
+<!-- header -->
 <nav class="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -19,6 +20,19 @@ require_once ("templates/header.php");
         </div>
     </div>
 </nav>
+<!-- user post -->
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <img src="" alt="">
+            <input type="text" placeholder="What's on your mind?" >
+        </div>
+        <hr>
+        <div class="card-body">
+            
+        </div>
+    </div>
+</div>
 <?php
 require_once ("templates/footer.php");
 ?>

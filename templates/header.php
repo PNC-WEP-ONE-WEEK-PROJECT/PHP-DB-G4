@@ -7,7 +7,7 @@
     <title>Facebook 2.0</title>
     <!-- Your style here -->
     <!-- link to bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
     <link rel="shortcut icon" href="../images/icon-facebook.webp" type="image/x-icon">
 </head>
 <body>
