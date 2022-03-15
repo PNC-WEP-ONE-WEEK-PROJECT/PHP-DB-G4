@@ -42,6 +42,40 @@ require_once ("templates/header.php");
             </div>
         </div>
 </div>
+
+<!-- contain user post -->
+<div class="container-card">
+        <div class="card-header post-header">
+            <div class="card-header">
+            <img src="images/icon-facebook.webp" alt="" width="10%">
+            <div class="name">
+                <h3 class="user_name">Sauth Phouek</h3>
+                <p class="post_time">Just now</p>
+            </div>
+            </div>
+            <div class="card-header-icon">
+                <div class="icon">
+                    <i class="fa fa-ellipsis-h"></i>
+                </div>
+            </div>
+        </div>
+        <div class="post-body">
+            <div class="description">
+                <p class="description">description...</p>
+            </div>
+            <div class="image-posted">
+                <img src="images/image-1.jpg" alt="" width="100%">
+            </div>
+        </div>
+        <div class="post-footer">
+            <div class="like">
+                <p>Like</p>
+            </div>
+            <div class="comment">
+                <p>Comment</p>
+            </div>
+        </div>
+</div>
 <?php
 require_once ("templates/footer.php");
 ?>

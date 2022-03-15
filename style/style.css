@@ -70,6 +70,7 @@
     border-radius: var(--border_raduis--);
     padding: 20px;
     box-shadow: 1px 2px 8px 2px #aaa;
+    box-sizing: border-box;
 }
 .container-card .card-header{
     display: flex;
@@ -113,4 +114,38 @@
 
 .container-card .card-body .btn:hover{
     background: #E5E5E5;
+}
+
+
+.container-card .card-header .name{
+    margin-left: 10px;
+}
+.card-header-icon .icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background: #E5E5E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+.card-header-icon .fa-ellipsis-h{
+    font-size: 30px;
+    margin: 0;
+}
+.post-body .description{
+    margin-bottom: 10px;
+}
+.image-posted{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.post-footer{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 2px 8px 2px #aaa;
+    padding: 10px 8px ;
 }
