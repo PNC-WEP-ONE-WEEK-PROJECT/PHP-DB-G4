@@ -1,0 +1,20 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container-fluid{
+    display: flex;
+    padding: 10px;
+}
+
+
+.navbar-header .nav_pages, .nav_icons{
+    display: flex;
+    justify-content: space-between;
+}

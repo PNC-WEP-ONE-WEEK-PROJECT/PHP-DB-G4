@@ -9,11 +9,11 @@ require_once ("templates/header.php");
         <div class="navbar-header">
             <a class="navbar-brand" href="#"><img src="images/icon-facebook.webp" alt="" width="5%"></a>
         </div>
-        <div class="nav navbar-nav">
+        <div class="nav_pages">
             <li><a href="#">Home</a></li>
             <li><a href="#">Friends</a></li>
         </div>      
-        <div class="nav navbar-nav navbar-right">
+        <div class="nav_icons">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </div>
