@@ -9,6 +9,7 @@
     <title>Facebook 2.0</title>
     <!-- Your style here -->
     <!-- link to bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../images/icon-facebook.webp" type="image/x-icon">
     <link rel="stylesheet" href="../style/style.css">
 </head>

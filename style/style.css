@@ -1,20 +1,48 @@
 
+/* body */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: none;
     list-style: none;
     text-decoration: none;
 }
 
 .container-fluid{
     display: flex;
-    padding: 10px;
-}
-
-
-.navbar-header .nav_pages, .nav_icons{
-    display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+
+.navbar-header{
+    width: 15%;
+    margin-left: 30px;
+}
+.nav_pages{
+   display: flex;
+   justify-content: space-between;
+   width: 25%;
+}
+
+.nav_icons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
+
+.navbar .fa{
+    color: black;
+}
+.navbar .cicle-user{
+    background-color: rgb(194, 194, 196);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
