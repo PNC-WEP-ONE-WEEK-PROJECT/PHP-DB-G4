@@ -1,2 +1,87 @@
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --border_raduis--:10px;
+}
+.container-fluid{
+    display: flex;
+    padding: 10px;
+}
 
+
+.navbar-header .nav_pages, .nav_icons{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container-card{
+    width: 40%;
+    margin: 30px auto;
+    background: #ffff;
+    border-radius: var(--border_raduis--);
+    padding: 20px;
+    box-shadow: 1px 2px 8px 2px #aaa;
+}
+.container-card .card-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.container-card .add-post{
+    width:100%;
+    border-radius: 50px;
+    padding: 12px 14px;
+    box-sizing: border-box;
+    background: #f5f4f4;
+    font-size: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.container-card .add-post:hover{
+    background: #E5E5E5;
+}
+
+.container-card .card-body{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 18px;
+
+}
+.container-card .card-body .btn{
+    display: flex;
+    align-items: center;
+    background: #f5f4f4;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: var(--border_raduis--);
+
+}
+.container-card .card-body .btn span{
+    margin-left: 10px;
+}
+
+
+.container-card .card-body .btn:hover{
+    background: #E5E5E5;
+}

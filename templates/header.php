@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +9,8 @@
     <title>Facebook 2.0</title>
     <!-- Your style here -->
     <!-- link to bootstrap -->
-    
     <link rel="shortcut icon" href="../images/icon-facebook.webp" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     
