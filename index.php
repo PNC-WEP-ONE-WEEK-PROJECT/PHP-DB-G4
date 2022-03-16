@@ -3,8 +3,10 @@
  * Your code here
  */
 require_once ("templates/header.php");
+require_once ("models/database.php");
 ?>
-    <!-- navbar on header  -->
+ 
+
 <!-- header -->
 <nav class="navbar">
     <div class="container-fluid">
@@ -14,12 +16,12 @@ require_once ("templates/header.php");
         </div>
         <!-- page home and group -->
         <div class="nav_pages">
-            <li class="active"><a href="#"><i class="fa fa-home" style="font-size:25px"></i></a></li>
+            <li class="active"><a href="#"><i class="fa fa-home blue" style="font-size:25px"></i></a></li>
             <li><a href="#"><i class="fa fa-group" style="font-size:22px"></i></a></li>
         </div>      
         <!-- ICON USER NAME -->
         <div class="nav_icons">
-            <li class="d-flex"> <span class="cicle-user"><a href="#" ><i class="fa fa-user" style="font-size:20px"></i></a></span> <span>username</span></li>
+            <li class="d-flex"> <span class="cicle-user"><a href="#" ><i class="fa fa-user" style="font-size:20px"></i></a></span> <span><?= $user["first_name"] . " " . $user["last_name"];?> </span></li>
             <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
         </div>
     </div>
@@ -49,7 +51,7 @@ require_once ("templates/header.php");
             <div class="card-header">
             <img src="images/icon-facebook.webp" alt="" width="10%">
             <div class="name">
-                <h3 class="user_name">Sauth Phouek</h3>
+                <h3 class="user_name"><?= $user["first_name"] . " " . $user["last_name"];?> </h3>
                 <p class="post_time">Just now</p>
             </div>
             </div>

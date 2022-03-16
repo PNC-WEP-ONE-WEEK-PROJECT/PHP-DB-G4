@@ -46,6 +46,7 @@
 
 .navbar .fa{
     color: black;
+    cursor: pointer;
 }
 .d-flex{
     display: flex;
@@ -68,9 +69,7 @@
     padding: 0 1rem;
 }
 
-
-
-    /* PARTH OF POST  */
+/* PARTH OF POST  */
 
 .container-card{
     width: 40%;
