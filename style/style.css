@@ -16,6 +16,7 @@ body{
 *{
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+    box-sizing: border-box;
 }
 :root{
     --border_raduis--:10px;
@@ -95,12 +96,13 @@ body{
     border-radius: var(--border_raduis--);
     padding: 20px;
     border: 1px solid #ccc;
-    box-sizing: border-box;
+
 }
 .container-card .card-header{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    height: auto;
 }
 .container-card .add-post{
     width:100%;
@@ -111,6 +113,10 @@ body{
     font-size: 18px;
     margin-left: 20px;
     cursor: pointer;
+    box-sizing: border-box;
+    height: auto;
+    padding: 20px;
+
 }
 .container-card .add-post:hover{
     background: #E5E5E5;
@@ -126,7 +132,7 @@ body{
 .container-card .card-body .btn{
     display: flex;
     align-items: center;
-    background: #f5f4f4;
+
     padding: 6px 12px;
     cursor: pointer;
     border-radius: var(--border_raduis--);
@@ -137,7 +143,7 @@ body{
 }
 
 .container-card .card-body .btn:hover{
-    background: #E5E5E5;
+  background: #f5f4f4;
 }
 
 .post-header{
@@ -156,17 +162,38 @@ body{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
-}
+    font-size: 12px;
+  }
 .card-header-icon .icon:hover{
     background: #E5E5E5;
 }
-.card-header-icon .fa-ellipsis-h{
-    font-size: 30px;
-    margin: 0;
+
+.card-activity{
+  position: absolute;
+  margin-left: 200px;
+  margin-top: -30px;
+  width: 20%;
+  background: #ffff;
+  border-radius: var(--border_raduis--);
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
 }
 
-
+.card-activity li { 
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px 0 ;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.card-activity li a { 
+  color: black;
+  text-decoration: none;
+}
+.card-activity li:hover{
+  background: #f5f4f4;
+}
 .post-body .description{
     margin-bottom: 14px;
 }
@@ -201,7 +228,7 @@ body{
 }
 
 .container .wrapper{
-  margin:60px auto;
+  margin:40px auto;
   width: 40%;
   overflow: hidden;
   display: flex;
@@ -211,17 +238,33 @@ body{
   border-radius: var(--border_raduis--);
   width: 100%;
   background-color: #fff;
+  padding: 20px;
 }
 .container img{
   cursor: pointer;
 }
+.create-post-header{
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  justify-content: space-between;
 
- .post header{
-  font-size: 22px;
-  font-weight: 600;
-  padding: 17px 0;
-  text-align: center;
-  border-bottom: 1px solid #bfbfbf;
+}
+.create-post-header h2 { 
+  font-size: 20px;
+  margin-left: 40%;
+}
+.cancel-post{
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  float: right;
+  margin-right: 0;
+
 }
 .post form{
   margin: 20px 25px;
@@ -271,9 +314,9 @@ form :where(textarea, button){
 }
 form textarea{
   resize: none;
-  font-size: 18px;
+  font-size: 24px;
   margin-top: 30px;
-  min-height: 100px;
+  min-height: 60px;
 }
 form textarea::placeholder{
   color: #858585;
@@ -281,52 +324,33 @@ form textarea::placeholder{
 form textarea:focus::placeholder{
   color: #b3b3b3;
 }
-form :where(.theme-emoji, .options){
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .theme-emoji img:last-child{
   max-width: 24px;
 }
 form .options{
-  height: 57px;
-  margin: 15px 0;
+  height: 50px;
+  margin: 15px auto;
   padding: 0 15px;
   border-radius: 7px;
   border: 1px solid #B9B9B9;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  height: auto;
+  text-align: center;
+  padding: 30px 0;
 }
-form .options :where(.list, li),
-.audience :where(.arrow-back, .icon, li .radio){
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-form .options p{
-  color: #595959;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: default;
-}
-form .options .list{
-  list-style: none;
-}
-.options .list li{
-  height: 42px;
-  width: 42px;
-  margin: 0 -1px;
+form .options:hover{
+  background-color: #eeeeee ;
   cursor: pointer;
-  border-radius: 50%;
 }
-.options .list li:hover{
-  background: #f0f1f4;
+form .options .add-icon{
+  width: 20%;
+  margin: auto;
 }
-.options .list li img{
-  width: 23px;
+form .options .add-icon img{
+  width: 50%;
 }
 form button{
-  height: 53px;
+  height: 40px;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;

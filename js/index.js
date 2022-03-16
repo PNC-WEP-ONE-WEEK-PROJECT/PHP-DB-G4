@@ -5,13 +5,20 @@ function showActivity(){
     }
 }
 
+
+function cancel_post(){
+    let cancel_post = document.querySelector(".container");
+    document.body.style.overflow="visible";
+    write_post.textContent = document.querySelector(".title").value;
+    return hide(cancel_post);
+}
 function show(element){
     element.style.display = "block";
 }
 
-// function hide(element){
-//     element.style.display = "none";
-// }
+function hide(element){
+    element.style.display = "none";
+}
 
 window.onclick = function(event) {
     if (event.target.className !== "icon") {
@@ -23,7 +30,7 @@ let get_activities = document.querySelector(".card-activity");
 
 
 // CREATE POST---------------------------------------------------------------
-document.querySelector(".add-post").addEventListener("click", create_post)
+let write_post = document.querySelector(".add-post");
 function create_post(){
     if (add_contianer_post.style.display== "none"){
         document.body.style.overflow="hidden";
@@ -33,4 +40,3 @@ function create_post(){
 }
 
 let add_contianer_post=document.querySelector(".container");
-

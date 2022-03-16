@@ -17,20 +17,20 @@ $posts=getItems();
             <div class="card-header">
             <img src="images/icon-facebook.webp" alt="" width="10%">
             <div class="name">
-            <input type="hidden" value="<?=$post["id"];?>" name="itemId">
+                <input type="hidden" value="<?=$post["id"];?>" name="itemId">
                 <h5 class="user_name"><?=$post["first_name"] . " " . $post["last_name"]?></h5>
                 <p class="post_time">Just now <i class="fa fa-globe"></i></p>
             </div>
             </div>
             <div class="card-header-icon">
-                <div class="icon">
-                    <i class="fa fa-ellipsis-h"></i>
+                <div class="icon" onclick="showActivity()">
+                    <li><img src="images/more.svg" alt="gallery"></li>
                 </div>
             </div>
         </div>
          <!-- user edit and delete -->
          <div class="card-activity" style="display:none">
-            <li><a class="edit-post" href="controllers"><i class="fa fa-edit"></i> Edit post</a></li>
+            <li><a class="edit-post" href="controllers/edit_post.php"><i class="fa fa-edit"></i> Edit post</a></li>
             <li><a class="delete-post" href="controllers/delete_post.php"><i class="fa fa-edit"></i> Remove to Recyle bin</a></li>
         </div>
         <div class="post-body">
