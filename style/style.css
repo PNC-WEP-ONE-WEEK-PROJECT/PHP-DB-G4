@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+}
 
-/* body */
 body{
     
     background: hsl(0, 0%, 87%);
@@ -8,9 +11,11 @@ body{
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    overflow: hidden;
 }
 *{
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 :root{
     --border_raduis--:10px;
@@ -83,8 +88,6 @@ body{
 
 /* PARTH OF POST  */
 
-    /* PARTH OF POST  */
-
 .container-card{
     width: 40%;
     margin: 20px auto;
@@ -132,7 +135,6 @@ body{
 .container-card .card-body .btn span{
     margin-left: 10px;
 }
-
 
 .container-card .card-body .btn:hover{
     background: #E5E5E5;
@@ -182,5 +184,163 @@ body{
 }
 .post-footer .like,.post-footer .comment{
     cursor: pointer;
+}
+
+ /* FORM ADD POST  */
+
+.container{
+  background-color: hsla(0, 0%, 9%, 0.651);
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container .wrapper{
+  margin:50px auto;
+  width: 40%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.container .wrapper section{
+  border-radius: var(--border_raduis--);
+  width: 100%;
+  background-color: #fff;
+}
+.container img{
+  cursor: pointer;
+}
+
+ .post header{
+  font-size: 22px;
+  font-weight: 600;
+  padding: 17px 0;
+  text-align: center;
+  border-bottom: 1px solid #bfbfbf;
+}
+.post form{
+  margin: 20px 25px;
+}
+.post form .content,
+.audience .list li .column{
+  display: flex;
+  align-items: center;
+}
+.post form .content img{
+  cursor: default;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+.post form .content .details{
+  margin: -3px 0 0 12px;
+}
+form .content .details p{
+  font-size: 17px;
+  font-weight: 500;
+}
+.content .details .privacy{
+  display: flex;
+  height: 25px;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 11px;
+  margin-top: 3px;
+  border-radius: 5px;
+  align-items: center;
+  max-width: 98px;
+  background: #E4E6EB;
+  justify-content: space-between;
+}
+.details .privacy span{
+  font-size: 13px;
+  font-weight: 500;
+}
+.details .privacy i:last-child{
+  font-size: 13px;
+}
+form :where(textarea, button){
+  width: 100%;
+  outline: none;
+  border: none;
+}
+form textarea{
+  resize: none;
+  font-size: 18px;
+  margin-top: 30px;
+  min-height: 100px;
+}
+form textarea::placeholder{
+  color: #858585;
+}
+form textarea:focus::placeholder{
+  color: #b3b3b3;
+}
+form :where(.theme-emoji, .options){
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.theme-emoji img:last-child{
+  max-width: 24px;
+}
+form .options{
+  height: 57px;
+  margin: 15px 0;
+  padding: 0 15px;
+  border-radius: 7px;
+  border: 1px solid #B9B9B9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+form .options :where(.list, li),
+.audience :where(.arrow-back, .icon, li .radio){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .options p{
+  color: #595959;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: default;
+}
+form .options .list{
+  list-style: none;
+}
+.options .list li{
+  height: 42px;
+  width: 42px;
+  margin: 0 -1px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.options .list li:hover{
+  background: #f0f1f4;
+}
+.options .list li img{
+  width: 23px;
+}
+form button{
+  height: 53px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #BCC0C4;
+  cursor: no-drop;
+  border-radius: 7px;
+  background: #e2e5e9;
+  transition: all 0.3s ease;
+}
+form textarea:valid ~ button{
+  color: #fff;
+  cursor: pointer;
+  background: #4599FF;
+}
+form textarea:valid ~ button:hover{
+  background: #1a81ff;
 }
 
