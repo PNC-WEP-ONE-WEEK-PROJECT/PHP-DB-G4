@@ -20,6 +20,8 @@
 $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
 $users = $db -> query("SELECT first_name, last_name FROM users limit 1");
 $user = $users -> fetch();
+
+$user_mind = "What is your mind?"
 ?>
     <!-- header -->
     <nav class="navbar opacity">
@@ -43,17 +45,17 @@ $user = $users -> fetch();
     <div class="container-card opacity">
     <div class="card-header">
         <img src="images/icon-facebook.webp" alt="" width="10%">
-        <span class="add-post">What's on your mind?</span>
+        <span class="add-post" onclick="create_post()"><?php echo $user_mind;?></span>
     </div>
     <hr>
     <div class="card-body">
-        <div class="btn photo">
+        <div class="btn photo"  onclick="create_post()">
             <img src="images/gallery.svg" alt="" width="20%">
-            <span>Photo/Video</span>
+            <span>Photo</span>
         </div>
-        <div class="btn feeling">
+        <div class="btn feeling"  onclick="create_post()">
             <img src="images/Happy.png" alt=""width="20%">
-            <span>Feeling</span>
+            <span >Feeling</span>
         </div>
     </div>
     </div>
