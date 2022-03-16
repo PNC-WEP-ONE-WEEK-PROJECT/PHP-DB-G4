@@ -46,7 +46,7 @@ $user_mind = "What is your mind?"
     <div class="container-card opacity">
     <div class="card-header">
         <img src="images/icon-facebook.webp" alt="" width="10%">
-        <span class="add-post" onclick="create_post()"><?php echo $user_mind;?></span>
+        <span class="add-post" onclick="create_post()">What's your mind?</span>
     </div>
     <hr>
     <div class="card-body">
