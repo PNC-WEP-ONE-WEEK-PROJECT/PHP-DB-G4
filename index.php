@@ -3,9 +3,9 @@
  * Your code here
  */
 
-// $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
-// $users = $db -> query("SELECT id, first_name, last_name FROM users limit 1");
-// $user = $users -> fetch();
+$db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
+$users = $db -> query("SELECT id, first_name, last_name FROM users limit 1");
+$user = $users -> fetch();
 
 //  contain user post --
 require_once("templates/header.php");
@@ -13,7 +13,7 @@ require_once("views/post_view.php");
 ?>
 
  <!-- user post -->
- 
+
  <div class="container-card opacity">
         <div class="card-header post-header">
             <div class="card-header">
