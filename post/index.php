@@ -1,6 +1,7 @@
 
 
-    <div class="container">
+
+    <div class="container" style="display:none">
       <div class="wrapper">
         <section class="post">
           <header>Create Post</header>
