@@ -28,6 +28,7 @@ function create_post(){
     if (add_contianer_post.style.display== "none"){
         document.body.style.overflow="hidden";
         show(add_contianer_post);
+       
     }
 }
 

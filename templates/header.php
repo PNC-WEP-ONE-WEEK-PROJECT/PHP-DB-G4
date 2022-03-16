@@ -17,6 +17,7 @@
 <body>
 
 <?php 
+
 $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
 $users = $db -> query("SELECT first_name, last_name FROM users limit 1");
 $user = $users -> fetch();
