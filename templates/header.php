@@ -16,9 +16,10 @@
 </head>
 <body>
 
-<?php
-// you code here
-
+<?php 
+$db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
+$users = $db -> query("SELECT first_name, last_name FROM users limit 1");
+$user = $users -> fetch();
 ?>
     <!-- header -->
     <nav class="navbar opacity">
@@ -34,9 +35,26 @@
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <li class="d-flex"> <span class="cicle-user"><a href="#" ><i class="fa fa-user" style="font-size:20px"></i></a></span> <span>name </span></li>
+                <li class="d-flex"> <span class="cicle-user"><a href="#" ><i class="fa fa-user" style="font-size:20px"></i></a></span> <span><?= $user["first_name"] . " " . $user["last_name"] ;?> </span></li>
                 <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
             </div>
         </div>
     </nav>
+    <div class="container-card opacity">
+    <div class="card-header">
+        <img src="images/icon-facebook.webp" alt="" width="10%">
+        <span class="add-post">What's on your mind?</span>
+    </div>
+    <hr>
+    <div class="card-body">
+        <div class="btn photo">
+            <img src="images/gallery.svg" alt="" width="20%">
+            <span>Photo/Video</span>
+        </div>
+        <div class="btn feeling">
+            <img src="images/Happy.png" alt=""width="20%">
+            <span>Feeling</span>
+        </div>
+    </div>
+    </div>
    
