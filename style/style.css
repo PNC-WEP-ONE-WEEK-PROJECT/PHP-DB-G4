@@ -9,6 +9,9 @@ body{
     list-style: none;
     text-decoration: none;
 }
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 :root{
     --border_raduis--:10px;
 }
@@ -24,7 +27,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 0 12px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
@@ -36,6 +39,15 @@ body{
    display: flex;
    justify-content: space-between;
    width: 25%;
+   margin: 0%;
+}
+.nav_pages li{
+    padding: 20px 40px;
+    color: blue;
+}
+.nav_pages li:hover{
+    background: #eee;
+    cursor: pointer;
 }
 
 .nav_icons{
@@ -60,25 +72,24 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
-.active{
+#active{
     border-bottom: 4px solid blue;
-    margin-bottom: -1.5rem;
-    padding: 0 1rem;
+    color: blue;
 }
-
 
 
     /* PARTH OF POST  */
 
 .container-card{
     width: 40%;
-    margin: 30px auto;
+    margin: 20px auto;
     background: #ffff;
     border-radius: var(--border_raduis--);
     padding: 20px;
-    box-shadow: 1px 2px 8px 2px #aaa;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 .container-card .card-header{
@@ -125,7 +136,9 @@ body{
     background: #E5E5E5;
 }
 
-
+.post-header{
+    margin:0;
+}
 .container-card .card-header .name{
     margin-left: 10px;
     line-height: 5px;
@@ -134,7 +147,6 @@ body{
     width: 40px;
     height: 40px;
     border-radius: 50px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,8 +160,10 @@ body{
     font-size: 30px;
     margin: 0;
 }
+
+
 .post-body .description{
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 .image-posted{
     width: 100%;
@@ -159,8 +173,10 @@ body{
 .post-footer{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 80px ;
-    font-size: 20px;
+    font-size: 18px;
+    height: 40px;
 }
 .post-footer .like #like-post,.post-footer .comment #comment-post{
     cursor: pointer;

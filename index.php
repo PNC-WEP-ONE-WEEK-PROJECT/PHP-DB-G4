@@ -14,8 +14,8 @@ require_once ("templates/header.php");
         </div>
         <!-- page home and group -->
         <div class="nav_pages">
-            <li class="active"><a href="#"><i class="fa fa-home" style="font-size:25px"></i></a></li>
-            <li><a href="#"><i class="fa fa-group" style="font-size:22px"></i></a></li>
+            <li id ="active" class="fa fa-home" style="font-size:25px"></li>
+            <li class="fa fa-group" style="font-size:22px"></li>
         </div>      
         <!-- ICON USER NAME -->
         <div class="nav_icons">
@@ -34,7 +34,7 @@ require_once ("templates/header.php");
         <div class="card-body">
             <div class="btn photo">
                 <img src="images/photo.png" alt="" width="20%">
-                <span>Photo/Video</span>
+                <span>Photo</span>
             </div>
             <div class="btn feeling">
                 <img src="images/Happy.png" alt=""width="20%">
@@ -61,12 +61,13 @@ require_once ("templates/header.php");
         </div>
         <div class="post-body">
             <div class="description">
-                <p class="description">description...</p>
+                <p class="description" name="description">We are here to study IT major</p>
             </div>
             <div class="image-posted">
                 <img src="images/image-1.jpg" alt="" width="100%">
             </div>
         </div>
+        <hr>
         <div class="post-footer">
             <div class="like">
                 <p id="like-post"><i class="fa fa-thumbs-o-up"></i>  Like</p>
