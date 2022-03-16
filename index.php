@@ -16,7 +16,7 @@ require_once ("models/database.php");
         </div>
         <!-- page home and group -->
         <div class="nav_pages">
-            <li class="active"><a href="#"><i class="fa fa-home blue" style="font-size:25px"></i></a></li>
+            <li class="active"><a href="#"><i class="fa fa-home" style="font-size:25px"></i></a></li>
             <li><a href="#"><i class="fa fa-group" style="font-size:22px"></i></a></li>
         </div>      
         <!-- ICON USER NAME -->
