@@ -16,8 +16,8 @@ require_once ("models/database.php");
         </div>
         <!-- page home and group -->
         <div class="nav_pages">
-            <li class="active"><a href="#"><i class="fa fa-home" style="font-size:25px"></i></a></li>
-            <li><a href="#"><i class="fa fa-group" style="font-size:22px"></i></a></li>
+            <li id="active" class="fa fa-home" style="font-size:25px"></li>
+            <li class="fa fa-group" style="font-size:22px"></li>
         </div>      
         <!-- ICON USER NAME -->
         <div class="nav_icons">
@@ -52,7 +52,7 @@ require_once ("models/database.php");
             <img src="images/icon-facebook.webp" alt="" width="10%">
             <div class="name">
                 <h3 class="user_name"><?= $user["first_name"] . " " . $user["last_name"];?> </h3>
-                <p class="post_time">Just now</p>
+                <p class="post_time">Just now <i class="fa fa-globe"></i></p>
             </div>
             </div>
             <div class="card-header-icon">
@@ -69,12 +69,13 @@ require_once ("models/database.php");
                 <img src="images/image-1.jpg" alt="" width="100%">
             </div>
         </div>
+        <hr>
         <div class="post-footer">
             <div class="like">
-                <p>Like</p>
+                <p><i class="fa fa-thumbs-o-up"></i> Like</p>
             </div>
             <div class="comment">
-                <p>Comment</p>
+                <p><i class="fa fa-comment-o"></i> Comment</p>
             </div>
         </div>
 </div>

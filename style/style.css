@@ -180,7 +180,7 @@ body{
     font-size: 18px;
     height: 40px;
 }
-.post-footer .like #like-post,.post-footer .comment #comment-post{
+.post-footer .like,.post-footer .comment{
     cursor: pointer;
 }
 
