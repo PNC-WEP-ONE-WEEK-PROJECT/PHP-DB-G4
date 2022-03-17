@@ -5,18 +5,6 @@
 
 // <!-- CONNECTION DATABASES  -->
 $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
-// $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
-
-// function getItemById($id)
-// {
-//     global $db;
-//     $statement = $db->prepare("SELECT posts.user_id FROM posts where id=:user_id");
-//     $statement->execute([
-//         ":user_id" => $id,
-//     ]);
-//     $getId = $statement->fetch();
-//     return $getId;
-// }
 
 function create_post($user_id, $description){
     // you code here 
@@ -30,17 +18,43 @@ function create_post($user_id, $description){
 }
 
 
-// function insert_post(){
-//     // you code here 
-// }
+function remove_post($id){
+    // you code here 
+    global $db;
+    $statement = $db->prepare("DELETE FROM posts WHERE id=:id_post;");
+    $statement->execute([
+        ':id_post' => $id
+    ]);
+    return ($statement->rowCount() == 1); #Delete one row from database;
+    
+}
 
 
-// function insert_post(){
-//     // you code here 
-// }
+/**
+ * Get a single item
+ * @param integer $id : the item id
+ 
+ * @return associative_array: the item related to given item id
+ */
+function getItemById($id)
+{
+    global $db; 
+    $statement = $db->prepare("SELECT * FROM posts where id=:id;");
+    $statement->execute([
+        ':id'=> $id
+    ]);
+    $item = $statement->fetch();
+    return $item;
+}
 
+// UPDATE POST ---------------------
+function update_post($id, $description){
+    global $db;
+    $statement = $db->prepare("UPDATE posts SET description=:description WHERE id=:id");
+    $statement->execute([
+        ':description' => $description,
+        ':id' =>  $id
+    ]);
 
-// function insert_post(){
-//     // you code here 
-// }
-
+    return ($statement->rowCount() == 1);
+}

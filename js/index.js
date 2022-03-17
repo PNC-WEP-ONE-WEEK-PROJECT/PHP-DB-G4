@@ -1,21 +1,18 @@
 // SHOW BOX TO EDIT OR DELETE POST---------------------------
-let get_activities = document.querySelectorAll(".card-activity");
+let get_activities = document.querySelector(".card-activity");
+get_activities.style.display = "none";
 function showActivity(){
-    for (let activity of get_activities){
-        if (activity.style.display == "none"){
-            return show(activity);
-        }
-        
-    }
+    console.log(get_activities);
+    return show(get_activities);
 }
 
 
 function cancel_post(){
     let cancel_post = document.querySelector(".container");
     document.body.style.overflow="visible";
-    write_post.textContent = document.querySelector(".title").value;
     return hide(cancel_post);
 }
+
 function show(element){
     element.style.display = "block";
 }
@@ -26,17 +23,12 @@ function hide(element){
 
 window.onclick = function(event) {
     if (event.target.className !== "icon") {
-        activity.style.display = "none";
+        get_activities.style.display = "none";
     }
 }
 
-let icons = document.querySelectorAll(".icon");
-for (let icon of icons){
-    icon.addEventListener("click",showActivity);
-    console.log(icon);
-}
-
-
+let more_icon = document.querySelector(".fa-ellipsis-h");
+more_icon.addEventListener("click",showActivity);
 // CREATE POST---------------------------------------------------------------
 let write_post = document.querySelector(".add-post");
 function create_post(){
