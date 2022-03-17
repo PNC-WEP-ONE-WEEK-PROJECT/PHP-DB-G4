@@ -61,7 +61,11 @@ body{
     justify-content: space-around;
     width: 15%;
 }
-
+.nav_icons img{
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
 .navbar .fa{
     color: black;
     cursor: pointer;
@@ -88,7 +92,6 @@ body{
 }
 
 /* PARTH OF POST  */
-
 .container-card{
     width: 40%;
     margin: 20px auto;
@@ -96,6 +99,7 @@ body{
     border-radius: var(--border_raduis--);
     padding: 20px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
 
 }
 .container-card .card-header{
@@ -104,6 +108,16 @@ body{
     margin-bottom: 20px;
     height: auto;
 }
+.container-card .card-header .profile{
+  width: 30%;
+  padding: 10px 0;
+
+}
+.container-card .card-header .profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
 .container-card .add-post{
     width:100%;
     border-radius: 50px;
@@ -111,11 +125,9 @@ body{
     box-sizing: border-box;
     background: #f5f4f4;
     font-size: 18px;
-    margin-left: 20px;
     cursor: pointer;
     box-sizing: border-box;
     height: auto;
-    padding: 20px;
 
 }
 .container-card .add-post:hover{
@@ -127,12 +139,11 @@ body{
     justify-content: space-between;
     margin-top: 20px;
     font-size: 18px;
-
-}
+    box-sizing: border-box;
+  }
 .container-card .card-body .btn{
     display: flex;
     align-items: center;
-
     padding: 6px 12px;
     cursor: pointer;
     border-radius: var(--border_raduis--);
@@ -146,14 +157,32 @@ body{
   background: #f5f4f4;
 }
 
-.post-header{
-    margin:0;
-}
-.container-card .card-header .name{
+/* END ADD POST */
+.container-card .post-header{
     margin-left: 10px;
     line-height: 5px;
+    width: 100%;
+    display: flex;
+}
+.container-card .post-header .post-header-profile{
+  width: 100%;
 }
 
+.container-card .post-header .post-header-profile .user-profile{
+  width: 20%;
+}
+.container-card .post-header .post-header-profile .user-profile img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.container-card .post-header .post-header-profile .name{
+  width: 100%;
+}
+.card-header-icon{
+  width: 5%;
+  padding: 10px 0;
+}
 .card-header-icon .icon{
     cursor: pointer;
     font-size: 20px;
@@ -162,8 +191,8 @@ body{
 
 .card-activity{
   position: absolute;
-  margin-left: 230px;
-  margin-top: 150px;
+  margin-left: 220px;
+  margin-top: 30px;
   width: 20%;
   background: #ffff;
   border-radius: var(--border_raduis--);
@@ -187,13 +216,14 @@ body{
   background: #f5f4f4;
 }
 .post-body .description{
+    width: 100%;
     margin-bottom: 14px;
+    box-sizing: border-box;
 }
 .image-posted{
     width: 100%;
     box-sizing: border-box;
 }
-
 .post-footer{
     display: flex;
     justify-content: space-between;

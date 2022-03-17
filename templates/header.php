@@ -40,20 +40,22 @@ $user_mind = "What is your mind?"
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <li class="d-flex"> <span class="cicle-user"><a href="#" ><i class="fa fa-user" style="font-size:20px"></i></a></span> <span><?= $user["first_name"] . " " . $user["last_name"] ;?> </span></li>
+                <li class="d-flex"> <span class="cicle-user"><a href="#" ><img src="../images/user.png" alt="" width=" 100%" ></a></span> <span><?= $user["first_name"] . " " . $user["last_name"] ;?> </span></li>
                 <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
             </div>
         </div>
     </nav>
     <div class="container-card opacity">
     <div class="card-header">
-        <img src="images/icon-facebook.webp" alt="" width="10%">
+        <div class="profile">
+            <img src="images/user.png" alt="" width="10%">
+        </div>
         <span class="add-post" onclick="create_post()">What's your mind?</span>
     </div>
     <hr>
     <div class="card-body">
         <div class="btn photo"  onclick="create_post()">
-            <img src="images/gallery.svg" alt="" width="20%">
+            <img src="images/gallery.svg" alt="" width="100%">
             <span>Photo</span>
         </div>
         <div class="btn feeling"  onclick="create_post()">
