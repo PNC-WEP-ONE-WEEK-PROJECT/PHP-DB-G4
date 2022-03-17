@@ -24,11 +24,11 @@ function hide(element){
     element.style.display = "none";
 }
 
-window.onclick = function(event) {
-    if (event.target.className !== "icon") {
-        activity.style.display = "none";
-    }
-}
+// window.onclick = function(event) {
+//     if (event.target.className !== "icon") {
+//         activity.style.display = "none";
+//     }
+// }
 
 let icons = document.querySelectorAll(".icon");
 for (let icon of icons){
@@ -48,3 +48,8 @@ function create_post(){
 }
 
 let add_contianer_post=document.querySelector(".container");
+
+let posts=document.querySelectorAll(".container-card")
+posts.forEach(element => {
+    console.log(element);
+});

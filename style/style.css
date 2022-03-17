@@ -346,6 +346,11 @@ form .options .add-icon{
   width: 20%;
   margin: auto;
 }
+form .options .add-icon input[type="file"]:valid ~ button{
+  cursor: pointer;
+  background: #4599FF;
+}
+
 form .options .add-icon img{
   width: 50%;
 }
@@ -365,6 +370,8 @@ form textarea:valid ~ button{
   cursor: pointer;
   background: #4599FF;
 }
+
+
 form textarea:valid ~ button:hover{
   background: #1a81ff;
 }
