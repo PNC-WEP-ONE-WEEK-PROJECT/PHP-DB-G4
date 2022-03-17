@@ -9,7 +9,8 @@ require_once("../models/database.php");
     $get_desc = $_POST["description"];
     $get_user_id = $_POST["user_id"];
     $file_name = uploadImage($_FILES['uploadimg']);
-    create_post($get_user_id, $get_desc, $file_name);
+    $date = date('DD/MM/YY H:i:s');
+    create_post($get_user_id, $get_desc, $file_name, $date);
  }
 header("location: /index.php");
 ?>

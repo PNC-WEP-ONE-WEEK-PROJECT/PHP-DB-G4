@@ -5,14 +5,15 @@
 
 // <!-- CONNECTION DATABASES  -->
 $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
-function create_post($user_id, $description, $img){
+function create_post($user_id, $description, $img, $date){
     // you code here 
     global $db;
-    $post_statement = $db->prepare("INSERT INTO posts (user_id, description, file_img) VALUES (:id, :desc, :image);");
+    $post_statement = $db->prepare("INSERT INTO posts (user_id, description, file_img, post_date) VALUES (:id, :desc, :image, :post_date);");
     $post_statement->execute([
         ':id' => $user_id,
         ':desc' => $description,
-        ':image' => $img
+        ':image' => $img,
+        ':post_date' => $date,
     ]);
     return $post_statement->rowCount()==1;
 }
@@ -39,6 +40,5 @@ function update_post($id, $description){
         ':description' => $description,
         ':id' =>  $id
     ]);
-
     return ($statement->rowCount() == 1);
 }

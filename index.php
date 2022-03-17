@@ -11,12 +11,10 @@ require_once("views/post_view.php");
    // Get the id of the item to update in query
 
 $posts=get_posts();
-
 $posts = array_reverse($posts);
 ?>
 
 <?php foreach($posts as $post):?>
-
  <div class="container-card" id="<?=$post["id"]?>">
         <div class="post-header">
             <div class="post-header-profile" style="display:flex">
