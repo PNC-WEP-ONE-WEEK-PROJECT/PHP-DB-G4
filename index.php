@@ -7,9 +7,12 @@
 require_once("templates/header.php");
 require_once("models/post.php");
 require_once("views/post_view.php");
+   // TO DO:
+   // Get the id of the item to update in query
 
-$posts=getItems();
+$posts=get_posts();
 
+$posts = array_reverse($posts);
 ?>
 
 <?php foreach($posts as $post):?>
@@ -25,15 +28,13 @@ $posts=getItems();
             </div>
             </div>
             <div class="card-header-icon">
-                <div class="icon">
-                    <li><img src="images/more.svg" alt="gallery"></li>
-                </div>
+                <li class="icon"><i class="fa fa-ellipsis-h"></i></li>
             </div>
         </div>
          <!-- user edit and delete -->
-         <div class="card-activity" style="display:none">
-            <li><a class="edit-post" href="controllers/edit_post.php"><i class="fa fa-edit"></i> Edit post</a></li>
-            <li><a class="delete-post" href="controllers/delete_post.php"><i class="fa fa-edit"></i> Remove to Recyle bin</a></li>
+         <div class="card-activity" style="display:">
+            <li><a class="edit-post" href="views/edit_view.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Edit post</a></li>
+            <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Remove to Recyle bin</a></li>
         </div>
         <div class="post-body">
             <div class="description">

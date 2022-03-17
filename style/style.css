@@ -154,19 +154,11 @@ body{
     line-height: 5px;
 }
 
-.card-header-icon .icon{
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.card-header-icon .icon .fa{
     cursor: pointer;
-    font-size: 12px;
+    font-size: 24px;
   }
-.card-header-icon .icon:hover{
-    background: #E5E5E5;
-}
+
 
 .card-activity{
   position: absolute;
