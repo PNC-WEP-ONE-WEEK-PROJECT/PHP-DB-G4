@@ -28,11 +28,12 @@ $posts = array_reverse($posts);
             </div>
             </div>
             <div class="card-header-icon">
-                <li class="icon"><i class="fa fa-ellipsis-h"></i></li>
+                <li class="icon"><i class="fa fa-ellipsis-h" id="<?= $post['id'];?>"></i></li>
             </div>
         </div>
          <!-- user edit and delete -->
-         <div class="card-activity" style="display:">
+
+         <div class="card-activity" style="display:none" id="<?= $post['id'];?>">
             <li><a class="edit-post" href="views/edit_view.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Edit post</a></li>
             <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Remove to Recyle bin</a></li>
         </div>

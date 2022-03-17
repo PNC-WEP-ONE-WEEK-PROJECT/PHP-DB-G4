@@ -159,6 +159,16 @@ body{
     font-size: 24px;
   }
 
+  .card-header-icon .selection{
+    outline: none;
+    border: none;
+    width: 2rem;
+    margin-top: -1rem;
+  }
+  .card-header-icon .selection .sticker{
+    font-weight: bolder;
+  }
+
 
 .card-activity{
   position: absolute;
