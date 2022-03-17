@@ -38,10 +38,7 @@ $posts = getItemById($id);
                 -->
             <div class="options">
                 <img src="../images/uploads/<?= $posts["file_img"]?>" alt="" width="100%">
-                    <!-- <div class="add-icon">
-                    <img src="../images/add-photo.png" alt="gallery" width=100%>
-                    </div>
-                    <p>Add photos</p> -->
+
             </div>
         </div>
             <button type="submit" name="submit">Update</button>
