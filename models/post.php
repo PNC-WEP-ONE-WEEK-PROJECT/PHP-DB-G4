@@ -9,3 +9,21 @@ function get_posts(){
     return $getItem;
 }
 // FORMAT (getdate(), 'dddd, MMMM, yyyy')
+
+
+/**
+ * Get a single item
+ * @param integer $id : the item id
+ 
+ * @return associative_array: the item related to given item id
+ */
+function getItemById($id)
+{
+    global $db; 
+    $statement = $db->prepare("SELECT * FROM posts where id=:id;");
+    $statement->execute([
+        ':id'=> $id
+    ]);
+    $item = $statement->fetch();
+    return $item;
+}

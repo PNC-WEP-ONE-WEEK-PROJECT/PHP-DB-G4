@@ -28,7 +28,7 @@ $user = $user_statement -> fetch();
                 </div>
               </div>
             </div>
-            <textarea name="description" class= "title"placeholder="What's on your mind?" spellcheck="false" required></textarea>
+            <textarea name="description" class= "title" placeholder="What's your mind?" spellcheck="false" required></textarea>
             <div class="add-gallery">
               </div>
               <div class="options">
@@ -43,14 +43,3 @@ $user = $user_statement -> fetch();
         </section>
       </div>
     </div>
-<!-- <script>
-    
-let chose_img= document.getElementById("#click_img")
-chose_img.addEventListener("click", ()=>{
-    document.getElementsByTagName("#sum_post").style.background="#4599FF"
-    console.log(document.getElementsByTagName("#sum_post")); 
-    
-})
-console.log(chose_img);
-</script> -->
-

@@ -30,22 +30,6 @@ function remove_post($id){
 }
 
 
-/**
- * Get a single item
- * @param integer $id : the item id
- 
- * @return associative_array: the item related to given item id
- */
-function getItemById($id)
-{
-    global $db; 
-    $statement = $db->prepare("SELECT * FROM posts where id=:id;");
-    $statement->execute([
-        ':id'=> $id
-    ]);
-    $item = $statement->fetch();
-    return $item;
-}
 
 // UPDATE POST ---------------------
 function update_post($id, $description){

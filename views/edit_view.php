@@ -1,6 +1,6 @@
 <?php
 require_once('../templates/header.php');
-require_once('../models/database.php');
+require_once('../models/post.php');
    // TO DO:
    // Get the id of the item to update in query
 $id = $_GET['id'];
@@ -14,12 +14,12 @@ $posts = getItemById($id);
         <input type="hidden" value="<?php echo $id;?>" name="id">
         <header class="create-post-header" style="display:flex">
         <h2>Update post</h2>
-        <div class="cancel-post">
+        <div class="cancel-post" onclick= "cancel_post()">
             <li><img src="../images/Cancel.png" alt="gallery" width="100%" ></li>
         </div>
         </header>
         <hr>
-        <form action="models/post.php" method="post">
+        <form action="models/post.php" method="post" id ="update">
         <div class="content">
             <img src="../images/user.png" alt="logo" class="icon_user">
             <div class="details">
@@ -31,17 +31,20 @@ $posts = getItemById($id);
             </div>
             </div>
         </div>
-        <textarea name="description" class= "title" placeholder="<?= $posts["description"];?>" spellcheck="false" required></textarea>
-        <div class="add-gallery">
-            </div>
-            
-            <div class="options">
-                <div class="add-icon">
-                <img src="../images/add-photo.png" alt="gallery" width=100%>
+        <div class="update_post">
+            <textarea name="description" class= "title" placeholder="<?= $posts["description"];?>" spellcheck="false" required></textarea>
+            <!-- <div class="add-gallery">
                 </div>
-                <p>Add photos</p>
+                -->
+            <div class="options">
+                <img src="../images/uploads/<?= $posts["file_img"]?>" alt="" width="100%">
+                    <!-- <div class="add-icon">
+                    <img src="../images/add-photo.png" alt="gallery" width=100%>
+                    </div>
+                    <p>Add photos</p> -->
+            </div>
         </div>
-        <button type="submit" name="submit">Update</button>
+            <button type="submit" name="submit">Update</button>
         </form>
     </section>
     </div>
@@ -49,3 +52,4 @@ $posts = getItemById($id);
 <?php
 require_once('../templates/footer.php');
 ?>
+

@@ -154,26 +154,16 @@ body{
     line-height: 5px;
 }
 
-.card-header-icon .icon .fa{
+.card-header-icon .icon{
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
+    margin: 0%;
   }
-
-  .card-header-icon .selection{
-    outline: none;
-    border: none;
-    width: 2rem;
-    margin-top: -1rem;
-  }
-  .card-header-icon .selection .sticker{
-    font-weight: bolder;
-  }
-
 
 .card-activity{
   position: absolute;
-  margin-left: 200px;
-  margin-top: -30px;
+  margin-left: 230px;
+  margin-top: 150px;
   width: 20%;
   background: #ffff;
   border-radius: var(--border_raduis--);
@@ -219,9 +209,10 @@ body{
  /* FORM ADD POST  */
 
 .container{
+  padding: 4rem 0;
   background-color: hsla(0, 0%, 9%, 0.651);
   position: fixed;
-  top: 8%;
+  top: 2%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -235,6 +226,7 @@ body{
   overflow: hidden;
   display: flex;
   justify-content: center;
+  padding: 0%;
 }
 .container .wrapper section{
   border-radius: var(--border_raduis--);
@@ -309,6 +301,29 @@ form .content .details p{
 .details .privacy i:last-child{
   font-size: 13px;
 }
+
+
+/* UPDATE POST */
+.update_post{
+  margin: 20px 0;
+  overflow: auto;
+  height: 10rem;
+}
+.update_post .options{
+  margin: 0%;
+  padding: 0;
+}
+.update_post .title {
+  font-size: 16px;
+  margin: 0%;
+}
+
+#update button{
+  color: #fff;
+  cursor: pointer;
+  background: #4599FF;
+} 
+
 form :where(textarea, button){
   width: 100%;
   outline: none;
@@ -348,11 +363,6 @@ form .options .add-icon{
   width: 20%;
   margin: auto;
 }
-form .options .add-icon input[type="file"]:valid ~ button{
-  cursor: pointer;
-  background: #4599FF;
-}
-
 form .options .add-icon img{
   width: 50%;
 }
@@ -372,9 +382,6 @@ form textarea:valid ~ button{
   cursor: pointer;
   background: #4599FF;
 }
-
-
 form textarea:valid ~ button:hover{
   background: #1a81ff;
 }
-
