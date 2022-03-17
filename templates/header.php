@@ -48,7 +48,7 @@ $user_mind = "What is your mind?"
     <div class="container-card opacity">
     <div class="card-header">
         <div class="profile">
-            <img src="images/user.png" alt="" width="10%">
+            <img src="images/user.png" alt="" width="100%">
         </div>
         <span class="add-post" onclick="create_post()">What's your mind?</span>
     </div>
@@ -64,4 +64,3 @@ $user_mind = "What is your mind?"
         </div>
     </div>
     </div>
-   
