@@ -4,17 +4,8 @@
  */
 
 // <!-- CONNECTION DATABASES  -->
-
 $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
-
-function getItems(){
-    global $db;
-    $user_statement = $db->query("SELECT users.id, users.first_name, users.last_name, description FROM posts INNER JOIN users on posts.user_id=users.id;");
-    $getItem = $user_statement->fetchAll();
-    return $getItem;
-    echo $getItem;
-}
-
+// $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
 
 // function getItemById($id)
 // {
@@ -26,8 +17,6 @@ function getItems(){
 //     $getId = $statement->fetch();
 //     return $getId;
 // }
-
-
 
 function create_post($user_id, $description){
     // you code here 
@@ -54,5 +43,4 @@ function create_post($user_id, $description){
 // function insert_post(){
 //     // you code here 
 // }
-
 

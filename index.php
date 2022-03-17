@@ -5,7 +5,9 @@
 
 //  contain user post --
 require_once("templates/header.php");
+require_once("models/post.php");
 require_once("views/post_view.php");
+
 $posts=getItems();
 
 ?>
@@ -23,7 +25,7 @@ $posts=getItems();
             </div>
             </div>
             <div class="card-header-icon">
-                <div class="icon" onclick="showActivity()">
+                <div class="icon">
                     <li><img src="images/more.svg" alt="gallery"></li>
                 </div>
             </div>

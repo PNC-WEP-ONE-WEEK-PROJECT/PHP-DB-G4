@@ -1,10 +1,10 @@
 <?php
-require_once("models/database.php");
+
 $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
 $user_statement = $db->query("SELECT id, first_name, last_name FROM users limit 1;");
 $user = $user_statement -> fetch();
 ?>
-    <div class="container" style="display:block">
+    <div class="container" style="display:none">
       <div class="wrapper">
         <section class="post">
           <form action="controllers/create_post.php" method="post">
@@ -15,7 +15,6 @@ $user = $user_statement -> fetch();
             </div>
           </header>
           <hr>
-          <form action="models/post.php" method="post">
             <div class="content">
               <img src="images/user.png" alt="logo" class="icon_user">
               <div class="details">
@@ -28,7 +27,7 @@ $user = $user_statement -> fetch();
                 </div>
               </div>
             </div>
-            <textarea name="title" class= "title"placeholder="What's on your mind?" spellcheck="false" required></textarea>
+            <textarea name="description" class= "title"placeholder="What's on your mind?" spellcheck="false" required></textarea>
             <div class="add-gallery">
               </div>
               
