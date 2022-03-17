@@ -18,27 +18,28 @@ $posts = array_reverse($posts);
 <?php foreach($posts as $post):?>
 
  <div class="container-card" id="<?=$post["id"]?>">
-        <div class="card-header post-header">
-            <div class="card-header">
-            <img src="images/icon-facebook.webp" alt="" width="10%">
-            <div class="name">
-                <h5 class="user_name"><?=$post["first_name"] . " " . $post["last_name"]?></h5>
-                <p><?= $post["current_time"]?></p>
-                <!-- <p class="post_time">Just now <i class="fa fa-globe"></i></p> -->
-            </div>
+        <div class="post-header">
+            <div class="post-header-profile" style="display:flex">
+                <div class="user-profile">
+                    <img src="images/user.png" alt="" width="100%">
+                </div>
+                <div class="name">
+                    <h4 class="user_name"><?=$post["first_name"] . " " . $post["last_name"]?></h4>
+                    <p><?= $post["current_time"]?></p>
+                </div>
             </div>
             <div class="card-header-icon">
                 <i class="fa fa-ellipsis-h icon"></i>
             </div>
             <!-- user edit and delete -->
             <div class="card-activity" style="display:none">
-               <li><a class="edit-post" href="views/edit_view.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Edit post</a></li>
-               <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Remove to Recyle bin</a></li>
-           </div>
+                <li><a class="edit-post" href="views/edit_view.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Edit post</a></li>
+                <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Remove to Recyle bin</a></li>
+            </div>
         </div>
         <div class="post-body">
             <div class="description">
-                <p class="description"><?= $post["description"]?></p>
+                <p><?= $post["description"]?></p>
             </div>
             <div class="image-posted">
                 <img src="images/uploads/<?= $post["file_img"]?>" alt="" width="100%">

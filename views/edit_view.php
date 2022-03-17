@@ -32,7 +32,7 @@ $posts = getItemById($id);
             </div>
         </div>
         <div class="update_post">
-            <textarea name="description" class= "title" placeholder="<?= $posts["description"];?>" spellcheck="false" required></textarea>
+            <textarea name="description" class= "title" placeholder="<?= $posts["description"];?>" spellcheck="false" required style="color:black" ></textarea>
             <!-- <div class="add-gallery">
                 </div>
                 -->
