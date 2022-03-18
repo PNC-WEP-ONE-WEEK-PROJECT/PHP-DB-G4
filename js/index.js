@@ -40,4 +40,16 @@ window.onclick = function (event) {
     }
 }
 
-window.reload();
+// UPLOAD PHOTO--------------
+var uploadImage = function(event){
+    var image = document.getElementById("image-post");
+    image.src = URL.createObjectURL(event.target.files[0]);
+    displayImage();
+}
+
+
+function displayImage(){
+    let box = document.querySelector(".user-post");
+    box.style.height ="15rem";
+    box.style.overflow = "auto";
+}
