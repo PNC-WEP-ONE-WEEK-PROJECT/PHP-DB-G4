@@ -259,14 +259,13 @@ body{
   border-radius: var(--border_raduis--);
   width: 100%;
   background-color: #fff;
-  padding: 20px;
+  padding: 0%;
 }
 .container img{
   cursor: pointer;
 }
 .create-post-header{
   display: flex;
-  align-items: center;
   line-height: 0;
   justify-content: space-between;
 
@@ -284,7 +283,6 @@ body{
   justify-content: center;
   cursor: pointer;
   float: right;
-  margin-right: 0;
 
 }
 .post form{
@@ -341,7 +339,7 @@ form .content .details p{
   padding: 0;
 }
 .update_post .title {
-  font-size: 16px;
+  font-size: 14px;
   margin: 0%;
 }
 
@@ -358,8 +356,7 @@ form :where(textarea, button){
 }
 form textarea{
   resize: none;
-  font-size: 24px;
-  margin-top: 30px;
+  margin-top: 20px;
   min-height: 60px;
 }
 form textarea::placeholder{
@@ -373,14 +370,18 @@ form textarea:focus::placeholder{
 }
 form .options{
   height: 50px;
-  margin: 15px auto;
+  margin: 0px auto;
   padding: 0 15px;
   border-radius: 7px;
   border: 1px solid #B9B9B9;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   height: auto;
   text-align: center;
-  padding: 30px 0;
+  padding:10px;
+  margin-bottom: 10px;
+}
+form .options img {
+  border-radius: 5px;
 }
 form .options:hover{
   background-color: #eeeeee ;
@@ -389,6 +390,9 @@ form .options:hover{
 form .options .add-icon{
   width: 20%;
   margin: auto;
+  background: #000;
+  padding: 10px;
+
 }
 form .options .add-icon img{
   width: 50%;

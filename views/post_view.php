@@ -11,7 +11,7 @@ $user = $user_statement -> fetch();
           <header class="create-post-header" style="display:flex">
             <h2>Create post</h2>
             <div class="cancel-post" onclick="cancel_post()">
-              <li><img src="images/Cancel.png" alt="gallery" width="100%" ></li>
+              <li><img src="images/Cancel.png" alt="gallery" width="80%" ></li>
             </div>
           </header>
           <hr>
@@ -28,15 +28,19 @@ $user = $user_statement -> fetch();
                 </div>
               </div>
             </div>
-            <textarea name="description" class= "title" placeholder="What's your mind?" spellcheck="false"></textarea>
-            <div class="add-gallery">
-              </div>
-              <div class="options">
-                  <div class="add-icon">
-                    <input type="file" name="uploadimg" id="click_img">
-                    <!-- <img src="../images/add-photo.png" alt="gallery" width=100%> -->
+            <div class="user-post">
+              <textarea name="description" class= "title" placeholder="What's your mind?" spellcheck="false" style="font-size:16px"></textarea>
+              <div class="add-gallery">
+                <label for="click_img">
+                  <div class="options add-icon" >
+                    <img src="" alt="" id="image-post" width="100%">
+                    <input type="file" name="uploadimg" onchange="uploadImage(event)" id="click_img" style="display:none">
+                    <div class="add-image">
+                      <img src="../images/add-photo.png" alt="" width= "10%"> <br> Add Photo 
+                    </div>
                   </div>
-                  <p>Photo</p>
+                </label>
+              </div>
             </div>
             <button id="sum_post" type="submit" name="submit">Post</button>
           </form>
