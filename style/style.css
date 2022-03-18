@@ -118,7 +118,7 @@ body{
 .container-card .add-post{
     width:100%;
     border-radius: 50px;
-    padding: 12px 14px;
+    padding: 8px 14px;
     box-sizing: border-box;
     background: #f5f4f4;
     font-size: 18px;
@@ -343,11 +343,6 @@ form .content .details p{
   margin: 0%;
 }
 
-#update button{
-  color: #fff;
-  cursor: pointer;
-  background: #4599FF;
-} 
 
 form :where(textarea, button){
   width: 100%;
@@ -402,17 +397,8 @@ form button{
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  color: #BCC0C4;
-  cursor: no-drop;
   border-radius: 7px;
-  background-color: #e2e5e9;
   transition: all 0.3s ease;
-}
-form textarea:valid ~ button{
-  color: #fff;
-  cursor: pointer;
   background: #4599FF;
 }
-form textarea:valid ~ button:hover{
-  background: #1a81ff;
-}
+
