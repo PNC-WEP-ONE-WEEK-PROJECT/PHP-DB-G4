@@ -28,7 +28,7 @@ $user = $user_statement -> fetch();
                 </div>
               </div>
             </div>
-            <textarea name="description" class= "title" placeholder="What's your mind?" spellcheck="false" required></textarea>
+            <textarea name="description" class= "title" placeholder="What's your mind?" spellcheck="false"></textarea>
             <div class="add-gallery">
               </div>
               <div class="options">
