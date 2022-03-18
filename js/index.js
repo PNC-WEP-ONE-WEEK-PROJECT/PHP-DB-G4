@@ -73,3 +73,12 @@ let btn_likes = document.querySelectorAll("#click_like");
 for (let btn of btn_likes){
     btn.addEventListener("click",like_post);
 }
+
+
+function comment_post(){
+    
+}
+let btn_comment = document.querySelectorAll("#click_comment");
+for (let btn of btn_comment){
+    btn.addEventListener("click",comment_post);
+}

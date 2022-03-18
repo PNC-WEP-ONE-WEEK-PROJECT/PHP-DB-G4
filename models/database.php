@@ -41,3 +41,14 @@ function update_post($id, $description, $img){
     ]);
     return ($statement->rowCount() == 1);
 }
+
+function comment_post($comment,$post_id,$user_id){
+    global $db;
+    $statement = $db->prepare("INSERT INTO comments(content,post_id,user_id) value(:comment,:post_id,:user_id)");
+    $statement->execute([
+        ':comment' => $comment,
+        ':post_id' =>  $post_id,
+        'user_id'=> $user_id
+    ]);
+    return ($statement->rowCount() == 1);
+}

@@ -279,6 +279,10 @@ body{
 .comment_box .input_comment{
   width: 100%;
   box-sizing: border-box;
+  align-items: center;
+}
+.comment_box .input_comment:focus .comment_box .input_comment .send-comment i{
+  display: block;
 }
 .comment_box .input_comment input{
   padding: 8px 10px;
@@ -286,6 +290,19 @@ body{
   width: 100%;
   outline: none;
   border: 1px solid #aaa;
+}
+.comment_box .input_comment .send-comment{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 30px;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  width: 20px;
+}
+.comment_box .input_comment .send-comment i{
+  /* display: none; */
 }
 /* LIKE & COMMENT */
 .content_like_comment{
