@@ -10,12 +10,14 @@ $posts = getItemById($id);
 <div class="container" style="display:block">
     <div class="wrapper">
     <section class="post">
-        <form action="../controllers/edit_post.php" method="post">
+        <form action="../controllers/edit_post.php" method="post" enctype="multipart/form-data">
         <input type="hidden" value="<?php echo $id;?>" name="id">
         <header class="create-post-header" style="display:flex">
         <h2>Update post</h2>
-        <div class="cancel-post" onclick= "cancel_post()">
+        <div class="cancel-post">
+            <a href="../index.php">
             <li><img src="../images/Cancel.png" alt="gallery" width="100%" ></li>
+            </a> 
         </div>
         </header>
         <hr>
@@ -32,12 +34,18 @@ $posts = getItemById($id);
             </div>
         </div>
         <div class="update_post">
-            <textarea name="description" class= "title" placeholder="<?= $posts["description"];?>" spellcheck="false" style="color:black" ></textarea>
-            <!-- <div class="add-gallery">
-                </div>
-                -->
-            <div class="options">
-                <img src="../images/uploads/<?= $posts["file_img"]?>" alt="" width="100%">
+            <textarea name="description" class= "title" spellcheck="false" style="color:black" ><?= $posts["description"];?></textarea>
+            <div class="add-gallery">
+                <label for="click_img">
+                    <div class="options add-icon" >
+                        <input type="hidden" name="update_photo" value="<?= $posts["file_img"]?>">
+                        <img src="../images/uploads/<?= $posts["file_img"]?>" alt="" width="100%" id="image-post">
+                        <input type="file" name="update_img"  onchange="uploadImage(event)" id="click_img" style="display:none">
+                        <div class="add-image">
+                            <img src="../images/add-photo.png" alt="" width= "10%"> <br> Add Photo 
+                        </div>
+                    </div>
+                </label>
             </div>
         </div>
             <button type="submit" name="submit">Update</button>

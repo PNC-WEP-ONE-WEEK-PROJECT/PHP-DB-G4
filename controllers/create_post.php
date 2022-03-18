@@ -4,7 +4,6 @@
  */
 
 require_once("../models/database.php");
-
 $file_name = uploadImage($_FILES['uploadimg']);
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['description']) || $file_name!=""){
     $get_desc = $_POST["description"];

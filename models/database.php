@@ -30,15 +30,14 @@ function remove_post($id){
     
 }
 
-
-
 // UPDATE POST ---------------------
-function update_post($id, $description){
+function update_post($id, $description, $img){
     global $db;
-    $statement = $db->prepare("UPDATE posts SET description=:description WHERE id=:id");
+    $statement = $db->prepare("UPDATE posts SET description=:description, file_img=:image WHERE id=:id");
     $statement->execute([
         ':description' => $description,
-        ':id' =>  $id
+        ':id' =>  $id,
+        ':image'=> $img
     ]);
     return ($statement->rowCount() == 1);
 }

@@ -9,7 +9,6 @@ require_once("models/post.php");
 require_once("views/post_view.php");
    // TO DO:
    // Get the id of the item to update in query
-
 $posts=get_posts();
 $posts = array_reverse($posts);
 ?>

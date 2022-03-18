@@ -8,8 +8,6 @@ function get_posts(){
     $getItem = $user_statement->fetchAll();
     return $getItem;
 }
-
-
 /**
  * Get a single item
  * @param integer $id : the item id
