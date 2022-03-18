@@ -32,13 +32,12 @@ $posts = getItemById($id);
             </div>
         </div>
         <div class="update_post">
-            <textarea name="description" class= "title" placeholder="<?= $posts["description"];?>" spellcheck="false" required style="color:black" ></textarea>
+            <textarea name="description" class= "title" placeholder="<?= $posts["description"];?>" spellcheck="false" style="color:black" ></textarea>
             <!-- <div class="add-gallery">
                 </div>
                 -->
             <div class="options">
                 <img src="../images/uploads/<?= $posts["file_img"]?>" alt="" width="100%">
-
             </div>
         </div>
             <button type="submit" name="submit">Update</button>

@@ -5,12 +5,18 @@
 
 require_once("../models/database.php");
 
-$get_desc = $_POST["description"];
-$get_user_id = $_POST["user_id"];
 $file_name = uploadImage($_FILES['uploadimg']);
-$myDate = date("d/m/y h:i:s");
-create_post($get_user_id, $get_desc, $file_name, $myDate);
-header("location: /index.php");
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['description']) || $file_name!=""){
+    $get_desc = $_POST["description"];
+    $get_user_id = $_POST["user_id"];
+    date_default_timezone_set("Asia/Bangkok");
+    $myDate = date("d/m/y h:i:s");
+    create_post($get_user_id, $get_desc, $file_name, $myDate);
+    header("location: /index.php");
+}else{
+    header("location: /index.php");
+}
+
 ?>
 
 <?php

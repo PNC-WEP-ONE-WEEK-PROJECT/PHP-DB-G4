@@ -8,7 +8,6 @@ function get_posts(){
     $getItem = $user_statement->fetchAll();
     return $getItem;
 }
-// FORMAT (getdate(), 'dddd, MMMM, yyyy')
 
 
 /**
