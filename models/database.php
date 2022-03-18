@@ -45,13 +45,23 @@ function update_post($id, $description, $img){
 
 //   UPDATE COUNTER LIKE
 
-function update_counter_likes($post_id, $number_like){
+// function update_counter_likes($post_id, $number_like){
+//     global $db;
+//     $statement = $db->prepare("UPDATE likes SET post_id=:id, count_like = :number_like WHERE post_id=:id");
+//     $statement->execute([
+//         ':id' =>  $post_id,
+//         ':number_like' => $number_like
+//     ]);
+//     return ($statement->rowCount() == 1);
+// }
+
+function comment_post($comment,$post_id,$user_id){
     global $db;
-    $statement = $db->prepare("UPDATE likes SET post_id=:id, count_like = :number_like WHERE post_id=:id");
+    $statement = $db->prepare("INSERT INTO comments(content,post_id,user_id) value(:comment,:post_id,:user_id)");
     $statement->execute([
-        ':id' =>  $post_id,
-        ':number_like' => $number_like
+        ':comment' => $comment,
+        ':post_id' =>  $post_id,
+        'user_id'=> $user_id
     ]);
     return ($statement->rowCount() == 1);
 }
-

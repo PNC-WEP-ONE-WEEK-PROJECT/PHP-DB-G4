@@ -75,13 +75,14 @@ $getComments = getCommentById();
                 <small><?php foreach($getComments as $comment){if ($comment["post_id"] == $post['id']){ echo $comment["comment"]; } else {echo "";}}  ?></small>
             </div>
         </div>
-        <div class="comment_box">
+        <div class="comment_box"​>
             <div class="user-profile">
                 <img src="images/user.png" alt="" width="100%">
             </div>
-            <div class="input_comment">
-            <input type="text" placeholder="Write a comment..." name="comment" id="write_comment">
-            </div>
+            <form action="controllers/comment_post.php?id=<?= $post['id'];?>" class="input_comment" style="display:flex" method="POST">
+                <input type="text" placeholder="Write a comment..." name="comment" id="write_comment">
+                <button type="submit" class="send-comment"><i class="material-icons" style="color:#24a0ed">send</i></button>
+            </form>
         </div>
        
         
