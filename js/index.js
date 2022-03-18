@@ -53,3 +53,23 @@ function displayImage(){
     box.style.height ="15rem";
     box.style.overflow = "auto";
 }
+
+
+
+// like and comment post 
+let count_likes = document.querySelectorAll("#count_like");
+var increment_like = 0;
+for (let each_post of count_likes){
+    each_post.textContent =  increment_like;
+}
+function like_post(event){
+    if (event.target.id == "click_like"){
+        increment_like += 1;
+        each_post.textContent =  increment_like;
+    }
+}
+
+let btn_likes = document.querySelectorAll("#click_like");
+for (let btn of btn_likes){
+    btn.addEventListener("click",like_post);
+}

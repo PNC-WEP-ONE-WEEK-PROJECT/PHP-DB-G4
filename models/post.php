@@ -8,8 +8,6 @@ function get_posts(){
     $getItem = $user_statement->fetchAll();
     return $getItem;
 }
-
-
 /**
  * Get a single item
  * @param integer $id : the item id
@@ -25,4 +23,12 @@ function getItemById($id)
     ]);
     $item = $statement->fetch();
     return $item;
+}
+
+
+function getCommentById(){
+    global $db; 
+    $statement = $db->query("SELECT * FROM comment_post;");
+    $contents = $statement->fetchAll();
+    return $contents;
 }
