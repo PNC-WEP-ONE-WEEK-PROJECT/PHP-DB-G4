@@ -41,3 +41,17 @@ function update_post($id, $description, $img){
     ]);
     return ($statement->rowCount() == 1);
 }
+
+
+//   UPDATE COUNTER LIKE
+
+function update_counter_likes($post_id, $number_like){
+    global $db;
+    $statement = $db->prepare("UPDATE likes SET post_id=:id, count_like = :number_like WHERE post_id=:id");
+    $statement->execute([
+        ':id' =>  $post_id,
+        ':number_like' => $number_like
+    ]);
+    return ($statement->rowCount() == 1);
+}
+

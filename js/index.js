@@ -57,10 +57,21 @@ function displayImage(){
 
 
 // like and comment post 
-let count_likes = document.querySelectorAll("#count_like");
-var increment_like = 0;
-for (let each_post of count_likes){
-    each_post.textContent =  increment_like;
+let count_likes = document.querySelectorAll(".count_like");
+let click_likes = document.querySelectorAll(".click_like");
+for (let each_post of click_likes){
+    // console.log(each_post.id);
+    each_post.addEventListener("click",(e)=>{
+        let click_on=e.target.id
+        for (let each_count of count_likes){
+            if (click_on == each_count.id){
+                let number_likes = parseInt(each_count.textContent)
+                each_count.textContent = number_likes + 1
+                console.log("number-likes: ", number_likes);
+            }
+        }
+        console.log(click_on);
+    })
 }
 function like_post(event){
     if (event.target.id == "click_like"){

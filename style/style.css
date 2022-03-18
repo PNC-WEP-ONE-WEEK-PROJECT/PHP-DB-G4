@@ -228,12 +228,12 @@ body{
     padding: 0 80px ;
     font-size: 18px;
     height: 30px;
-    /* background: #000; */
     margin: 0;
 }
 .post-footer .like,.post-footer .comment{
     cursor: pointer;
 }
+
 
 .post-footer p:hover{
   color: #4599FF;
@@ -300,6 +300,14 @@ body{
   font-size: 18px;
   display: flex;
 }
+
+.post-footer .like a{
+  text-decoration: none;
+  color: #000;
+}
+
+
+
 
  /* FORM ADD POST  */
 

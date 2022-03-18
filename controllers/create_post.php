@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['description']) || $fi
 }
 
 ?>
-
 <?php
 function uploadImage($photo){
     if (isset($photo)){

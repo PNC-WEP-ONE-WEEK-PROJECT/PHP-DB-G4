@@ -50,7 +50,7 @@ $getComments = getCommentById();
         <!-- VIEWER LIKE OR COMMENT -->
         <div class="content_like_comment">
             <div class="interest_post">
-                <small><span id="count_like" name="number_of_like">0</span> Likes</small>
+                <small><span class="count_like" name="number_of_like" id="<?= $post['id'];?>">0</span> Likes</small>
             </div>
             <div class="interest_post">
                 <small><span id="count_comment"  name="number_of_comment">5</span> Comment</small>
@@ -59,7 +59,7 @@ $getComments = getCommentById();
         <hr>
         <div class="post-footer">
             <div class="like">
-                <p id ="click_like"><i class="fa fa-thumbs-o-up"></i> Like</p>
+              <p class="click_like" id="<?= $post['id'];?>"><i class="fa fa-thumbs-o-up"></i> Like</p>
             </div>
             <div class="comment">
                 <p id = "click_comment"><i class="fa fa-comment-o"></i> Comment</p>
@@ -83,6 +83,8 @@ $getComments = getCommentById();
             <input type="text" placeholder="Write a comment..." name="comment" id="write_comment">
             </div>
         </div>
+       
+        
     </div>
 <?php endforeach?>
 <?php
