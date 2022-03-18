@@ -23,7 +23,7 @@ $posts = array_reverse($posts);
                 </div>
                 <div class="name">
                     <h4 class="user_name"><?=$post["first_name"] . " " . $post["last_name"]?></h4>
-                    <p><?= date("F jS, Y",) . " at ". date("g:iA", strtotime($post['current_time'])); ?></p>
+                    <small><?= date("F jS, Y",) . " at ". date("g:iA", strtotime($post['current_time'])); ?></small>
                 </div>
             </div>
             <div class="card-header-icon">
