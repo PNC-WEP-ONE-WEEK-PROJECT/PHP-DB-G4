@@ -7,18 +7,54 @@
 require_once("templates/header.php");
 require_once("models/post.php");
 require_once("views/post_view.php");
+
    // TO DO:
    // Get the id of the item to update in query
-$posts=get_posts();
+$posts = get_posts();
 $posts = array_reverse($posts);
-
 ?>
+    <!-- header -->
+    <nav class="navbar opacity">
+        <div class="container-fluid">
+            <!-- LOGO FB -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src="../images/icon-facebook.webp" alt="" width="25%"></a>
+            </div>
+            <!-- page home and group -->
+            <div class="nav_pages">
+                <li id="active" class="fa fa-home" style="font-size:25px"></li>
+                <li class="fa fa-group" style="font-size:22px"></li>
+            </div>      
+            <!-- ICON USER NAME -->
+            <div class="nav_icons">
+                <li class="d-flex"> <span class="cicle-user"><a href="#" ><img src="../images/user.png" alt="" width=" 100%" ></a></span> <span><?= $user["first_name"] . " " . $user["last_name"] ;?> </span></li>
+                <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
+            </div>
+        </div>
+    </nav>
+    <!-- PART OF POSTS -->
+    <div class="container-card opacity">
+        <div class="card-header">
+            <div class="profile">
+                <img src="images/user.png" alt="" width="100%">
+            </div>
+            <span class="add-post" onclick="create_post()">What's your mind?</span>
+        </div>
+        <hr>
+        <div class="card-body">
+            <div class="btn photo"  onclick="create_post()">
+                <img src="images/gallery.svg" alt="" width="100%">
+                <span>Photo</span>
+            </div>
+            <div class="btn feeling"  onclick="create_post()">
+                <img src="images/Happy.png" alt=""width="20%">
+                <span >Feeling</span>
+            </div>
+        </div>
+    </div>
 
 <?php foreach($posts as $post):?>
-<?php 
-$getComments = getCommentById(); 
-
-?>
+<?php $getComments = getCommentById(); ?>
  <div class="container-card" id="<?=$post["id"]?>">
         <div class="post-header">
             <div class="post-header-profile" style="display:flex">
