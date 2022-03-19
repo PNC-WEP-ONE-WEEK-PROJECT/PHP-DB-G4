@@ -67,7 +67,7 @@ $getComments = getCommentById();
             </div>
             <div class="name">
                 <h4 class="user_name"><?=$post["first_name"] . " " . $post["last_name"]?></h4>
-                <small><?= date("F jS, Y",) . " at ". date("g:iA", strtotime($post['current_time'])); ?></small>
+                <small><?= date("F jS, Y",) . " at ". date("g:iA", strtotime($post['current_time'])).". "; ?><i class="fa fa-globe"></i></small>
             </div>
         </div>
         <div class="card-header-icon">
@@ -75,34 +75,36 @@ $getComments = getCommentById();
         </div>
         <!-- user edit and delete -->
         <div class="card-activity" style="display:none">
-            <li><a class="edit-post" href="views/edit_view.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Edit post</a></li>
-            <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['id'];?>"><i class="fa fa-edit"></i> Remove to Recyle bin</a></li>
+            <li><a class="edit-post" href="views/edit_view.php?id=<?= $post['id'];?>"><i class='fas fa-user-edit' style='font-size:16px;color:blue'></i> Edit post</a></li>
+            <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['id'];?>"><i class='far fa-trash-alt' style='font-size:16px;color:red'></i> Remove to Recyle bin</a></li>
         </div>
     </div>
-    <div class="post-body">
+    <div class="post-body" style="margin-top: 40px;">
         <div class="description">
             <p><?= $post["description"]?></p>
         </div>
-        <div class="image-posted">
+        <div class="image-posted" style="margin-bottom:10px">
             <img src="images/uploads/<?= $post["file_img"]?>" alt="" width="100%">
         </div>
     </div>
     <!-- VIEWER LIKE OR COMMENT -->
    
         <div class="content_like_comment">
-            <div class="interest_post like_post" id="<?= $post['id'];?>" style="display:">
+            <?php 
+                $increment = 0;
+                $hide_like = "none";
+                foreach(likes_posts() as $counter_like){
+                    if ($counter_like["post_id"] == $post['id']){
+                        $increment ++;
+                        $hide_like = "block";
+                    }
+                }
+            ?>
+            <div class="interest_post like_post" id="<?= $post['id'];?>">
+                <small style="display:<?= $hide_like;?>"><span class="count_like" id="<?= $post['id'];?>"><?php if ( $increment == 1){echo  $increment." Like";}else{ echo  $increment." Likes";} ?></span></small>
                 <!-- COUNTER LIKES -->
-                <small><p class="count_like" id="<?= $post['id'];?>">
-                <?php 
-                    $increment = 0;
-                    foreach(likes_posts() as $counter_like){
-                        if ($counter_like["post_id"] == $post['id']){
-                            $increment ++;
-                        }
-                    }echo $increment;
-                ?>
-                </p></small>
             </div>
+
             <?php 
                 $count_cmm = 0 ;
                 $show = "none";
@@ -114,16 +116,16 @@ $getComments = getCommentById();
                 }
             endforeach 
             ?>
-                <div class="interest_post comment_post"  id="<?= $post['id'];?>" style="display:<?php echo $show ;?>">
-                    <small><span id="count_comment"  name="number_of_comment"> <?php if ($count_cmm == 1){echo $count_cmm." comment";}else{ echo $count_cmm." comments";} ; ?></span></small>
+                <div class="interest_post comment_post"  id="<?= $post['id'];?>" >
+                    <small style="display:<?php echo $show ;?>"><span id="count_comment"  name="number_of_comment"> <?php if ($count_cmm == 1){echo $count_cmm." comment";}else{ echo $count_cmm." comments";} ; ?></span></small>
                 </div>
         </div>
         <div class="post-footer">
             <div class="like">
-               <a href="controllers/count_like.php?id=<?=$post['id'];?>"><i class="fa fa-thumbs-o-up"></i> Like</a>
+                <a href="controllers/count_like.php?id=<?=$post['id'];?>"><i class="fa fa-thumbs-o-up"></i> Like</a>
             </div>
                 <div class="comment" >
-                    <button class = "click_comment" id="<?= $post['id'];?>"><i class="fa fa-comment-o"></i> Comment</button>
+                    <button class = "click_comment" id="<?= $post['id'];?>"><i class='far fa-comment-alt' style='font-size:14px'></i> Comment</button>
                 </div>
         </div>
     <!-- DISPLAY COMMENT -->
@@ -147,7 +149,7 @@ foreach($getComments as $comment):
 <?php endif ?>
 <?php endforeach ?>
 
-    <div class="comment_box" style="display:none" id="<?= $post['id'];?>">
+    <div class="comment_box" style="display:none;margin-top:20px" id="<?= $post['id'];?>">
     <div class="user-profile">
                 <img src="images/user.png" alt="" width="100%">
             </div>
