@@ -32,3 +32,9 @@ function getCommentById(){
     $contents = $statement->fetchAll();
     return $contents;
 }
+function getLikeById(){
+    global $db; 
+    $statement = $db->query("SELECT post_id FROM likes;");
+    $likes = $statement->fetchAll();
+    return $likes;
+}
