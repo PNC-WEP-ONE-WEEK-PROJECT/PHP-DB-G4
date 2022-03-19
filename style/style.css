@@ -58,24 +58,41 @@ body{
     display: flex;
     justify-content: space-around;
     width: 15%;
+    align-items: center;
+  }
+.nav_icons .user_profile{
+width: 100px;
+max-width: 200px;
+display: flex;
+align-items: center;
+padding: 2px 4px;
+border-radius: 20px;
+/* justify-content: space-between; */
+height: 44px;
+color: blue;
+background: hsla(189, 84%, 52%, 0.13);
+cursor: pointer;
+
+}
+.nav_icons .user_profile:hover{
+  background: #4acef64d;
+  transition: all .4s;
 }
 .nav_icons img{
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  margin-right: 10px;
+  height: 40px;
+  display: flex;
 }
 .navbar .fa{
     color: black;
     cursor: pointer;
 }
-.d-flex{
-    display: flex;
-    align-items: center;
-}
 .navbar .cicle-user{
     background-color: #E5E5E5;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     margin: 0 6px;
     border-radius: 50%;
     display: flex;

@@ -29,7 +29,7 @@ $username = users($_GET["id"])
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <li class="d-flex"> <span class="cicle-user"><a href="#" ><img src="../images/user.png" alt="" width=" 100%" ></a></span> <span><?=$username["first_name"]. " ". $username["last_name"] ;?> </span></li>
+                <div class="user_profile"><a href="#" ><img src="../images/user.png" alt="" width=" 100%"></a> <span ><?=$username["first_name"]?> </span></div>
                 <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
             </div>
         </div>
@@ -154,7 +154,7 @@ foreach($getComments as $comment):
                 <img src="images/user.png" alt="" width="100%">
             </div>
             <form action="controllers/comment_post.php?id=<?= $post['id'];?>" class="input_comment"  method="POST">
-                <input type="text" placeholder="Write a comment..." name="comment" id="write_comment">
+                <input type="text" placeholder="Write a comment..." name="comment" id="write_comment" required>
                 <button type="submit" class="send-comment"><i class="material-icons" style="color:#24a0ed;cursor:pointer">send</i></button>
             </form>
         </div>

