@@ -2,7 +2,7 @@
 
 body{
   
-  /* background: #000; */
+  background: #D4D3D3;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -37,6 +37,7 @@ body{
 .navbar-header{
     width: 15%;
     margin-left: 30px;
+
 }
 .nav_pages{
    display: flex;
@@ -221,28 +222,39 @@ body{
     width: 100%;
     box-sizing: border-box;
 }
+hr{
+  margin: 0%;
+}
 .post-footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 80px ;
-    font-size: 18px;
-    height: 30px;
+    /* height: 30px; */
+    max-height: 50px;
     margin: 0;
+    /* background: #000; */
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+  }
+  .post-footer  button{
+    /* cursor: pointer; */
+    font-size: 16px;
+    /* background: rgb(180, 50, 50); */
+    /* height: 30px  ; */
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    font-weight: 200;
 }
-.post-footer .like,.post-footer .comment{
-    cursor: pointer;
-}
-.post-footer .comment .click_comment:focus{
-  color: #4599FF;
+.post-footer button:hover,.post-footer button:focus{
+  cursor: pointer;
+  color: #4267B2;
+  background: #eee;
 }
 
-.post-footer p:hover{
-  color: #4599FF;
-  transform: scale(1.1);
-  transition: all .8s;
-
-}
 .comment_box{
   display: flex;
   align-items: center;
@@ -315,13 +327,15 @@ body{
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  height: 30px;
 }
 .content_like_comment .interest_post{
   width: 50%;
   padding: 0 20px;
   font-size: 18px;
   display: flex;
+  margin-left: 30px;
 }
 
 .post-footer .like a{
