@@ -12,6 +12,7 @@ require_once("views/post_view.php");
    // Get the id of the item to update in query
 $posts = get_posts();
 $posts = array_reverse($posts);
+
 ?>
     <!-- header -->
     <nav class="navbar opacity">
@@ -87,12 +88,10 @@ $getComments = getCommentById();
         </div>
     </div>
     <!-- VIEWER LIKE OR COMMENT -->
-    <form action="controllers/count_like.php" method="post">
+   
         <div class="content_like_comment">
             <div class="interest_post like_post" id="<?= $post['id'];?>" style="display:">
                 <!-- COUNTER LIKES -->
-                <input type="hidden" name="id" value="<?= $post['id'];?>">
-                <input type="hidden" name="counter" class="update_likes" id="<?= $post['id'];?>" > 
                 <small><p class="count_like" id="<?= $post['id'];?>">0</p></small>
             </div>
             <div class="interest_post comment_post"  id="<?= $post['id'];?>" style="display:none">
@@ -102,13 +101,12 @@ $getComments = getCommentById();
         <hr>
         <div class="post-footer">
             <div class="like">
-                <button type="submit"><p class="click_like" id="<?= $post['id'];?>"><i class="fa fa-thumbs-o-up"></i> Like</p></button>
+               <a href="controllers/count_like.php?id=<?= $post['id'];?>"><p class="click_like" id="<?= $post['id'];?>"><i class="fa fa-thumbs-o-up"></i> Like</p></a>
             </div>
             <div class="comment" >
                 <p class = "click_comment" id="<?= $post['id'];?>"><i class="fa fa-comment-o"></i> Comment</p>
             </div>
         </div>
-    </form>
     <!-- DISPLAY COMMENT -->
     <hr>
 <?php    foreach($getComments as $comment): ?>
