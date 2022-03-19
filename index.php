@@ -92,7 +92,16 @@ $getComments = getCommentById();
         <div class="content_like_comment">
             <div class="interest_post like_post" id="<?= $post['id'];?>" style="display:">
                 <!-- COUNTER LIKES -->
-                <small><p class="count_like" id="<?= $post['id'];?>">0</p></small>
+                <small><p class="count_like" id="<?= $post['id'];?>">
+                <?php 
+                    $increment = 0;
+                    foreach(likes_posts() as $counter_like){
+                        if ($counter_like["post_id"] == $post['id']){
+                            $increment ++;
+                        }
+                    }echo $increment
+                ?>
+                </p></small>
             </div>
             <div class="interest_post comment_post"  id="<?= $post['id'];?>" style="display:none">
                 <small><span id="count_comment"  name="number_of_comment">0</span> Comment</small>
@@ -101,7 +110,7 @@ $getComments = getCommentById();
         <hr>
         <div class="post-footer">
             <div class="like">
-               <a href="controllers/count_like.php?id=<?= $post['id'];?>"><p class="click_like" id="<?= $post['id'];?>"><i class="fa fa-thumbs-o-up"></i> Like</p></a>
+               <a href="controllers/count_like.php?id=<?=$post['id'];?>"><i class="fa fa-thumbs-o-up"></i> Like</a>
             </div>
             <div class="comment" >
                 <p class = "click_comment" id="<?= $post['id'];?>"><i class="fa fa-comment-o"></i> Comment</p>

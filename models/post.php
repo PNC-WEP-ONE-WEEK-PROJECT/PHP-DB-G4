@@ -52,9 +52,11 @@ function getCommentById(){
     $contents = $statement->fetchAll();
     return $contents;
 }
-function getLikeById(){
+
+
+function likes_posts(){
     global $db; 
-    $statement = $db->query("SELECT post_id FROM likes;");
+    $statement = $db->query("SELECT*FROM likes;");
     $likes = $statement->fetchAll();
     return $likes;
 }

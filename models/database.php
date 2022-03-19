@@ -45,20 +45,16 @@ function update_post($id, $description, $img){
 
 //   UPDATE COUNTER LIKE
 
-function update_counter_likes($post_id, $number_likes){
+function insert_likes($post_id, $user_id){
     global $db;
-    if ($number_likes == 1){
-        $statement = $db->prepare("INSERT INTO likes (post_id,number_of_likes) value(:id,:number_like);");
-    } else{
-        $statement = $db->prepare("UPDATE likes set number_of_likes=:number_like) where post_id=:id;");
-    }
+    $statement = $db->prepare("INSERT INTO LIKES(likes.post_id, likes.user_id) value (:post_id, :user_id)");
     $statement->execute([
-        ':id' =>  $post_id,
-        ':number_like' => $number_likes
-        
+        ':post_id' => $post_id,
+        ':user_id' => $user_id
     ]);
     return ($statement->rowCount() == 1);
 }
+
 
 function comment_post($comment,$post_id,$user_id){
     global $db;
