@@ -99,37 +99,52 @@ $getComments = getCommentById();
                         if ($counter_like["post_id"] == $post['id']){
                             $increment ++;
                         }
-                    }echo $increment
+                    }echo $increment;
                 ?>
                 </p></small>
             </div>
-            <div class="interest_post comment_post"  id="<?= $post['id'];?>" style="display:none">
-                <small><span id="count_comment"  name="number_of_comment">0</span> Comment</small>
-            </div>
+            <?php 
+                $count_cmm = 0 ;
+                $show = "none";
+            ?>
+            <?php foreach($getComments as $comment): ?>
+            <?php if ($comment["post_id"] == $post['id']){
+                    $count_cmm += 1 ; 
+                    $show = "block";
+                }
+            endforeach 
+            ?>
+                <div class="interest_post comment_post"  id="<?= $post['id'];?>" style="display:<?php echo $show ;?>">
+                    <small><span id="count_comment"  name="number_of_comment"> <?php if ($count_cmm == 1){echo $count_cmm." comment";}else{ echo $count_cmm." comments";} ; ?></span></small>
+                </div>
         </div>
-        <hr>
         <div class="post-footer">
             <div class="like">
                <a href="controllers/count_like.php?id=<?=$post['id'];?>"><i class="fa fa-thumbs-o-up"></i> Like</a>
             </div>
-            <div class="comment" >
-                <p class = "click_comment" id="<?= $post['id'];?>"><i class="fa fa-comment-o"></i> Comment</p>
-            </div>
+                <div class="comment" >
+                    <button class = "click_comment" id="<?= $post['id'];?>"><i class="fa fa-comment-o"></i> Comment</button>
+                </div>
         </div>
     <!-- DISPLAY COMMENT -->
-    <hr>
-<?php    foreach($getComments as $comment): ?>
-    <?php    if ($comment["post_id"] == $post['id']): ?>
+<?php    
+$show_one_comment = true;
+$getComments = array_reverse($getComments);
+foreach($getComments as $comment):
+    if ($comment["post_id"] == $post['id'] && $show_one_comment):
+        $show_one_comment = false;
+
+?>
         <div class="display_comment">
             <div class="user-profile">
                 <img src="images/user.png" alt="" width="100%">
             </div>
             <div class= 'show_comment'>
                 <p class='name'><?php echo $post['first_name'] . " ". $post['last_name'] ?></p>
-                <small><?php echo $comment['comment'];?></small>
+                <small><?php echo $comment['comment'] ;?></small>
             </div>
         </div>
-    <?php endif ?>
+<?php endif ?>
 <?php endforeach ?>
 
     <div class="comment_box" style="display:none" id="<?= $post['id'];?>">
