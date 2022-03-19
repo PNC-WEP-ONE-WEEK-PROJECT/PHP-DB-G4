@@ -27,7 +27,9 @@ body {
     height: 120px;
 }
 
-
+.none{
+    display: none;
+}
 .container-form { 
     width: 60%;
     /* background: var(--bg--frame); */
@@ -128,4 +130,23 @@ label {
     margin-left: 2px;
     position: absolute;
     color: #aaa;
+}
+
+.confirm_contianer{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 15% auto;
+    display: none;
+}
+.flex{display: flex;}
+.confirm_contianer button{
+    font-size: 200%;
+    padding: 20px;
+    background-color: #229ef6;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
 }

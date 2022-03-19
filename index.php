@@ -12,6 +12,7 @@ require_once("views/post_view.php");
    // Get the id of the item to update in query
 $posts = get_posts();
 $posts = array_reverse($posts);
+$username = users($_GET["id"])
 
 ?>
     <!-- header -->
@@ -28,7 +29,7 @@ $posts = array_reverse($posts);
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <li class="d-flex"> <span class="cicle-user"><a href="#" ><img src="../images/user.png" alt="" width=" 100%" ></a></span> <span><?= $user["first_name"] . " " . $user["last_name"] ;?> </span></li>
+                <li class="d-flex"> <span class="cicle-user"><a href="#" ><img src="../images/user.png" alt="" width=" 100%" ></a></span> <span><?=$username["first_name"]. " ". $username["last_name"] ;?> </span></li>
                 <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
             </div>
         </div>
@@ -53,7 +54,6 @@ $posts = array_reverse($posts);
             </div>
         </div>
     </div>
-
 <?php foreach($posts as $post):?>
 <?php 
 $getComments = getCommentById(); 

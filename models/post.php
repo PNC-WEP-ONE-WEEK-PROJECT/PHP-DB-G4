@@ -9,16 +9,15 @@ $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
 //  * @return associative_array: the item related to given USER ID
 //  */
 
-// function get_user_Id($id)
-// {
-//     global $db; 
-//     $statement = $db->prepare("SELECT*FROM users where users.id=:id;");
-//     $statement->execute([
-//         ':id'=> $_SESSION($id)
-//     ]);
-//     $user = $statement->fetch();
-//     return $user;
-// }
+function users($id){
+    global $db;
+    $statement = $db->prepare("SELECT*FROM users WHERE users.id = :user_id;");
+    $statement->execute([
+        ':user_id' => $id
+    ]);
+    return $statement->fetch(); 
+}
+
 
 
 // TO POST
