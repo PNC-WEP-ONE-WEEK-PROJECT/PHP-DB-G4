@@ -59,37 +59,55 @@ function displayImage(){
 // like and comment post 
 let count_likes = document.querySelectorAll(".count_like");
 let click_likes = document.querySelectorAll(".click_like");
+let show_likes = document.querySelectorAll(".like_post")
+let update_counter = document.querySelectorAll(".update_likes")
 for (let each_post of click_likes){
     // console.log(each_post.id);
     each_post.addEventListener("click",(e)=>{
+        e.preventDefault()
         let click_on=e.target.id
         for (let each_count of count_likes){
-            if (click_on == each_count.id){
-                let number_likes = parseInt(each_count.textContent)
-                each_count.textContent = number_likes + 1
-                console.log("number-likes: ", number_likes);
+            for (let each_update of update_counter){
+                if (click_on == each_count.id && click_on == each_update.id){
+                    let number_likes = parseInt(each_count.textContent);
+                    // each_count = parseInt(each_count.value);
+                    if (number_likes == 0){
+                        each_count.textContent = 1
+                    } else{
+                        each_count.textContent = number_likes + 1
+                    }
+                    each_update.value = each_count.textContent
+                    console.log(each_update.value, "update later");
+                }
             }
+            for (let each_show of show_likes){
+                if (click_on==each_show.id){
+                    each_show.style.display="block"
+                }
+            }
+            
+
         }
         console.log(click_on);
     })
 }
-function like_post(event){
-    if (event.target.id == "click_like"){
-        increment_like += 1;
-        each_post.textContent =  increment_like;
-    }
-}
-
-let btn_likes = document.querySelectorAll("#click_like");
-for (let btn of btn_likes){
-    btn.addEventListener("click",like_post);
-}
 
 
-function comment_post(){
-    
-}
-let btn_comment = document.querySelectorAll("#click_comment");
-for (let btn of btn_comment){
-    btn.addEventListener("click",comment_post);
+
+// like and comment post 
+let count_comment = document.querySelectorAll(".count_comment");
+let click_comment = document.querySelectorAll(".click_comment");
+let show_comment = document.querySelectorAll(".comment_box")
+for (let each_post of click_comment){
+    // console.log(each_post.id);
+    each_post.addEventListener("click",(e)=>{
+        let click_on=e.target.id
+            for (let each_show of show_comment){
+                if (click_on==each_show.id){
+                    each_show.style.display="flex"
+                    // alert(each_show)
+                }
+            }
+
+    })
 }
