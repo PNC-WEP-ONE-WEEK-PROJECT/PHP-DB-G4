@@ -1,16 +1,11 @@
 <?php
 require_once("../models/database.php");
 
-$post_id = $_GET["id"];
-echo $post_id;
-
-insert_likes($post_id, 1);
-
-header("location: /index.php");
-
-
-
-
+if (!empty($_POST["post_id"])){
+    $userId = $_POST["user_id"];
+    $postId = $_POST["post_id"];
+    insert_likes($postId, $userId);
+}
 
 
 

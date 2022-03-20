@@ -7,83 +7,36 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
     background: #eee;
 }
 
 .container{
-    width: 80%;
-    margin: 50px auto;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
 }
 
 .container h2{
     font-size: 60px;
     color: var(--color--text);
-    font-weight: 900;
+    font-weight: 700;
 }
-.container img {
-    width: 120px;
-    height: 120px;
-}
-
-.none{
-    display: none;
-}
-.container-form { 
-    width: 60%;
-    /* background: var(--bg--frame); */
-    margin:16px auto;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 4px 8px 1px #aaa;
-    box-sizing: border-box;
-    background: #fff;
-}
-.container .message{
-    background: rgb(248, 123, 123);
-    color: #fff;
+.container input{
+    padding: 12px;
     font-size: 20px;
-    width: 60%;
-    margin: auto;
-    padding: 8px 0;
-    border-radius: 5px;
-    transition: 1s ease-in-out;
-    display: none;
 }
-.container-form form h3 { 
-    font-size: 30px;
-    color: var(--color--text);
-}
-.container-form form {
-    margin: auto;
-    text-align: center;
-}
-.container-form form .input {
-    width: 60%;
-    margin: 14px auto;
-}
-.container-form form .input input{
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 6px;
-    background: transparent;
-    border: 1px solid #aaa;
-    outline: none;
-    font-size: 18px;
-    padding-left: 46px;
-    box-sizing: border-box;
-}
-::placeholder{
-    color: #aaa;
-    font-size: 18px;
+.container input::placeholder{
+    font-size: 20px;
+
 }
 .show{
     width: 34px;
     height: 34px;
 
     position: absolute;
-    margin-left: 340px;
+    margin-left: 330px;
     margin-top: -40px; 
     border-radius: 50%;
     display: flex;
@@ -91,35 +44,16 @@ body {
     flex: auto;
     align-items: center;
     cursor: pointer;
-    color: #aaa;
+    /* / color: #aaa; /
+    / background: #000; / */
+    z-index: 100;
 }
 .show:hover{
     background: hsl(0, 0%, 81%);
     transition: ease-in-out .5s;
 }
-.btn-submit { 
-    width: 60%;
-    padding: 8px 0;
-    border-radius: 6px;
-    font-size: 18px;
-    border: none;
-    background: var(--bg--btn);
-    color: #fff;
-    font-weight: 900;
-    cursor: pointer;
-}
-.btn-submit:hover{
-    transition: all 1s;
-    background: #229ef6;
-    box-shadow: 2px 4px 8px 1px #aaa;
-}
-.container-form li{
-    font-size: 18px;
-    margin: 20px 0;
-    list-style: none;
-}
 
-/* icon style */
+/* / icon style / */
 label { 
     display: flex;
     align-items: center;
@@ -149,4 +83,25 @@ label {
     border-radius: 10px;
     color: white;
     font-weight: bolder;
+}
+
+
+/* / FORM CREATE  / */
+
+.container_form_create{
+    background: rgba(0, 0, 0, 0.301);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    opacity: 1;
+    transition: all ease-in 1s;
+}
+.form_create{
+    margin: 60px 0  ;
+} 
+
+.cancel_create{
+    display:flex;
+    float:right;
+    cursor: pointer;
 }

@@ -9,24 +9,22 @@ $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
 //  * @return associative_array: the item related to given USER ID
 //  */
 
-function users($id){
+function information_users(){
     global $db;
-    $statement = $db->prepare("SELECT*FROM users WHERE users.id = :user_id;");
-    $statement->execute([
-        ':user_id' => $id
-    ]);
-    return $statement->fetch(); 
+    $statement = $db->query("SELECT*FROM data_users WHERE data_users.logined=true;");
+    return $statement->fetchAll(); 
 }
 
 
 
 // TO POST
-function get_posts(){
-    global $db;
-    $user_statement = $db->query("SELECT posts.id, users.first_name, users.last_name, posts.file_img, description, post_date as 'current_time' FROM posts INNER JOIN users on posts.user_id=users.id;");
-    $getItem = $user_statement->fetchAll();
-    return $getItem;
-}
+// function get_posts(){
+//     global $db;
+//     $user_statement = $db->query("SELECT posts.id, users.first_name, users.last_name, posts.file_img, description, post_date as 'current_time' FROM posts INNER JOIN users on posts.user_id=users.id;");
+//     $getItem = $user_statement->fetchAll();
+//     return $getItem;
+// }
+
 /**
  * Get a single item
  * @param integer $id : the item id
@@ -43,7 +41,6 @@ function getItemById($id)
     $item = $statement->fetch();
     return $item;
 }
-
 
 function getCommentById(){
     global $db; 

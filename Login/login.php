@@ -4,11 +4,6 @@
 // <!-- INCLUDES HEADER -->
 require_once "Includes/header.php";
 require_once "models/item.php";
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['user_email']) && !empty($_POST['user_password'])){
-    $email = $_POST['user_email'];
-    $password = $_POST['user_password'];
-    $user = get_users($email, $password);
-}
 ?>
 <?php if(empty($user)){
     echo '<script>alert("Check your email and password again")</script>';
@@ -18,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['user_email']) && !emp
 }
 ?>
 <div class="confirm_contianer <?=$flex?>">
-    <a href="../index.php?id=<?= $user["id"]?>"><button>Click Countinoues</button></a>
+    <a href="../controllers/controll_login.php?id=<?= $user["id"]?>"><button>Click Countinoues</button></a>
 </div>
 
 <!-- MAIN -----------------------------------------  -->
@@ -46,8 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['user_email']) && !emp
         </li>
     </div>
 </div>
-
-<!-- INCLUDES FOOTER -->
 
 <?php
 require_once ("Includes/footer.php");

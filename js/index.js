@@ -58,36 +58,28 @@ function displayImage(){
 
 // like and comment post 
 let count_likes = document.querySelectorAll(".count_like");
-let click_likes = document.querySelectorAll(".click_like");
+let click_likes = document.querySelectorAll(".btn_likes");
 let show_likes = document.querySelectorAll(".like_post")
-let update_counter = document.querySelectorAll(".update_likes")
+// let update_counter = document.querySelectorAll(".update_likes")
 for (let each_post of click_likes){
     // console.log(each_post.id);
     each_post.addEventListener("click",(e)=>{
-        e.preventDefault()
-        let click_on=e.target.id
-        for (let each_count of count_likes){
-            for (let each_update of update_counter){
-                if (click_on == each_count.id && click_on == each_update.id){
-                    let number_likes = parseInt(each_count.textContent);
-                    // each_count = parseInt(each_count.value);
-                    if (number_likes == 0){
-                        each_count.textContent = 1
-                    } else{
-                        each_count.textContent = number_likes + 1
-                    }
-                    each_update.value = each_count.textContent
-                    console.log(each_update.value, "update later");
+        let click_on = e.target.parentElement.id
+        e.target.style.color="blue"
+        for (let each_likes of count_likes){
+            // for (let each_update of update_counter){
+                if (click_on == each_likes.id){
+                    let number_likes = parseInt(each_likes.textContent)+1;
+                    console.log(number_likes);
+                    each_likes.textContent = number_likes + " Like"
                 }
             }
-            for (let each_show of show_likes){
-                if (click_on==each_show.id){
+        for (let each_show of show_likes){
+            if (click_on==each_show.id){
                     each_show.style.display="block"
-                }
             }
-            
-
         }
+            
         console.log(click_on);
     })
 }
