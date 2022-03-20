@@ -20,13 +20,6 @@ foreach($posts as $user){
 }
 require_once("views/post_view.php");
 
-// if (!empty($_POST["post_id"])){
-//     $userId = $_POST["user_id"];
-//     echo $userId;
-
-// }
-
-
 ?>
     <!-- header -->
     <nav class="navbar opacity">
@@ -149,10 +142,15 @@ $getComments = getCommentById();
 $show_one_comment = true;
 $getComments = array_reverse($getComments);
 foreach($getComments as $comment):
+    $show_more = "none";
     if ($comment["post_id"] == $post['post_id'] && $show_one_comment):
         $show_one_comment = false;
 
+    
 ?>
+            <div class="view_comment">
+                <li><a href="" class="view_more" style="display:none">View comments</a></li>
+            </div>
         <div class="display_comment">
             <div class="user-profile">
                 <img src="images/user.png" alt="" width="100%">
@@ -160,6 +158,16 @@ foreach($getComments as $comment):
             <div class= 'show_comment'>
                 <p class='name'><?php echo $post['first_name'] . " ". $post['last_name'] ?></p>
                 <small><?php echo $comment['comment'] ;?></small>
+                
+            </div>
+            <div class="update_comm">
+                <li style="margin-top: 10px;cursor:pointer;" class="show_action">
+                    <i class="material-icons" style>more_vert</i>
+                </li>
+                <div class="comment_action" style="margin-top: 10px;cursor:pointer;display:none" >
+                    <li ><a href="controllers/edit_comm.php?id=<?= $comment['comment_id'];?>">Edit</a></li>
+                    <li><a href="controllers/delete_comm.php?id=<?= $comment['comment_id'];?>">Delete</a></li>
+                </div>
             </div>
         </div>
 <?php endif ?>

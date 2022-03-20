@@ -272,6 +272,7 @@ hr{
 .display_comment{
   display: flex;
   margin: 20px 10px;
+  font-size: 20px;
 }
 .comment_box .user-profile{
   width: 10%;
@@ -290,13 +291,14 @@ hr{
 }
 .display_comment .show_comment {
   padding: 0px 14px;
-  border-radius: 6px;
+  border-radius: 20px;
   background: #ddd;
   width: auto;
-  min-width: 40%;
+  min-width: 20%;
   margin-left: 10px;
   height: 2.8rem;
-  font-size: 14px;
+  height: auto;
+  font-size: 16px;
   line-height: 2px;
   box-sizing: border-box;
 }
@@ -347,7 +349,28 @@ hr{
   color: #4267B2;
 }
 
-
+.comment_action{
+  width: 100px;
+  /* text-align: center; */
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 1px 2px 8px 1px #aaa;
+  position: absolute;
+  margin: auto ;
+  background: #fff;
+  padding: 4px;
+  /* position: relative; */
+}
+.comment_action li{
+  padding: 4px 10px;
+  /* background-color: #4267B2; */
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.comment_action li:hover{
+  background: #dddd;
+}
 
  /* FORM ADD POST  */
 

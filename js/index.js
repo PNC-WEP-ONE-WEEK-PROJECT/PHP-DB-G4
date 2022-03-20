@@ -38,6 +38,14 @@ window.onclick = function (event) {
             card.style.display = "none";
         }
     }
+    if(event.target.matches(".material-icons")){
+        event.target.parentElement.nextElementSibling.style.display = "block";
+    } else{
+        let boxes = document.querySelectorAll(".comment_action");
+        for(let box of boxes){
+            box.style.display = "none";
+        }
+    }
 }
 
 // UPLOAD PHOTO--------------
@@ -71,7 +79,10 @@ for (let each_post of click_likes){
                 if (click_on == each_likes.id){
                     let number_likes = parseInt(each_likes.textContent)+1;
                     console.log(number_likes);
-                    each_likes.textContent = number_likes + " Like"
+                    each_likes.textContent = number_likes + " Likes";
+                    if ( number_likes == 0){
+                        each_likes.textContent = number_likes + " Like";
+                    }
                 }
             }
         for (let each_show of show_likes){
@@ -100,6 +111,24 @@ for (let each_post of click_comment){
                     // alert(each_show)
                 }
             }
-
     })
 }
+
+
+// // CREATE ACCOUNT
+let btn_create = document.querySelector("#create");
+btn_create.addEventListener("click",create_account);
+let form_create = document.querySelector(".container_form_create")
+form_create .style.display = "none";
+function create_account(){
+    show(form_create);
+}
+
+let btn_cancel_create = document.querySelector(".cancel_create");
+btn_cancel_create.addEventListener("click",cancel_create);
+function cancel_create(){
+    hide(form_create);
+}
+
+
+

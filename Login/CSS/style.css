@@ -16,6 +16,8 @@ body {
     justify-content: space-between;
     height: 100vh;
     width: 100%;
+
+    /* background: #000; */
 }
 
 .container h2{
@@ -44,8 +46,8 @@ body {
     flex: auto;
     align-items: center;
     cursor: pointer;
-    /* / color: #aaa; /
-    / background: #000; / */
+    /* color: #aaa; */
+    /* background: #000; */
     z-index: 100;
 }
 .show:hover{
@@ -86,7 +88,7 @@ label {
 }
 
 
-/* / FORM CREATE  / */
+/* FORM CREATE  */
 
 .container_form_create{
     background: rgba(0, 0, 0, 0.301);
