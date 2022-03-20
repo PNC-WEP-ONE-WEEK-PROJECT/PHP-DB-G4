@@ -38,6 +38,14 @@ window.onclick = function (event) {
             card.style.display = "none";
         }
     }
+    if(event.target.matches(".material-icons")){
+        event.target.parentElement.nextElementSibling.style.display = "block";
+    } else{
+        let boxes = document.querySelectorAll(".comment_action");
+        for(let box of boxes){
+            box.style.display = "none";
+        }
+    }
 }
 
 // UPLOAD PHOTO--------------
@@ -54,46 +62,6 @@ function displayImage(){
     box.style.overflow = "auto";
 }
 
-
-
-// like and comment post 
-let count_likes = document.querySelectorAll(".count_like");
-let click_likes = document.querySelectorAll(".click_like");
-let show_likes = document.querySelectorAll(".like_post")
-let update_counter = document.querySelectorAll(".update_likes")
-for (let each_post of click_likes){
-    // console.log(each_post.id);
-    each_post.addEventListener("click",(e)=>{
-        e.preventDefault()
-        let click_on=e.target.id
-        for (let each_count of count_likes){
-            for (let each_update of update_counter){
-                if (click_on == each_count.id && click_on == each_update.id){
-                    let number_likes = parseInt(each_count.textContent);
-                    // each_count = parseInt(each_count.value);
-                    if (number_likes == 0){
-                        each_count.textContent = 1
-                    } else{
-                        each_count.textContent = number_likes + 1
-                    }
-                    each_update.value = each_count.textContent
-                    console.log(each_update.value, "update later");
-                }
-            }
-            for (let each_show of show_likes){
-                if (click_on==each_show.id){
-                    each_show.style.display="block"
-                }
-            }
-            
-
-        }
-        console.log(click_on);
-    })
-}
-
-
-
 // like and comment post 
 let count_comment = document.querySelectorAll(".count_comment");
 let click_comment = document.querySelectorAll(".click_comment");
@@ -108,6 +76,24 @@ for (let each_post of click_comment){
                     // alert(each_show)
                 }
             }
-
     })
 }
+
+
+// // CREATE ACCOUNT
+let btn_create = document.querySelector("#create");
+btn_create.addEventListener("click",create_account);
+let form_create = document.querySelector(".container_form_create")
+form_create .style.display = "none";
+function create_account(){
+    show(form_create);
+}
+
+let btn_cancel_create = document.querySelector(".cancel_create");
+btn_cancel_create.addEventListener("click",cancel_create);
+function cancel_create(){
+    hide(form_create);
+}
+
+
+

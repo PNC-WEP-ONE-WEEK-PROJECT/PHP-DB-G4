@@ -66,3 +66,33 @@ function comment_post($comment,$post_id,$user_id){
     ]);
     return ($statement->rowCount() == 1);
 }
+
+
+
+function delete_comment($id){
+    // you code here 
+    global $db;
+    $statement = $db->prepare("DELETE FROM comments WHERE id=:id_post;");
+    $statement->execute([
+        ':id_post' => $id
+    ]);
+    return ($statement->rowCount() == 1); #Delete one row from database;
+    
+}
+
+
+
+function insert_users($firstN,$lastN,$bd,$gender,$email,$password){
+    global $db;
+    $statement = $db->prepare("INSERT INTO users(first_name,last_name,gender,email,user_password,birthday) value(:fname,:lname,:gender,:email,:password,:birthday)");
+    $statement->execute([
+        ':fname' => $firstN,
+        ':lname' =>  $lastN,
+        ':gender'=>$gender,
+        ':email'=>$email,
+        ':password'=>$password,
+        ':birthday'=>$bd,
+    ]);
+    return ($statement->rowCount() == 1);
+
+}

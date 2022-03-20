@@ -12,7 +12,7 @@ require_once("views/post_view.php");
    // Get the id of the item to update in query
 $posts = get_posts();
 $posts = array_reverse($posts);
-$username = users($_GET["id"])
+// $username = users($_GET["id"])
 
 ?>
     <!-- header -->
@@ -29,7 +29,7 @@ $username = users($_GET["id"])
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <div class="user_profile"><a href="#" ><img src="../images/user.png" alt="" width=" 100%"></a> <span ><?=$username["first_name"]?> </span></div>
+                <div class="user_profile"><a href="#" ><img src="../images/user.png" alt="" width=" 100%"></a> <span ><?=$user["first_name"]?> </span></div>
                 <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
             </div>
         </div>
@@ -133,10 +133,15 @@ $getComments = getCommentById();
 $show_one_comment = true;
 $getComments = array_reverse($getComments);
 foreach($getComments as $comment):
+    $show_more = "none";
     if ($comment["post_id"] == $post['id'] && $show_one_comment):
         $show_one_comment = false;
 
+    
 ?>
+            <div class="view_comment">
+                <li><a href="" class="view_more" style="display:none">View comments</a></li>
+            </div>
         <div class="display_comment">
             <div class="user-profile">
                 <img src="images/user.png" alt="" width="100%">
@@ -144,6 +149,16 @@ foreach($getComments as $comment):
             <div class= 'show_comment'>
                 <p class='name'><?php echo $post['first_name'] . " ". $post['last_name'] ?></p>
                 <small><?php echo $comment['comment'] ;?></small>
+                
+            </div>
+            <div class="update_comm">
+                <li style="margin-top: 10px;cursor:pointer;" class="show_action">
+                    <i class="material-icons" style>more_vert</i>
+                </li>
+                <div class="comment_action" style="margin-top: 10px;cursor:pointer;display:none" >
+                    <li ><a href="controllers/edit_comm.php?id=<?= $comment['comment_id'];?>">Edit</a></li>
+                    <li><a href="controllers/delete_comm.php?id=<?= $comment['comment_id'];?>">Delete</a></li>
+                </div>
             </div>
         </div>
 <?php endif ?>
