@@ -20,7 +20,7 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
                 </div>
                 <div class="mb-3 mt-3">
                     <input type="password" class="form-control p-2 px-3"  id="password" placeholder="Password" name="password"></input>
-                <div class="show" onclick="show_password()"><i class="fa fa-eye" style="font-size:24px"></i></div>
+                <div class="show" onclick="show_password()"><img src="images/Hide.png" alt="gallery" width="100%" id="hide_show" ></div>
                 </div>
                 <div class="d-grid">
                     <button class="btn btn-primary py-2" type="submit">Log In</button>
@@ -28,7 +28,7 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
         </form>
         <hr mt-2 mb-2>
         <div class="d-grid ds-flex m-auto w-50">
-            <a class="btn btn-success py-2  " id="create">Create new account</a>
+            <a class="btn btn-success py-2  " id="create_account">Create new account</a>
         </div>
     </div>
 </div>
@@ -117,7 +117,7 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
 
             <div class="col-12 mt-2">
                 <span for="">Password</span>
-                <input type="password" class="form-control" name="password" id="inputPassword4" placeholder="Password.." required>
+                <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password.." required>
             </div>
             <div class="col-12 mt-2">
                 <span for="">Confirmed password</span>
