@@ -1,49 +1,26 @@
 
-
 <?php
-// <!-- INCLUDES HEADER -->
-require_once "Includes/header.php";
-require_once "models/item.php";
-if (isset($_POST["user_email"]) && isset($_POST["user_password"])){
-
-    $_SESSION["email"]=$_POST["user_email"];
-    $_SESSION["password"]=$_POST["user_password"];
-    $email= $_SESSION["email"];
-    $password = $_SESSION["password"];
-    $user = get_users($email, $password);
-}
+$pathUrl = parse_url($_SERVER['REQUEST_URI']);
+$pathUrl['path'] === "views/login_view.php" ? session_start() : null;
+isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
 ?>
-
-<?php if(!empty($user)){
-    // echo '<script>alert("Check your email and password again")</script>';
-    
-    $none = "none";
-    $flex = "flex";
-}
-?>
-<div class="confirm_contianer <?=$flex?>">
-    <a href="../controllers/controll_login.php?id=<?= $user["id"]?>"><button>Click Countinoues</button></a>
-</div>
-
-<!-- MAIN -----------------------------------------  -->
 <div class="container">
-    <!-- caption -->
     <div class="content w-50 px-5" style="text-align:left;">
         <h2 class="text-primary">facebook</h2>
         <p style="font-size:28px">Connect with friends and the world around you on Facebook.</p>
     </div>
     <div class="container-fluid p-3" style="background-color: #fff;box-shadow:1px 2px 8px 1px #aaa;border-radius:5px;width:36%">
-        <form action="" method="post">
+        <form action="#" method="post">
                 <div class="col-12 text-center w-100">
                     <h3>Log In</h3>      
                 </div>
                 <hr mt-2 mb-2>
                 <div class="mt-3">
-                    <input type="email" class="form-control p-2 px-3" id="email" placeholder="Enter email" name="user_email">
+                    <input type="email" class="form-control p-2 px-3" id="email" placeholder="Enter email" name="email">
                 </div>
                 <div class="mb-3 mt-3">
-                    <input type="password" class="form-control p-2 px-3"  id="password" placeholder="Password" name="user_password">
-                <div class="show" onclick="show_password()"><i class="fa fa-eye-slash"></i></div></input>
+                    <input type="password" class="form-control p-2 px-3"  id="password" placeholder="Password" name="password"></input>
+                <div class="show" onclick="show_password()"><i class="fa fa-eye" style="font-size:24px"></i></div>
                 </div>
                 <div class="d-grid">
                     <button class="btn btn-primary py-2" type="submit">Log In</button>
@@ -55,8 +32,47 @@ if (isset($_POST["user_email"]) && isset($_POST["user_password"])){
         </div>
     </div>
 </div>
-
-
+        <?php
+           // <!-- CONNECTION DATABASES  -->
+            $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $statement = $db->prepare("SELECT*FROM users WHERE email=:user_email and user_password=:user_password limit 1;");
+                $statement->execute([
+                    ':user_email'=> $email,
+                    ':user_password' => $password
+                ]);
+                $user = $statement->fetch();
+                if(!empty($user)){
+                    function logout_users($id){
+                        global $db;
+                        $statement = $db->prepare("UPDATE users SET users.login = false WHERE users.id!=:id;");
+                        $statement->execute([
+                            ':id' =>  $id
+                        ]);
+                        return ($statement->rowCount() == 1);
+                    }
+                    function login_users($id){
+                        global $db;
+                        $statement = $db->prepare("UPDATE users SET users.login = true WHERE users.id = :id;");
+                        $statement->execute([
+                            ':id' =>  $id
+                        ]);
+                        return ($statement->rowCount() == 1);
+                    }
+                    $_SESSION['user_id'] = $user["id"];
+                    logout_users($_SESSION['user_id']);
+                    login_users($_SESSION['user_id']);
+                    echo $_SESSION["login"] = $user["login"];
+                    header('Location: /pages.php');
+                    echo $_SESSION["login"];
+                }
+                 else {
+                    echo "Error login";
+                }
+            }
+            ?>
 <div class="container_form_create">
     <!-- INCLUDES FOOTER -->
 <form action="../../controllers/create_account.php" class="form_create" method="POST">
@@ -115,5 +131,3 @@ if (isset($_POST["user_email"]) && isset($_POST["user_password"])){
     </div>
 </form>
 </div>
-<?php
-require_once ("Includes/footer.php");

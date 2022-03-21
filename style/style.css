@@ -8,7 +8,6 @@ body{
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  /* overflow: hidden; */
 }
 *{
   font-family: 'Poppins', sans-serif;
@@ -67,7 +66,6 @@ display: flex;
 align-items: center;
 padding: 2px 4px;
 border-radius: 20px;
-/* justify-content: space-between; */
 height: 44px;
 color: blue;
 background: hsla(189, 84%, 52%, 0.13);
@@ -106,7 +104,7 @@ cursor: pointer;
     color: blue;
 }
 
-/* PARTH OF POST  */
+/* / PARTH OF POST  / */
 .container-card{
     width: 40%;
     margin: 20px auto;
@@ -174,7 +172,7 @@ cursor: pointer;
   background: #f5f4f4;
 }
 
-/* END ADD POST */
+/* / END ADD POST / */
 .container-card .post-header{
     margin-left: 10px;
     line-height: 5px;
@@ -267,7 +265,6 @@ hr{
   background-color: white;
 }
 .container_comments {
-  background: rgb(189, 65, 65);
   max-height: 1000vh;
   box-sizing: border-box;
 }
@@ -338,7 +335,7 @@ hr{
   font-size: 12px;
 }
 
-/* LIKE & COMMENT */
+/* / LIKE & COMMENT / */
 .content_like_comment{
   width: 100%;
   box-sizing: border-box;
@@ -359,21 +356,18 @@ hr{
 
 .comment_action{
   width: 200px;
-  /* text-align: center; */
   border-radius: 4px;
   font-size: 16px;
   box-shadow: 1px 2px 8px 1px #aaa;
   position: absolute;
-  /* margin: auto ; */
   margin-top: -20px;
   margin-left: -40px;
   background: #fff;
   padding: 4px;
-  /* position: relative; */
+
 }
 .comment_action a{
   padding: 4px 10px;
-  /* background-color: #4267B2; */
   cursor: pointer;
   border-radius: 4px;
   width: 100%;
@@ -387,7 +381,7 @@ hr{
   color:#fff;
 }
 
- /* FORM ADD POST  */
+ /* / FORM ADD POST  / */
 
 .container{
   padding: 4rem 0;
@@ -482,7 +476,7 @@ form .content .details p{
 }
 
 
-/* UPDATE POST */
+/* / UPDATE POST / */
 .update_post{
   margin: 20px 0;
   overflow: auto;
@@ -556,4 +550,3 @@ form button{
   background: #4599FF;
   color: #fff;
 }
-

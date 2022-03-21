@@ -2,29 +2,9 @@
 /**
  * Your code here 
  */
-
+session_start();
 // <!-- CONNECTION DATABASES  -->
 $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
-
-function logout_users($id){
-    global $db;
-    $statement = $db->prepare("UPDATE users SET users.login=false WHERE users.id != :id");
-    $statement->execute([
-        ':id' =>  $id
-    ]);
-    return ($statement->rowCount() == 1);
-}
-
-function login_users($id){
-    global $db;
-    $statement = $db->prepare("UPDATE users SET users.login=true WHERE users.id = :id");
-    $statement->execute([
-        ':id' =>  $id
-    ]);
-    return ($statement->rowCount() == 1);
-}
-
-
 
 function create_post($user_id, $description, $img, $date){
     // you code here 
