@@ -19,8 +19,8 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
                     <input type="email" class="form-control p-2 px-3" id="email" placeholder="Enter email" name="email">
                 </div>
                 <div class="mb-3 mt-3">
-                    <input type="password" class="form-control p-2 px-3"  id="password" placeholder="Password" name="password">
-                <div class="show" onclick="show_password()"><i class="fa fa-eye-slash"></i></div></input>
+                    <input type="password" class="form-control p-2 px-3"  id="password" placeholder="Password" name="password"></input>
+                <div class="show" onclick="show_password()"><i class="fa fa-eye" style="font-size:24px"></i></div>
                 </div>
                 <div class="d-grid">
                     <button class="btn btn-primary py-2" type="submit">Log In</button>

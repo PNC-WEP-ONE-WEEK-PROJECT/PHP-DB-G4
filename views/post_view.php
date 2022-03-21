@@ -1,23 +1,5 @@
 
 <!-- header -->
-<nav class="navbar opacity">
-        <div class="container-fluid">
-            <!-- LOGO FB -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img src="../images/icon-facebook.webp" alt="" width="25%"></a>
-            </div>
-            <!-- page home and group -->
-            <div class="nav_pages">
-                <li id="active" class="fa fa-home" style="font-size:25px"></li>
-                <li class="fa fa-group" style="font-size:22px"></li>
-            </div>      
-            <!-- ICON USER NAME -->
-            <div class="nav_icons">
-                <div class="user_profile"><a href="views/view_profile.php" ><img src="../images/user.png" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
-                <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
-            </div>
-        </div>
-  </nav>
 
     <div class="container" style="display:none">
       <div class="wrapper">

@@ -1,3 +1,21 @@
+
+
+// // CREATE ACCOUNT
+let btn_create = document.querySelector("#create");
+btn_create.addEventListener("click",create_account);
+let form_create = document.querySelector(".container_form_create")
+form_create .style.display = "none";
+function create_account(){
+    show(form_create);
+}
+
+let btn_cancel_create = document.querySelector(".cancel_create");
+btn_cancel_create.addEventListener("click",cancel_create);
+function cancel_create(){
+    hide(form_create);
+}
+
+
 // SHOW BOX TO EDIT OR DELETE POST---------------------------
 
 
@@ -45,6 +63,11 @@ window.onclick = function (event) {
         for(let box of boxes){
             box.style.display = "none";
         }
+    }
+    if(event.target.matches(".view_more")){
+        event.target.nextElementSibling.style.display = "block";
+        event.target.nextElementSibling.nextElementSibling.style.display = "none";
+        console.log(event.target.nextElementSibling);
     }
 }
 
@@ -113,22 +136,5 @@ for (let each_post of click_comment){
             }
     })
 }
-
-
-// // CREATE ACCOUNT
-let btn_create = document.querySelector("#create");
-btn_create.addEventListener("click",create_account);
-let form_create = document.querySelector(".container_form_create")
-form_create .style.display = "none";
-function create_account(){
-    show(form_create);
-}
-
-let btn_cancel_create = document.querySelector(".cancel_create");
-btn_cancel_create.addEventListener("click",cancel_create);
-function cancel_create(){
-    hide(form_create);
-}
-
 
 

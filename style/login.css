@@ -36,24 +36,24 @@ body {
 .show{
     width: 34px;
     height: 34px;
-
-    position: absolute;
+    /* position: absolute; */
     margin-left: 330px;
     margin-top: -40px; 
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    flex: auto;
+    /* flex: auto; */
     align-items: center;
     cursor: pointer;
-    /* color: #aaa; */
-    /* background: #000; */
-    z-index: 100;
+    background: rgb(149, 133, 133);
 }
-.show:hover{
+.show i{
+    color: #229ef6;
+}
+/* .show:hover{
     background: hsl(0, 0%, 81%);
     transition: ease-in-out .5s;
-}
+} */
 
 /* / icon style / */
 label { 
