@@ -76,14 +76,11 @@ function displayImage(){
 let count_likes = document.querySelectorAll(".count_like");
 let click_likes = document.querySelectorAll(".btn_likes");
 let show_likes = document.querySelectorAll(".like_post")
-// let update_counter = document.querySelectorAll(".update_likes")
 for (let each_post of click_likes){
-    
     each_post.addEventListener("click",(e)=>{
         let click_on = e.target.parentElement.id
         e.target.style.color="blue"
         for (let each_likes of count_likes){
-            // for (let each_update of update_counter){
                 if (click_on == each_likes.id){
                     let number_likes = parseInt(each_likes.textContent)+1;
                     each_likes.textContent = number_likes + " Likes";
@@ -103,7 +100,7 @@ for (let each_post of click_likes){
 
 
 // like and comment post 
-let count_comment = document.querySelectorAll(".count_comment");
+// let count_comment = document.querySelectorAll(".count_comment");
 let click_comment = document.querySelectorAll(".click_comment");
 let show_comment = document.querySelectorAll(".comment_box")
 for (let each_post of click_comment){
@@ -112,6 +109,20 @@ for (let each_post of click_comment){
         let click_on=e.target.id
             for (let each_show of show_comment){
                 if (click_on==each_show.id){
+                    each_show.style.display="flex"
+                }
+            }
+    })
+}
+// let count_comment = document.querySelectorAll(".count_comment");
+let edit_comment = document.querySelectorAll(".edit_comment_post");
+let edit = document.querySelectorAll(".edit_comment");
+for (let each_post of edit_comment){
+    // console.log(each_post.id);
+    each_post.addEventListener("click",(e)=>{
+        let click_on = e.target.id
+            for (let each_show of edit){
+                if (click_on == each_show.id){
                     each_show.style.display="flex"
                 }
             }

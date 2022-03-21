@@ -132,10 +132,10 @@ require_once("views/post_view.php");
                 <form action="../controllers/count_like.php" class="like" target="fTarget" method="post">
                     <input type="hidden" value="<?= $user_id ?>" name="user_id">
                     <input type="hidden" value="<?= $post["post_id"]?>" name="post_id">
-                    <button type="submit" id="<?= $post["post_id"]?>" class="btn_likes"><a href=""></a><i class="fa fa-thumbs-o-up"> Like</i></button>
+                    <button type="submit" id="<?= $post["post_id"]?>" class="btn_likes"><i class="fa fa-thumbs-o-up">Like</i></button>
                 </form>
                 <div class="comment" >
-                    <button class = "click_comment" id="<?= $post['post_id'];?>"><i class='far fa-comment-alt' style='font-size:14px'></i> Comment</button>
+                    <button class = "click_comment"  id="<?= $post['post_id'];?>"><i class='far fa-comment-alt' style='font-size:14px'></i> Comment</button>
                 </div>
             </div>
             <!-- DISPLAY COMMENT -->
@@ -143,7 +143,7 @@ require_once("views/post_view.php");
                 <a  class= "view_more" style="cursor:pointer">View all comments</a>
                 <div class="show_all_comments" style="display:none">
                     <?php 
-                    // $getComments = array_reverse($getComments);
+                    $getComments = array_reverse($getComments);
                     foreach($getComments as $comment):
                         if ($comment["post_id"] == $post['post_id']):
                         ?>
@@ -162,13 +162,24 @@ require_once("views/post_view.php");
                                     </li>
                                     <div class="comment_action" style="margin-top: 10px;cursor:pointer;display:none" >
                                         <div class="edit_comm">
-                                            <a href="../controllers/edit_comm.php?id=<?= $comment['comment_id'];?>" id="edit">Edit</a>
+                                            <a class="edit_comment_post"  id="<?= $comment['comment_id'];?>">Edit</a>
                                         </div>
                                         <div class="delete_comm">
                                             <a href="../controllers/delete_comm.php?id=<?= $comment['comment_id'];?>" id="delete">Delete</a>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        <!-- EDIT COMMENT -->
+                            <div class="edit_comment" style="display:none;margin-top:20px" id="<?= $comment['comment_id'];?>">
+                                <div class="user-profile">
+                                    <img src="images/user.png" alt="" width="100%">
+                                </div>
+                                <form action="controllers/edit_comment_post.php?id=<?= $comment['comment_id'];?>" class="input_comment"  method="POST">
+                                    <input type="text" placeholder="<?= $comment['comment'];?>" name="edit_comment" id="write_comment" required>
+                                    
+                                    <button type="submit" class="send-comment"><i class="material-icons" style="color:#24a0ed;cursor:pointer">send</i></button>
+                                </form>
                             </div>
                         <?php endif ?>
                     <?php endforeach ?>
@@ -195,7 +206,7 @@ require_once("views/post_view.php");
                                     </li>
                                     <div class="comment_action" style="margin-top: 10px;cursor:pointer;display:none" >
                                         <div class="edit_comm">
-                                            <a href="controllers/edit_comm.php?id=<?= $comment['comment_id'];?>" id="edit">Edit</a>
+                                        <a class="edit_comment_post"  id="<?= $comment['comment_id'];?>">Edit</a>
                                         </div>
                                         <div class="delete_comm">
                                             <a href="controllers/delete_comm.php?id=<?= $comment['comment_id'];?>" id="delete">Delete</a>
@@ -203,17 +214,32 @@ require_once("views/post_view.php");
                                     </div>
                                 </div>
                             </div>
+                            <!-- EDIT COMMENT -->
+                            <div class="edit_comment" style="display:none;margin-top:20px" id="<?= $comment['comment_id'];?>">
+                                <div class="user-profile">
+                                    <img src="images/user.png" alt="" width="100%">
+                                </div>
+                                <form action="controllers/edit_comment_post.php?id=<?= $comment['comment_id'];?>" class="input_comment"  method="POST">
+                                    <input type="text" placeholder="<?= $comment['comment'];?>" name="edit_comment" id="write_comment" required>
+                                    
+                                    <button type="submit" class="send-comment"><i class="material-icons" style="color:#24a0ed;cursor:pointer">send</i></button>
+                                </form>
+                            </div>
                         <?php endif ?>
                     <?php endforeach ?>
+
+                <!--COMMENT POST -->
                 <div class="comment_box" style="display:none;margin-top:20px" id="<?= $post['post_id'];?>">
                     <div class="user-profile">
                         <img src="images/user.png" alt="" width="100%">
                     </div>
                     <form action="controllers/comment_post.php?id=<?= $post['post_id'];?>" class="input_comment"  method="POST">
                         <input type="text" placeholder="Write a comment..." name="comment" id="write_comment" required>
+                        <input type="hidden" name="user" value="<?= $user_id ?>">
                         <button type="submit" class="send-comment"><i class="material-icons" style="color:#24a0ed;cursor:pointer">send</i></button>
                     </form>
                 </div>
+
             </div>
         </div>
         <?php endif ?>

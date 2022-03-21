@@ -97,3 +97,17 @@ function insert_users($firstN,$lastN,$bd,$gender,$email,$password, $comfirm){
     ]);
     return ($statement->rowCount() == 1);
 }
+
+
+
+// EDIT COMMENT
+
+function edit_comment_post($get_comment,$get_id){
+    global $db;
+    $statement = $db->prepare("UPDATE comments SET content=:comment where id=:comment_id");
+    $statement->execute([
+        ':comment' => $get_comment,
+        ':comment_id' =>  $get_id,
+    ]);
+    return ($statement->rowCount() == 1);
+}
