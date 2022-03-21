@@ -79,7 +79,7 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
             ?>
 <div class="container_form_create">
     <!-- INCLUDES FOOTER -->
-<form action="../../controllers/create_account.php" class="form_create" method="POST">
+<form action="../controllers/create_account.php" class="form_create" method="POST">
     <div class="shadow  m-auto mt-5  p-3 mb-5 bg-body rounded" style="width: 35%;">
         <div class="row ds-flex">
             <div class="col-6 w-50">
