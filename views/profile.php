@@ -12,6 +12,8 @@ foreach($posts as $user){
 }
 require_once("post_view.php");
 ?>
+<!-- BOOSTTRAP STYLE -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <nav class="navbar opacity">
         <div class="container-fluid">
             <!-- LOGO FB -->
