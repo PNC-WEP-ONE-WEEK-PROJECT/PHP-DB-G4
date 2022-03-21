@@ -15,6 +15,9 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
                     <h3>Log In</h3>      
                 </div>
                 <hr mt-2 mb-2>
+                <div class="alert alert-danger text-center p-2" style="display: none">
+                        Invalid email or password
+                </div>
                 <div class="mt-3">
                     <input type="email" class="form-control p-2 px-3" id="email" placeholder="Enter email" name="email">
                 </div>
@@ -32,6 +35,7 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
         </div>
     </div>
 </div>
+
         <?php
            // <!-- CONNECTION DATABASES  -->
             $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
@@ -69,7 +73,7 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
                     echo $_SESSION["login"];
                 }
                  else {
-                    echo "Error login";
+                    echo "<script>document.querySelector('.alert').style.display= 'block';</script>";
                 }
             }
             ?>
