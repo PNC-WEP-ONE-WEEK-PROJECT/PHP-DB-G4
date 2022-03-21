@@ -4,22 +4,25 @@
 // <!-- INCLUDES HEADER -->
 require_once "Includes/header.php";
 require_once "models/item.php";
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['user_email']) && !empty($_POST['user_password'])){
-    $email = $_POST['user_email'];
-    $password = $_POST['user_password'];
+if (isset($_POST["user_email"]) && isset($_POST["user_password"])){
+
+    $_SESSION["email"]=$_POST["user_email"];
+    $_SESSION["password"]=$_POST["user_password"];
+    $email= $_SESSION["email"];
+    $password = $_SESSION["password"];
     $user = get_users($email, $password);
 }
 ?>
-<?php if(empty($user)){
+
+<?php if(!empty($user)){
     // echo '<script>alert("Check your email and password again")</script>';
-}else{
+    
     $none = "none";
     $flex = "flex";
-    // header("location: ../../index.php");
 }
 ?>
 <div class="confirm_contianer <?=$flex?>">
-    <a href="../index.php?id=<?= $user["id"]?>"><button>Click Countinoues</button></a>
+    <a href="../controllers/controll_login.php?id=<?= $user["id"]?>"><button>Click Countinoues</button></a>
 </div>
 
 <!-- MAIN -----------------------------------------  -->

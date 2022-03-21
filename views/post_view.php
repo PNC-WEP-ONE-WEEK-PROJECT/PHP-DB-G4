@@ -1,9 +1,4 @@
-<?php
 
-$db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
-$user_statement = $db->query("SELECT id, first_name, last_name FROM users limit 1;");
-$user = $user_statement -> fetch();
-?>
     <div class="container" style="display:none">
       <div class="wrapper">
         <section class="post">
@@ -18,8 +13,8 @@ $user = $user_statement -> fetch();
             <div class="content">
               <img src="images/user.png" alt="logo" class="icon_user">
               <div class="details">
-                <input type="hidden" value="<?=$user["id"];?>" name="user_id">
-                <p><?= $user["first_name"]." ". $user["last_name"];?></p>
+                <input type="hidden" name="user_id" value="<?= $user_id ?>">
+                <p><?= $FirstName . $LastName;?></p>
       
                 <div class="privacy">
                   <i class="fas fa-user-friends"></i>

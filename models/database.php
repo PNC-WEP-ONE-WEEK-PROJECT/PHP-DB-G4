@@ -5,6 +5,27 @@
 
 // <!-- CONNECTION DATABASES  -->
 $db = new PDO("mysql:host=localhost;dbname=facebook_pnc", "root", "");
+
+function logout_users($id){
+    global $db;
+    $statement = $db->prepare("UPDATE users SET users.login=false WHERE users.id != :id");
+    $statement->execute([
+        ':id' =>  $id
+    ]);
+    return ($statement->rowCount() == 1);
+}
+
+function login_users($id){
+    global $db;
+    $statement = $db->prepare("UPDATE users SET users.login=true WHERE users.id = :id");
+    $statement->execute([
+        ':id' =>  $id
+    ]);
+    return ($statement->rowCount() == 1);
+}
+
+
+
 function create_post($user_id, $description, $img, $date){
     // you code here 
     global $db;
@@ -47,10 +68,10 @@ function update_post($id, $description, $img){
 
 function insert_likes($post_id, $user_id){
     global $db;
-    $statement = $db->prepare("INSERT INTO LIKES(likes.post_id, likes.user_id) value (:post_id, :user_id)");
+    $statement = $db->prepare("INSERT INTO likes(likes.post_id, likes.user_id) value (:post, :user)");
     $statement->execute([
-        ':post_id' => $post_id,
-        ':user_id' => $user_id
+        ':post' => $post_id,
+        ':user' => $user_id
     ]);
     return ($statement->rowCount() == 1);
 }
@@ -82,17 +103,17 @@ function delete_comment($id){
 
 
 
-function insert_users($firstN,$lastN,$bd,$gender,$email,$password){
+function insert_users($firstN,$lastN,$bd,$gender,$email,$password, $comfirm){
     global $db;
-    $statement = $db->prepare("INSERT INTO users(first_name,last_name,gender,email,user_password,birthday) value(:fname,:lname,:gender,:email,:password,:birthday)");
+    $statement = $db->prepare("INSERT INTO users(first_name, last_name, gender, email, user_password, birthday, users.login) values(:fname, :lname, :gender, :email, :user_password, :birthday, :comfirmed);");
     $statement->execute([
         ':fname' => $firstN,
         ':lname' =>  $lastN,
         ':gender'=>$gender,
         ':email'=>$email,
-        ':password'=>$password,
+        ':user_password'=>$password,
         ':birthday'=>$bd,
+        ':comfirmed' => $comfirm,
     ]);
     return ($statement->rowCount() == 1);
-
 }

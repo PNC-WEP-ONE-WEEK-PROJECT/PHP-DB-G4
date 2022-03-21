@@ -116,6 +116,7 @@ cursor: pointer;
     border: 1px solid #ccc;
     box-sizing: border-box;
     box-shadow: 2px 1px 5px 1px #aaa;
+    height: auto;
 
 }
 .container-card .card-header{
@@ -248,41 +249,38 @@ hr{
     justify-content: space-between;
     align-items: center;
     padding: 0 80px ;
-    /* height: 30px; */
-    max-height: 50px;
+    height: auto;
     margin: 0;
-    /* background: #000; */
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
-  }
+}
   .post-footer  button{
-    /* cursor: pointer; */
-    font-size: 16px;
-    /* background: rgb(180, 50, 50); */
-    /* height: 30px  ; */
     padding: 8px 12px;
     box-sizing: border-box;
     border: none;
     border-radius: 5px;
-    background: none;
     font-weight: 200;
+    color:black;
+    cursor: pointer;
 }
-.post-footer button:hover,.post-footer button:focus{
-  cursor: pointer;
-  color: #4267B2;
-  background: #eee;
+.post-footer .like button{
+  background-color: white;
 }
-
+.container_comments {
+  background: rgb(189, 65, 65);
+  max-height: 1000vh;
+  box-sizing: border-box;
+}
 .comment_box{
   display: flex;
   align-items: center;
-  /* background: #000; */
   justify-content: space-between;
 }
 .display_comment{
   display: flex;
   margin: 20px 10px;
   font-size: 20px;
+  /* background: #000; */
 }
 .comment_box .user-profile{
   width: 10%;
@@ -335,8 +333,6 @@ hr{
   cursor: pointer;
   background: none;
   width: 40px;
-  /* position:absolute; */
-  /* background: #000; */
   box-sizing: border-box;
   margin-left: 100px;
   font-size: 12px;
@@ -360,11 +356,6 @@ hr{
   text-align: center;
   color: #4267B2;
 }
-.post-footer .like a{
-  text-decoration: none;
-  color: #000;
-}
-
 
 .comment_action{
   width: 200px;
