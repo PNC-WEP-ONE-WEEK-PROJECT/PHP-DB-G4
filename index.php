@@ -127,7 +127,7 @@ require_once("views/post_view.php");
                         </div>
             </div>
             <div class="post-footer">
-                <!-- <iframe src="" style="display:none;" name="fTarget" frameborder="0"></iframe> -->
+                <iframe src="" style="display:none;" name="fTarget" frameborder="0"></iframe>
                 <form action="controllers/count_like.php" class="like" target="fTarget" method="post">
                     <input type="hidden" value="<?= $user_id ?>" name="user_id">
                     <input type="hidden" value="<?= $post["post_id"]?>" name="post_id">

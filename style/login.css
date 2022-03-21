@@ -45,15 +45,12 @@ body {
     /* flex: auto; */
     align-items: center;
     cursor: pointer;
-    background: rgb(149, 133, 133);
 }
-.show i{
-    color: #229ef6;
-}
-/* .show:hover{
+
+.show:hover{
     background: hsl(0, 0%, 81%);
     transition: ease-in-out .5s;
-} */
+}
 
 /* / icon style / */
 label { 
