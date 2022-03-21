@@ -2,7 +2,7 @@
 
 body{
   
-  background: #D4D3D3;
+  background: #03f5e118;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -115,6 +115,7 @@ cursor: pointer;
     padding: 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    box-shadow: 2px 1px 5px 1px #aaa;
 
 }
 .container-card .card-header{
@@ -366,26 +367,33 @@ hr{
 
 
 .comment_action{
-  width: 100px;
+  width: 200px;
   /* text-align: center; */
   border-radius: 4px;
   font-size: 16px;
   box-shadow: 1px 2px 8px 1px #aaa;
   position: absolute;
-  margin: auto ;
+  /* margin: auto ; */
+  margin-top: -20px;
+  margin-left: -40px;
   background: #fff;
   padding: 4px;
   /* position: relative; */
 }
-.comment_action li{
+.comment_action a{
   padding: 4px 10px;
   /* background-color: #4267B2; */
-  margin: 2px;
   cursor: pointer;
   border-radius: 4px;
+  width: 100%;
+  display: flex;
 }
-.comment_action li:hover{
-  background: #dddd;
+.comment_action #edit:hover{
+  background-color: #4599FF;
+}
+.comment_action #delete:hover{
+  background-color: red;
+  color:#fff;
 }
 
  /* FORM ADD POST  */

@@ -134,14 +134,10 @@ $show_one_comment = true;
 $getComments = array_reverse($getComments);
 foreach($getComments as $comment):
     $show_more = "none";
-    if ($comment["post_id"] == $post['id'] && $show_one_comment):
+    if ($comment["post_id"] == $post['id']):
         $show_one_comment = false;
-
     
 ?>
-            <div class="view_comment">
-                <li><a href="" class="view_more" style="display:none">View comments</a></li>
-            </div>
         <div class="display_comment">
             <div class="user-profile">
                 <img src="images/user.png" alt="" width="100%">
@@ -156,27 +152,38 @@ foreach($getComments as $comment):
                     <i class="material-icons" style>more_vert</i>
                 </li>
                 <div class="comment_action" style="margin-top: 10px;cursor:pointer;display:none" >
-                    <li ><a href="controllers/edit_comm.php?id=<?= $comment['comment_id'];?>">Edit</a></li>
-                    <li><a href="controllers/delete_comm.php?id=<?= $comment['comment_id'];?>">Delete</a></li>
+                    <div class="edit_comm">
+                        <a href="controllers/edit_comm.php?id=<?= $comment['comment_id'];?>" id="edit">Edit</a>
+                    </div>
+                    <div class="delete_comm">
+                        <a href="controllers/delete_comm.php?id=<?= $comment['comment_id'];?>" id="delete">Delete</a>
+                    </div>
                 </div>
             </div>
         </div>
+
 <?php endif ?>
 <?php endforeach ?>
-
-    <div class="comment_box" style="display:none;margin-top:20px" id="<?= $post['id'];?>">
-    <div class="user-profile">
-                <img src="images/user.png" alt="" width="100%">
-            </div>
-            <form action="controllers/comment_post.php?id=<?= $post['id'];?>" class="input_comment"  method="POST">
-                <input type="text" placeholder="Write a comment..." name="comment" id="write_comment" required>
-                <button type="submit" class="send-comment"><i class="material-icons" style="color:#24a0ed;cursor:pointer">send</i></button>
-            </form>
+        <div class="comment_box" style="display:none;margin-top:20px" id="<?= $post['id'];?>">
+        <div class="user-profile">
+            <img src="images/user.png" alt="" width="100%">
+        </div>
+                <form action="controllers/comment_post.php?id=<?= $post['id'];?>" class="input_comment"  method="POST">
+                    <input type="text" placeholder="Write a comment..." name="comment" id="write_comment" required>
+                    <button type="submit" class="send-comment"><i class="material-icons" style="color:#24a0ed;cursor:pointer">send</i></button>
+                </form>
         </div>
     </div>
 
 
 <?php endforeach?>
+
+<!-- footer -->
+<div class="mt-5 mb-5 text-center" style="text-align: center;margin:30px 0;">
+    <footer>
+        <small>Facebook version 2.0 Created by Mr.Tim and Mr.Sauth</small>
+    </footer>
+</div>
 <?php
 require_once("templates/footer.php");
 ?>

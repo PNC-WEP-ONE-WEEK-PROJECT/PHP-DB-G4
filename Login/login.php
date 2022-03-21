@@ -18,9 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['user_email']) && !emp
     // header("location: ../../index.php");
 }
 ?>
-<!-- <div class="confirm_contianer <?=$flex?>">
+<div class="confirm_contianer <?=$flex?>">
     <a href="../index.php?id=<?= $user["id"]?>"><button>Click Countinoues</button></a>
-</div> -->
+</div>
 
 <!-- MAIN -----------------------------------------  -->
 <div class="container">
