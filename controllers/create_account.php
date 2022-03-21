@@ -11,7 +11,7 @@ $confirmed = $_POST["comfirmpass"];
 if ($password==$confirmed){
     $confirmed=true;
     insert_users($firstN,$lastN,$bd,$gender,$email,$password, $confirmed);
+    require_once("../views/pages.php");
 }
-header("location: ../Login/login.php");
 
 ?>
