@@ -45,7 +45,7 @@ require_once("views/post_view.php");
 <div class="container-card opacity">
     <div class="card-header">
         <div class="profile">
-            <img src="images/user.png" alt="" width="100%">
+            <a href="../views/profile.php"><img src="images/user.png" alt="" width="100%"></a>
         </div>
         <span class="add-post" onclick="create_post()">What's your mind?</span>
     </div>
@@ -71,7 +71,7 @@ require_once("views/post_view.php");
             <div class="post-header">
                 <div class="post-header-profile" style="display:flex">
                     <div class="user-profile">
-                        <img src="images/user.png" alt="" width="100%">
+                        <a href="views/profile.php"><img src="images/user.png" alt="" width="100%"></a>
                     </div>
                     <div class="name">
                         <h4 class="user_name"><?=$post["first_name"] . " " . $post["last_name"]?></h4>
@@ -132,7 +132,7 @@ require_once("views/post_view.php");
                 <form action="../controllers/count_like.php" class="like" target="fTarget" method="post">
                     <input type="hidden" value="<?= $user_id ?>" name="user_id">
                     <input type="hidden" value="<?= $post["post_id"]?>" name="post_id">
-                    <button type="submit" id="<?= $post["post_id"]?>" class="btn_likes"><i class="fa fa-thumbs-o-up"> Like</i></button>
+                    <button type="submit" id="<?= $post["post_id"]?>" class="btn_likes"><a href=""></a><i class="fa fa-thumbs-o-up"> Like</i></button>
                 </form>
                 <div class="comment" >
                     <button class = "click_comment" id="<?= $post['post_id'];?>"><i class='far fa-comment-alt' style='font-size:14px'></i> Comment</button>
