@@ -2,13 +2,12 @@
 
 body{
   
-  background: #D4D3D3;
+  background: #03f5e118;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  /* overflow: hidden; */
 }
 *{
   font-family: 'Poppins', sans-serif;
@@ -67,7 +66,6 @@ display: flex;
 align-items: center;
 padding: 2px 4px;
 border-radius: 20px;
-/* justify-content: space-between; */
 height: 44px;
 color: blue;
 background: hsla(189, 84%, 52%, 0.13);
@@ -106,7 +104,7 @@ cursor: pointer;
     color: blue;
 }
 
-/* PARTH OF POST  */
+/* / PARTH OF POST  / */
 .container-card{
     width: 40%;
     margin: 20px auto;
@@ -115,6 +113,8 @@ cursor: pointer;
     padding: 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    box-shadow: 2px 1px 5px 1px #aaa;
+    height: auto;
 
 }
 .container-card .card-header{
@@ -172,7 +172,7 @@ cursor: pointer;
   background: #f5f4f4;
 }
 
-/* END ADD POST */
+/* / END ADD POST / */
 .container-card .post-header{
     margin-left: 10px;
     line-height: 5px;
@@ -247,11 +247,11 @@ hr{
     justify-content: space-between;
     align-items: center;
     padding: 0 80px ;
-    max-height: 50px;
+    height: auto;
     margin: 0;
     border-top: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
-  }
+}
   .post-footer  button{
     padding: 8px 12px;
     box-sizing: border-box;
@@ -259,11 +259,16 @@ hr{
     border-radius: 5px;
     font-weight: 200;
     color:black;
+    cursor: pointer;
 }
 .post-footer .like button{
   background-color: white;
 }
-
+.container_comments {
+  background: rgb(189, 65, 65);
+  max-height: 1000vh;
+  box-sizing: border-box;
+}
 .comment_box{
   display: flex;
   align-items: center;
@@ -330,7 +335,7 @@ hr{
   font-size: 12px;
 }
 
-/* LIKE & COMMENT */
+/* / LIKE & COMMENT / */
 .content_like_comment{
   width: 100%;
   box-sizing: border-box;
@@ -350,29 +355,35 @@ hr{
 }
 
 .comment_action{
-  width: 100px;
-  /* text-align: center; */
+  width: 200px;
+
   border-radius: 4px;
   font-size: 16px;
   box-shadow: 1px 2px 8px 1px #aaa;
   position: absolute;
-  margin: auto ;
+
+  margin-top: -20px;
+  margin-left: -40px;
   background: #fff;
   padding: 4px;
-  /* position: relative; */
+
 }
-.comment_action li{
+.comment_action a{
   padding: 4px 10px;
-  /* background-color: #4267B2; */
-  margin: 2px;
   cursor: pointer;
   border-radius: 4px;
+  width: 100%;
+  display: flex;
 }
-.comment_action li:hover{
-  background: #dddd;
+.comment_action #edit:hover{
+  background-color: #4599FF;
+}
+.comment_action #delete:hover{
+  background-color: red;
+  color:#fff;
 }
 
- /* FORM ADD POST  */
+ /* / FORM ADD POST  / */
 
 .container{
   padding: 4rem 0;
@@ -467,7 +478,7 @@ form .content .details p{
 }
 
 
-/* UPDATE POST */
+/* / UPDATE POST / */
 .update_post{
   margin: 20px 0;
   overflow: auto;
@@ -541,4 +552,3 @@ form button{
   background: #4599FF;
   color: #fff;
 }
-

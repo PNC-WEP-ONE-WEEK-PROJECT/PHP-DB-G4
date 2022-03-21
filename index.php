@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 /**
  * Your code here
@@ -7,8 +6,8 @@ session_start();
 
  // TO DO:
    // Get the id of the item to update in query
-
 require_once("templates/header.php");
+
 require_once("models/post.php");
 $posts = information_users();
 $posts = array_reverse($posts);
@@ -60,8 +59,8 @@ require_once("views/post_view.php");
             </div>
         </div>
     </div>
-<?php foreach($posts as $post):?>
-<?php 
+<?php if(count($posts)!=0):?>
+<?php foreach($posts as $post): 
 $getComments = getCommentById(); 
 ?>
 
@@ -183,12 +182,8 @@ foreach($getComments as $comment):
             </form>
         </div>
     </div>
-
-
 <?php endforeach?>
+<?php endif?>
+
 <?php
-require_once("templates/footer.php");
-?>
-
-
-
+require_once "templates/footer.php";
