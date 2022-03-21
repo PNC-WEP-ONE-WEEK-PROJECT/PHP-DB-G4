@@ -21,7 +21,7 @@ foreach($posts as $user){
 require_once("views/post_view.php");
 ?>
 
-<nav class="navbar opacity">
+<nav class="navbar_facebook opacity">
         <div class="container-fluid">
             <!-- LOGO FB -->
             <div class="navbar-header">
@@ -84,7 +84,7 @@ require_once("views/post_view.php");
                 <!-- user edit and delete -->
                 <div class="card-activity" style="display:none">
                     <li><a class="edit-post" href="views/edit_view.php?id=<?= $post['post_id'];?>"><i class='fas fa-user-edit' style='font-size:16px;color:blue'></i> Edit post</a></li>
-                    <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['post_id'];?>"><i class='far fa-trash-alt' style='font-size:16px;color:red'></i> Remove to Recyle bin</a></li>
+                    <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['post_id'];?>"><i class='far fa-trash-alt' style='font-size:16px;color:red'></i> Remove</a></li>
                 </div>
             </div>
             <div class="post-body" style="margin-top: 40px;">
@@ -129,7 +129,7 @@ require_once("views/post_view.php");
             </div>
             <div class="post-footer">
                 <iframe src="" style="display:none;" name="fTarget" frameborder="0"></iframe>
-                <form action="controllers/count_like.php" class="like" target="fTarget" method="post">
+                <form action="../controllers/count_like.php" class="like" target="fTarget" method="post">
                     <input type="hidden" value="<?= $user_id ?>" name="user_id">
                     <input type="hidden" value="<?= $post["post_id"]?>" name="post_id">
                     <button type="submit" id="<?= $post["post_id"]?>" class="btn_likes"><i class="fa fa-thumbs-o-up">Like</i></button>
@@ -165,7 +165,7 @@ require_once("views/post_view.php");
                                             <a class="edit_comment_post"  id="<?= $comment['comment_id'];?>">Edit</a>
                                         </div>
                                         <div class="delete_comm">
-                                            <a href="controllers/delete_comm.php?id=<?= $comment['comment_id'];?>" id="delete">Delete</a>
+                                            <a href="../controllers/delete_comm.php?id=<?= $comment['comment_id'];?>" id="delete">Delete</a>
                                         </div>
                                     </div>
                                 </div>

@@ -94,8 +94,6 @@ for (let each_post of click_likes){
                     each_show.style.display="block"
             }
         }
-            
-        console.log(click_on);
     })
 }
 
