@@ -78,7 +78,7 @@ let click_likes = document.querySelectorAll(".btn_likes");
 let show_likes = document.querySelectorAll(".like_post")
 // let update_counter = document.querySelectorAll(".update_likes")
 for (let each_post of click_likes){
-    // console.log(each_post.id);
+    
     each_post.addEventListener("click",(e)=>{
         let click_on = e.target.parentElement.id
         e.target.style.color="blue"
@@ -97,8 +97,6 @@ for (let each_post of click_likes){
                     each_show.style.display="block"
             }
         }
-            
-        console.log(click_on);
     })
 }
 
@@ -115,7 +113,6 @@ for (let each_post of click_comment){
             for (let each_show of show_comment){
                 if (click_on==each_show.id){
                     each_show.style.display="flex"
-                    // alert(each_show)
                 }
             }
     })

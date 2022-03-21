@@ -15,6 +15,11 @@ function information_users(){
     return $statement->fetchAll(); 
 }
 
+function profile_user(){
+    global $db;
+    $statement = $db->query("SELECT*FROM users WHERE users.login=true;");
+    return $statement->fetch(); 
+}
 
 /**
  * Get a single item

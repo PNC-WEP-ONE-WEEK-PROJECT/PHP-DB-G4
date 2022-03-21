@@ -2,7 +2,6 @@
 
 body{
   
-  background: #03f5e118;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,7 +17,7 @@ body{
     --border_raduis--:10px;
 }
 
-.navbar{
+.navbar_facebook{
     position: sticky;
     top: 0;
     z-index: 100002;
@@ -44,9 +43,9 @@ body{
    width: 25%;
    margin: 0%;
 }
-.nav_pages li{
+.navbar_facebook .nav_pages li{
     padding: 20px 40px;
-    color: blue;
+   
 }
 .nav_pages li:hover{
     background: #eee;
@@ -59,7 +58,7 @@ body{
     width: 15%;
     align-items: center;
   }
-.nav_icons .user_profile{
+  .navbar_facebook .nav_icons .user_profile{
 width: 100px;
 max-width: 200px;
 display: flex;
@@ -83,11 +82,11 @@ cursor: pointer;
   height: 40px;
   display: flex;
 }
-.navbar .fa{
+.navbar_facebook .fa{
     color: black;
     cursor: pointer;
 }
-.navbar .cicle-user{
+.navbar_facebook .cicle-user{
     background-color: #E5E5E5;
     width: 40px;
     height: 40px;
