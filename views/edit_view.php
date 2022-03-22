@@ -71,7 +71,7 @@ $FirstName=$posts["first_name"];
                 </label>
             </div>
         </div>
-            <button type="submit" name="submit">Update</button>
+            <button type="submit" name="submit" class="btn btn-primary">Update</button>
         </form>
     </section>
     </div>

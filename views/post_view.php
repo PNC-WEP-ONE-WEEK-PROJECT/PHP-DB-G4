@@ -39,7 +39,7 @@
                 </label>
               </div>
             </div>
-            <button id="sum_post" type="submit" name="submit">Post</button>
+            <button id="sum_post" type="submit" name="submit" class="btn btn-primary">Post</button>
           </form>
         </section>
       </div>

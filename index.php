@@ -1,13 +1,16 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['login'])){
+    header("location: pages.php");
+    exit;
+}
 /**
  * Your code here
  */
 
  // TO DO:
    // Get the id of the item to update in query
-
 require_once("templates/header.php");
 require_once("models/post.php");
 $posts = information_users();
@@ -35,7 +38,7 @@ require_once("views/post_view.php");
             <!-- ICON USER NAME -->
             <div class="nav_icons">
                 <div class="user_profile"><a href="views/profile.php" ><img src="../images/user.png" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
-                <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
+                <a href="views/logout.php"><img src="images/log-out.png" alt="" width="10%">Sign Out</a>
             </div>
         </div>
   </nav>
@@ -249,6 +252,8 @@ require_once("views/post_view.php");
         <small>Database and PHP Project</small>
     </footer>
 </div>
+
+
 <?php
 require_once("templates/footer.php");
 ?>
