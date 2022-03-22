@@ -22,7 +22,7 @@ $FirstName=$posts["first_name"];
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <div class="user_profile"><a href="views/profile.php" ><img src="../images/user.png" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
+                <div class="user_profile"><a href="views/profile.php" ><img src="images/uploads/<?=$user_image ?>" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
                 <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
             </div>
         </div>
@@ -44,7 +44,7 @@ $FirstName=$posts["first_name"];
         <hr>
         <form action="models/post.php" method="post" id ="update">
         <div class="content">
-            <img src="../images/user.png" alt="logo" class="icon_user">
+            <img src="../images/uploads/<?=$user_image["image"] ?>" alt="logo" class="icon_user">
             <div class="details">
                 <p><?= $posts["first_name"] . " " . $posts["last_name"] ?></p>
                 <div class="privacy">

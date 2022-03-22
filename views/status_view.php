@@ -4,7 +4,7 @@
             <div class="post-header">
                 <div class="post-header-profile" style="display:flex">
                     <div class="user-profile">
-                        <a href="views/profile.php"><img src="images/user.png" alt="" width="100%"></a>
+                        <a href="views/profile.php"><img src="images/uploads/<?=$user_image?>" alt="" width="100%"></a>
                     </div>
                     <div class="name">
                         <h4 class="user_name"><?=$post["first_name"] . " " . $post["last_name"]?></h4>
@@ -82,7 +82,7 @@
                         ?>
                             <div class="display_comment" >
                                 <div class="user-profile">
-                                    <img src="images/user.png" alt="" width="100%">
+                                    <img src="../images/uploads/<?=$user_image ?>" alt="" width="100%">
                                 </div>
                                 <div class= 'show_comment'>
                                     <p class='name'><?php echo $post['first_name'] . " ". $post['last_name'] ?></p>
@@ -106,7 +106,7 @@
                         <!-- EDIT COMMENT -->
                             <div class="edit_comment" style="display:none;margin-top:20px" id="<?= $comment['comment_id'];?>">
                                 <div class="user-profile">
-                                    <img src="images/user.png" alt="" width="100%">
+                                    <img src="../images/uploads/<?=$user_image ?>" alt="" width="100%">
                                 </div>
                                 <form action="controllers/edit_comment_post.php?id=<?= $comment['comment_id'];?>" class="input_comment"  method="POST">
                                     <input type="text" name="edit_comment" id="write_comment" required value="<?= $comment['comment'];?>">
@@ -125,7 +125,7 @@
                 ?>
                             <div class="display_comment" id ="comment_appear">
                                 <div class="user-profile">
-                                    <img src="images/user.png" alt="" width="100%">
+                                    <img src="../images/uploads/<?=$user_image?>" alt="" width="100%">
                                 </div>
                                 <div class= 'show_comment'>
                                     <p class='name'><?php echo $post['first_name'] . " ". $post['last_name'] ?></p>
@@ -149,7 +149,7 @@
                             <!-- EDIT COMMENT -->
                             <div class="edit_comment" style="display:none;margin-top:20px" id="<?= $comment['comment_id'];?>">
                                 <div class="user-profile">
-                                    <img src="images/user.png" alt="" width="100%">
+                                    <img src="images/uploads/<?=$user_image ?>" alt="" width="100%">
                                 </div>
                                 <form action="controllers/edit_comment_post.php?id=<?= $comment['comment_id'];?>" class="input_comment"  method="POST">
                                     <input type="text" placeholder="<?= $comment['comment'];?>" name="edit_comment" id="write_comment" required>
@@ -163,7 +163,7 @@
                 <!--COMMENT POST -->
                 <div class="comment_box" style="display:none;margin-top:20px" id="<?= $post['post_id'];?>">
                     <div class="user-profile">
-                        <img src="images/user.png" alt="" width="100%">
+                        <img src="../images/uploads/<?=$user_image ?>" alt="" width="100%">
                     </div>
                     <form action="controllers/comment_post.php?id=<?= $post['post_id'];?>" class="input_comment"  method="POST">
                         <input type="text" placeholder="Write a comment..." name="comment" id="write_comment" required>

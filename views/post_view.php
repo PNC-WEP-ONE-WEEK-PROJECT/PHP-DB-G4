@@ -13,7 +13,7 @@
           </header>
           <hr>
             <div class="content">
-              <img src="images/user.png" alt="logo" class="icon_user">
+              <img src="../images/uploads/<?=$user_image["image"] ?>" alt="logo" class="icon_user">
               <div class="details">
                 <input type="hidden" name="user_id" value="<?= $user_id ?>">
                 <p><?= $FirstName . $LastName;?></p>
