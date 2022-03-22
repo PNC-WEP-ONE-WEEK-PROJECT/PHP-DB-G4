@@ -45,7 +45,6 @@ body{
 }
 .navbar_facebook .nav_pages li{
     padding: 20px 40px;
-   
 }
 .nav_pages li:hover{
     background: #eee;
@@ -551,4 +550,67 @@ form button{
   transition: all 0.3s ease;
   background: #4599FF;
   color: #fff;
+}
+
+/* PROFILE */
+
+.rounded .cover{
+  height: 40vh;
+  background-color: #000;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.profile-head{
+ position: relative;
+ bottom: -10rem;
+}
+.profile-head .profile{
+  width: 30vh;
+  height: 30vh;
+  margin:auto;
+  
+}
+.profile img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.media-body{
+  text-align: center;
+  position: relative;
+  top: 1rem;
+ 
+}
+
+.media-body .fa-solid{
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.bg-light{
+  position: relative;
+  top: 4rem;
+}
+.media-body h4{
+  color: black;
+}
+
+.contianer_prof{
+  margin-top: 14rem;
+  display: block;
+  justify-content: space-between;
+  color: black;
+}
+
+.conection{
+  margin: auto;
+  text-align: center;
+  margin-top: 1rem;
+}
+.conection .list-inline{
+  display: flex;
+  justify-content: space-evenly;
+}
+.list-inline-item .fas{
+  color: #4599FF;
 }

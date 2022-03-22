@@ -65,8 +65,7 @@ require_once("views/post_view.php");
 <?php foreach($posts as $post):
         if (!empty($post["post_id"])):
         $getComments = getCommentById(); 
-        ?>
-
+?>
         <div class="container-card" id="<?=$post["post_id"]?>">
             <div class="post-header">
                 <div class="post-header-profile" style="display:flex">
@@ -92,11 +91,11 @@ require_once("views/post_view.php");
                     <p><?= $post["description"]?></p>
                 </div>
                 <div class="image-posted" style="margin-bottom:10px">
-                    <img src="images/uploads/<?= $post["file_img"]?>" alt="" width="100%">
+                    <img src="images/uploads/<?php if(!empty($post["file_img"])){echo $post["file_img"];}?>" alt="" width="100%">
                 </div>
             </div>
             <!-- VIEWER LIKE OR COMMENT -->
-            <div class="content_like_comment">
+            <div class="content_like_comment"> 
                     <?php 
                         $increment = 0;
                         $hide_like = "none";
@@ -108,7 +107,7 @@ require_once("views/post_view.php");
                         }
                     ?>
                     <div class="interest_post like_post" id="<?= $post['post_id'];?>">
-                        <small style="display:<?= $hide_like;?>"><span class="count_like" id="<?= $post['post_id'];?>"><?php if ( $increment == 1){echo  $increment." Like";}else{ echo  $increment." Likes";} ?></span></small>
+                        <span style="display:<?= $hide_like;?>" class="count_like" id="<?= $post['post_id'];?>"><?= $increment . " Likes"?></span>
                         <!-- COUNTER LIKES -->
                     </div>
 
@@ -132,7 +131,7 @@ require_once("views/post_view.php");
                 <form action="../controllers/count_like.php" class="like" target="fTarget" method="post">
                     <input type="hidden" value="<?= $user_id ?>" name="user_id">
                     <input type="hidden" value="<?= $post["post_id"]?>" name="post_id">
-                    <button type="submit" id="<?= $post["post_id"]?>" class="btn_likes"><i class="fa fa-thumbs-o-up">Like</i></button>
+                    <button type="submit" id="<?= $post["post_id"]?>" class="btn_likes"><img src="images/like.png" alt="" width="30%"> <span>Like</span></button>
                 </form>
                 <div class="comment" >
                     <button class = "click_comment"  id="<?= $post['post_id'];?>"><i class='far fa-comment-alt' style='font-size:14px'></i> Comment</button>
@@ -176,8 +175,7 @@ require_once("views/post_view.php");
                                     <img src="images/user.png" alt="" width="100%">
                                 </div>
                                 <form action="controllers/edit_comment_post.php?id=<?= $comment['comment_id'];?>" class="input_comment"  method="POST">
-                                    <input type="text" placeholder="<?= $comment['comment'];?>" name="edit_comment" id="write_comment" required>
-                                    
+                                    <input type="text" name="edit_comment" id="write_comment" required value="<?= $comment['comment'];?>">
                                     <button type="submit" class="send-comment"><i class="material-icons" style="color:#24a0ed;cursor:pointer">send</i></button>
                                 </form>
                             </div>

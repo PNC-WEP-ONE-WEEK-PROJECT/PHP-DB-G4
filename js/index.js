@@ -83,9 +83,11 @@ for (let each_post of click_likes){
         for (let each_likes of count_likes){
                 if (click_on == each_likes.id){
                     let number_likes = parseInt(each_likes.textContent)+1;
-                    each_likes.textContent = number_likes + " Likes";
-                    if ( number_likes == 0){
-                        each_likes.textContent = number_likes + " Like";
+                    each_likes.textContent = 1 + " Like";
+                    each_likes.style.display="block";
+                    if(number_likes>1){
+                        each_likes.textContent = number_likes + " Likes"
+                        console.log(each_likes.textContent, " Like");
                     }
                 }
             }

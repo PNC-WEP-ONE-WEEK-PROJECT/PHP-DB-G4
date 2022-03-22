@@ -5,7 +5,28 @@ require_once('../models/post.php');
    // Get the id of the item to update in query
 $id = $_GET['id'];
 $posts = getItemById($id);
+$FirstName=$posts["first_name"];
 ?>
+
+
+<nav class="navbar_facebook opacity">
+        <div class="container-fluid">
+            <!-- LOGO FB -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src="../images/icon-facebook.webp" alt="" width="25%"></a>
+            </div>
+            <!-- page home and group -->
+            <div class="nav_pages">
+                <li id="active" class="fa fa-home" style="font-size:25px"></li>
+                <li class="fa fa-group" style="font-size:22px"></li>
+            </div>      
+            <!-- ICON USER NAME -->
+            <div class="nav_icons">
+                <div class="user_profile"><a href="views/profile.php" ><img src="../images/user.png" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
+                <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
+            </div>
+        </div>
+  </nav>
 
 <div class="container" style="display:block">
     <div class="wrapper">
@@ -33,13 +54,15 @@ $posts = getItemById($id);
                 </div>
             </div>
         </div>
+
+
         <div class="update_post">
             <textarea name="description" class= "title" spellcheck="false" style="color:black" ><?= $posts["description"];?></textarea>
             <div class="add-gallery">
                 <label for="click_img">
                     <div class="options add-icon" >
                         <input type="hidden" name="update_photo" value="<?= $posts["file_img"]?>">
-                        <img src="../images/uploads/<?= $posts["file_img"]?>" alt="" width="100%" id="image-post">
+                        <img id="image-post" src="../images/uploads/<?= $posts["file_img"]?>" alt="" width="100%">
                         <input type="file" name="update_img"  onchange="uploadImage(event)" id="click_img" style="display:none">
                         <div class="add-image">
                             <img src="../images/add-photo.png" alt="" width= "10%"> <br> Update Photo 
@@ -53,7 +76,15 @@ $posts = getItemById($id);
     </section>
     </div>
 </div>
+<script>
+    
+// UPLOAD PHOTO--------------
+    var uploadImage = function(event){
+        var image = document.getElementById("image-post");
+        image.src = URL.createObjectURL(event.target.files[0]);
+        displayImage();
+    }
+</script>
 <?php
 require_once('../templates/footer.php');
 ?>
-
