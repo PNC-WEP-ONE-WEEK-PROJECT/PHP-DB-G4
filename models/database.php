@@ -111,3 +111,13 @@ function edit_comment_post($get_comment,$get_id){
     ]);
     return ($statement->rowCount() == 1);
 }
+
+function upload_profile_users($user_id, $profile_img){
+    global $db;
+    $statement = $db->prepare("UPDATE users SET image=:profile_image where users.id=:id");
+    $statement->execute([
+        ':profile_image' => $profile_img,
+        ':id' =>  $user_id,
+    ]);
+    return ($statement->rowCount() == 1);
+}

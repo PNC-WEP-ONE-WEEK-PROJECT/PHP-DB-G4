@@ -52,3 +52,4 @@ function likes_posts(){
     $likes = $statement->fetchAll();
     return $likes;
 }
+

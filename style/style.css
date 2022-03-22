@@ -555,14 +555,15 @@ form button{
 /* PROFILE */
 
 .rounded .cover{
+  width: 100%;
   height: 40vh;
-  background-color: #000;
+  background-color:#4599FF;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .profile-head{
  position: relative;
- bottom: -10rem;
+ bottom: -4rem;
 }
 .profile-head .profile{
   width: 30vh;
@@ -578,14 +579,8 @@ form button{
 .media-body{
   text-align: center;
   position: relative;
-  top: 1rem;
- 
 }
 
-.media-body .fa-solid{
-  margin-top: 2rem;
-  font-size: 2rem;
-}
 
 .bg-light{
   position: relative;
@@ -596,7 +591,7 @@ form button{
 }
 
 .contianer_prof{
-  margin-top: 14rem;
+  margin-top: 8rem;
   display: block;
   justify-content: space-between;
   color: black;
@@ -613,4 +608,57 @@ form button{
 }
 .list-inline-item .fas{
   color: #4599FF;
+}
+
+.about h5{
+  background-color: #4599FF;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.contianer_profiles{
+  width: 40%;
+  margin: auto;
+ 
+}
+
+li{
+  list-style: none;
+}
+
+/* UPLOAD PROFILE IMAGE */
+.contianer_uplaod_profile{
+  width: 40%;
+  position: absolute;
+  margin:0 auto;
+  top: 15%;
+  left: 30%;
+}
+#image_upload{
+  width: 30vh;
+  height: 30vh;
+  border: none;
+  border-radius: 50%;
+}
+.user-upload .options{
+  background-color: white;
+  border: none;
+  height: 50vh;
+}
+.user-upload .title_profile{
+  padding: 10px;
+  position: relative;
+ bottom: -1rem;
+}
+.user-upload #upload_img_profile{
+  position: relative;
+  top:-1rem;
+}
+.span_edite{float: right;
+  position: relative;
+  top: -8.5rem;
+  right: 46%;
+  font-size: larger;
+  font-weight: bolder;
+  color: rgb(235, 233, 233);
 }

@@ -16,7 +16,7 @@ $profiles = profile_user();
 require_once("post_view.php");
 ?>
 
-<nav class="navbar_facebook opacity">
+<nav class="navbar_facebook">
         <div class="container-fluid">
             <!-- LOGO FB -->
             <div class="navbar-header">
@@ -29,75 +29,38 @@ require_once("post_view.php");
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <div class="user_profile"><a href="views/profile.php" ><img src="../images/user.png" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
+                <div class="user_profile"><a href="views/profile.php" ><img src="../images/uploads/<?=$profiles["image"]?>" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
                 <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
             </div>
         </div>
   </nav>
 
-<!-- PROFILES -->
-<div class="container" style="display:none">
-      <div class="wrapper">
-        <section class="post">
-          <form action="controllers/create_post.php" method="post" enctype="multipart/form-data">
-          <header class="create-post-header" style="display:flex">
-            <h2>Create post</h2>
-            <div class="cancel-post" onclick="cancel_post()">
-              <li><img src="images/Cancel.png" alt="gallery" width="80%" ></li>
-            </div>
-          </header>
-          <hr>
-            <div class="content">
-              <img src="images/user.png" alt="logo" class="icon_user">
-              <div class="details">
-                <input type="hidden" name="user_id" value="<?= $user_id ?>">
-                <p><?= $FirstName . $LastName;?></p>
-      
-                <div class="privacy">
-                  <i class="fas fa-user-friends"></i>
-                  <span> Friends</span>
-                  <i class="fas fa-caret-down"></i>
-                </div>
-              </div>
-            </div>
-            <div class="user-post">
-              <textarea name="description" class= "title" placeholder="What's your mind?" spellcheck="false" style="font-size:16px"></textarea>
-              <div class="add-gallery">
-                <label for="click_img">
-                  <div class="options add-icon" >
-                    <img src="" alt="" id="image-post" width="100%">
-                    <input type="file" name="uploadimg" onchange="uploadImage(event)" id="click_img" style="display:none">
-                    <div class="add-image">
-                      <img src="../images/add-photo.png" alt="" width= "10%"> <br> Add Photo 
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </div>
-            <button id="sum_post" type="submit" name="submit">Post</button>
-          </form>
-        </section>
-      </div>
-    </div>
 
 <!-- BOOSTTRAP STYLE -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <div class="row">
-        <div class="col-md-5 mx-auto">
-            <div class="rounded overflow-hidden">
-                <div class="px-4 pt-0 pb-4 cover">
+
+    <div id="show_hide_profile">
+        <div class="contianer_profiles">
+            <div class="rounded">
+                <div class="cover">
+              <!-- IMG PROFILE -->
                     <div class="profile-head">
-                        <div class="profile"><img src="../images/uploads/sauth.jpg" alt="..." ></div>
-                        <div class="media-body text-white">
-                        <i class="fa-light fa-circle-camera"></i>
+                        <div class="profile"><img src="../images/uploads/<?=$profiles["image"]?>" alt="" ></div>
+                         <!-- UPDATE PROFILE  -->
+                         <div class="media-body">
                             <h4 class="mt-0 mb-0"><?= $profiles["first_name"] . " " . $profiles["last_name"];?></h4>
                             <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i>New York</p>
                         </div>
+                        <!-- UPLOAD IMG -->
+                        <div class="btn photo span_edite"  onclick="create_profile()">
+                            <span>Edit</span>
+                        </div>
+                       
+                        <!-- USERNAME -->
                     </div>
                 </div>
                 <div class="contianer_prof">
                   <div class="about">
-                        <h5 class="mb-0">About</h5>
+                        <h5>About</h5>
                         <div class="shadow-sm">
                             <p class="font-italic mb-0"><span>Date of birth: </span> <span> <?= $profiles["birthday"]?></span></p>
                             <p class="font-italic mb-0"><span>Gender: </span><span> <?= $profiles["gender"]?></span></p>
@@ -122,11 +85,88 @@ require_once("post_view.php");
             </div>
         </div>
     </div>
+<!-- 
+  UPLOAND IMAGES -->
+<div id ="content-profile"  style="display:none">
+    <div class="contianer_uplaod_profile">
+      <form action="../controllers/upload_profile.php" method="post" enctype="multipart/form-data">
+          <input type="hidden" value="<?=$user_id?>" name="id">
+          <div class="cancel-post" onclick="No_uploand()">
+            <li><img src="../images/Cancel.png" alt="gallery" width="80%" ></li>
+          </div>
+            <div class="user-upload">
+                <textarea name="title" class= "title_profile" placeholder="What's your mind?" spellcheck="false" style="font-size:16px"></textarea>
+                <label for="clicke_on_img">
+                    <div class="options add-icon" >
+                        <img src="" alt="" id="image_upload" width="100%">
+                        <input type="file" name="upload_img_profile" onchange="upload_profile(event)" id="clicke_on_img" style="display:none">
+                        <div class="add-image">
+                        <img src="../images/add-photo.png" alt="" width= "10%"> <br> Choose Photo 
+                        </div>
+                    </div>
+                    <button id="upload_img_profile" type="submit" name="submit">Save</button>
+                </label>
+            </div> 
+        </form>
+    </div>
+</div>
 
+
+
+
+<script>
+    
+
+    let add_contianer_post=document.querySelector("#content-profile");
+    function No_uploand(){
+        let cancel_post = document.querySelector("#content-profile");
+        document.body.style.overflow="visible";
+        hide(cancel_post);
+    }
+
+
+    function show(element){
+        element.style.display = "block";
+    }
+
+    function hide(element){
+        element.style.display = "none";
+    }
+
+    // CREATE POST---------------------------------------------------------------
+ 
+    function create_profile(){
+        if (add_contianer_post.style.display== "none"){
+            document.body.style.overflow="hidden";
+            show(add_contianer_post);
+            // hide(profile_users)
+        }
+    }
+
+   
+          var upload_profile = function(event){
+            var image = document.getElementById("image_upload");
+            image.src = URL.createObjectURL(event.target.files[0]);
+           
+            displayImage();
+          }
+
+          function displayImage(){
+              let box = document.querySelector(".user-uploand");
+              box.style.height ="10rem";
+              // box.style.width ="10rem";
+              // box.style.border-radius="50%";
+              box.style.overflow = "auto";
+          }
+          
+</script>
+    
+    
 <!-- footer -->
 <div class="mt-5 mb-5 text-center" style="text-align: center;margin:30px 0;">
-    <footer>
         <small>Facebook version 2.0 Created by Mr.Tim and Mr.Sauth</small><br>
         <small>Database and PHP Project</small>
-    </footer>
-<?php require_once("../templates/footer.php")?>
+</div>
+
+</body>
+</html>
