@@ -11,7 +11,7 @@ $confirmed = $_POST["comfirmpass"];
 if ($password==$confirmed){
     $confirmed=true;
     insert_users($firstN,$lastN,$bd,$gender,$email,$password, $confirmed);
-    require_once("../views/pages.php");
+    require_once("../pages.php");
 }
 
 ?>

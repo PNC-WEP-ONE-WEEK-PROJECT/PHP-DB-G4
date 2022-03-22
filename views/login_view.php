@@ -31,7 +31,7 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
         </form>
         <hr mt-2 mb-2>
         <div class="d-grid ds-flex m-auto w-50">
-            <a href="views/resgister.php" class="btn btn-success py-2  " id="create_account">Create new account</a>
+            <a href="#" class="btn btn-success py-2  " id="create_account">Create new account</a>
         </div>
     </div>
 </div>

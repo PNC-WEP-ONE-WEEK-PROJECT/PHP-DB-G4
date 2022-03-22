@@ -82,22 +82,13 @@ require_once("post_view.php");
 
 <!-- BOOSTTRAP STYLE -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     <div class="row py-5 px-4">
         <div class="col-md-5 mx-auto">
-            <!-- Profile widget -->
             <div class="shadow rounded overflow-hidden">
                 <div class="px-4 pt-0 pb-4 cover">
                     <div class="media align-items-end profile-head">
                         <div class="profile mr-3"><img src="../images/user.png" alt="..."  class="rounded mb-2 img-thumbnail">
-                        <!-- UPDATE PROFILE PICTURE -->
-                            <div class="card-body">
-                                <div class="btn photo"  onclick="create_post()">
-                                    <img src="images/gallery.svg" alt="" width="100%">
-                                    <span>EDITE</span>
-                                </div>
-                            </div>
-                            <!-- USER UPDATE -->
-
                         </div>
                         <div class="media-body mb-5 text-white">
                             <h4 class="mt-0 mb-0"><?= $profiles["first_name"] . " " . $profiles["last_name"];?></h4>
