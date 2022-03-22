@@ -53,3 +53,13 @@ function likes_posts(){
     return $likes;
 }
 
+function log_out($logout,$user_id){
+    global $db; 
+    $statement = $db->prepare("UPDATE users SET login=:logout where id=:user_id");
+    $statement->execute([
+        ':logout' => $logout,
+        ':user_id' =>  $user_id,
+    ]);
+    return ($statement->rowCount() == 1);
+
+}

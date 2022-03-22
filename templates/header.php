@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facebook 2.0</title>
     <!-- LINK BOOSTTRAP  -->
+   
     <!-- Your style here -->
     <script src="https://kit.fontawesome.com/65fd79dd45.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
     <link rel="shortcut icon" href="../images/icon-facebook.webp" type="image/x-icon">
     <link rel="stylesheet" href="../style/style.css">
 </head>
