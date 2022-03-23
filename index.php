@@ -21,13 +21,13 @@ foreach($posts as $user){
     $_SESSION["user_id"] = $user["user_id"];
     $user_id =  $_SESSION["user_id"];
 }
-
 // Get user_profile image from database
 $get_image = profile_user();
-$user_image = "user-profile-icon.png";
-if ($get_image["image"] !== NULL){
-    $user_image = $get_image["image"];
-}
+// $user_image = "user-profile-icon.png";
+// if (!empty($get_image["image"])){
+//     $user_image = $get_image["image"];
+// }
+
 require_once("views/post_view.php");
 ?>
 
@@ -44,7 +44,7 @@ require_once("views/post_view.php");
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <div class="user_profile"><a href="views/profile.php" ><img src="images/uploads/<?=$user_image ?>" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
+                <div class="user_profile"><a href="views/profile.php" ><img src="images/uploads/<?=$get_image["image"] ?>" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
                 <a href="views/logout.php"><img src="images/log-out.png" alt="" width="10%">Sign Out</a>
             </div>
         </div>
@@ -55,7 +55,7 @@ require_once("views/post_view.php");
 <div class="container-card opacity">
     <div class="card-header">
         <div class="profile">
-            <a href="../views/profile.php"><img src="images/uploads/<?=$user_image ?>" alt="" width="100%"></a>
+            <a href="../views/profile.php"><img src="images/uploads/<?=$get_image["image"] ?>" alt="" width="100%"></a>
         </div>
         <span class="add-post" onclick="create_post()">What's your mind?</span>
     </div>

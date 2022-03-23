@@ -12,7 +12,7 @@ $confirmed = $_POST["comfirmpass"];
 if ($password==$confirmed){
     $confirmed=true;
     insert_users($firstN,$lastN,$bd,$gender,$email,$encrypted_pwd, $confirmed);
-    require_once("../pages.php");
+    header("location:../pages.php");
 }
 
 ?>

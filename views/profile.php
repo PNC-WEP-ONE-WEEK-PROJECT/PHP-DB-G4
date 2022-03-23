@@ -22,7 +22,7 @@ require_once("post_view.php");
             <div class="navbar-header">
                 <a class="navbar-brand" href="#"><img src="../images/icon-facebook.webp" alt="" width="25%"></a>
             </div>
-            <!-- page home and group -->
+            <!-- HOME PAGE -->
             <div class="nav_pages">
                 <a href="../index.php"> <li class="fa fa-home" style="font-size:25px"></li></a>
                 <li class="fa fa-group" style="font-size:22px"></li>
