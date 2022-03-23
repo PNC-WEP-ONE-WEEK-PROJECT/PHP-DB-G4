@@ -113,7 +113,7 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
                 <div class="col-6 mt-2">
                     <span>Gender:</span>
                     <br>
-                    <select class="form-select" aria-label="Default select example" name="gender">
+                    <select class="form-select" aria-label="Default select example" name="gender" >
                         <option disabled selected>Select gender</option>
                         <option value="F" >Female</option>
                         <option value="M">Male</option>
