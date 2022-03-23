@@ -30,7 +30,7 @@ require_once("post_view.php");
             <!-- ICON USER NAME -->
             <div class="nav_icons">
                 <div class="user_profile"><a href="views/profile.php" ><img src="../images/uploads/<?=$profiles["image"]?>" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
-                <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
+                <a href="logout.php"><img src="../images/log-out.png" alt="" width="10%">Sign Out</a>
             </div>
         </div>
   </nav>
@@ -44,7 +44,7 @@ require_once("post_view.php");
                 <div class="cover">
               <!-- IMG PROFILE -->
                     <div class="profile-head">
-                        <div class="profile"><img src="../images/uploads/<?=$profiles["image"]?>" alt="" ></div>
+                        <div class="profile"><img src="../images/uploads/<?= $profiles["image"]?>" alt="" ></div>
                          <!-- UPDATE PROFILE  -->
                          <div class="media-body">
                             <h4 class="mt-0 mb-0"><?= $profiles["first_name"] . " " . $profiles["last_name"];?></h4>
@@ -112,8 +112,6 @@ require_once("post_view.php");
 </div>
 
 
-
-
 <script>
     
 
@@ -143,30 +141,24 @@ require_once("post_view.php");
         }
     }
 
-   
-          var upload_profile = function(event){
-            var image = document.getElementById("image_upload");
-            image.src = URL.createObjectURL(event.target.files[0]);
-           
-            displayImage();
-          }
 
-          function displayImage(){
-              let box = document.querySelector(".user-uploand");
-              box.style.height ="10rem";
-              // box.style.width ="10rem";
-              // box.style.border-radius="50%";
-              box.style.overflow = "auto";
-          }
-          
+        var upload_profile = function(event){
+        var image = document.getElementById("image_upload");
+        image.src = URL.createObjectURL(event.target.files[0]);
+        
+        displayImage();
+        }
+
+        function displayImage(){
+            let box = document.querySelector(".user-uploand");
+            box.style.height ="10rem";
+            // box.style.width ="10rem";
+            // box.style.border-radius="50%";
+            box.style.overflow = "auto";
+        }
 </script>
     
-    
-<!-- footer -->
-<div class="mt-5 mb-5 text-center" style="text-align: center;margin:30px 0;">
-        <small>Facebook version 2.0 Created by Mr.Tim and Mr.Sauth</small><br>
-        <small>Database and PHP Project</small>
-</div>
 
-</body>
-</html>
+<?php
+
+require_once ("../templates/footer.php");
