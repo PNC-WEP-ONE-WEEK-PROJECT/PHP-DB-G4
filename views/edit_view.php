@@ -6,6 +6,7 @@ require_once('../models/post.php');
 $id = $_GET['id'];
 $posts = getItemById($id);
 $FirstName=$posts["first_name"];
+$get_image = profile_user();
 ?>
 
 
@@ -22,8 +23,8 @@ $FirstName=$posts["first_name"];
             </div>      
             <!-- ICON USER NAME -->
             <div class="nav_icons">
-                <div class="user_profile"><a href="views/profile.php" ><img src="images/uploads/<?=$user_image ?>" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
-                <li class="cicle-user"><a href="#" ><i class="fa fa-caret-down" style="font-size:20px"></i></a></li>
+                <div class="user_profile"><a href="views/profile.php" ><img src="../images/uploads/<?= $get_image["image"] ?>" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
+                <a href="logout.php"><img src="../images/log-out.png" alt="" width="10%">Sign Out</a>
             </div>
         </div>
   </nav>
@@ -44,7 +45,7 @@ $FirstName=$posts["first_name"];
         <hr>
         <form action="models/post.php" method="post" id ="update">
         <div class="content">
-            <img src="../images/uploads/<?=$user_image["image"] ?>" alt="logo" class="icon_user">
+            <img src="../../images/uploads/<?= $get_image["image"] ?>" alt="logo" class="icon_user">
             <div class="details">
                 <p><?= $posts["first_name"] . " " . $posts["last_name"] ?></p>
                 <div class="privacy">
@@ -76,8 +77,9 @@ $FirstName=$posts["first_name"];
     </section>
     </div>
 </div>
+
+
 <script>
-    
 // UPLOAD PHOTO--------------
     var uploadImage = function(event){
         var image = document.getElementById("image-post");
