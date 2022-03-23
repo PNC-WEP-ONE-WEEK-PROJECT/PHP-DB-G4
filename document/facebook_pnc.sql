@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2022 at 03:57 PM
+-- Generation Time: Mar 23, 2022 at 02:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -39,10 +39,7 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `content`, `user_id`, `post_id`) VALUES
-(14, 'handsome b', 1, 74),
-(15, 'hello', 1, 74),
-(16, 'gg', 1, 74),
-(20, 'handsome man', 1, 81);
+(41, 'SDFGBN', 10, 123);
 
 -- --------------------------------------------------------
 
@@ -100,217 +97,12 @@ CREATE TABLE `likes` (
 --
 
 INSERT INTO `likes` (`post_id`, `user_id`) VALUES
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(NULL, 1),
-(74, 1),
-(74, 1),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(74, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(75, 2),
-(81, 3),
-(81, 3),
-(81, 3),
-(81, 3),
-(81, 3),
-(82, 4),
-(82, 4),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(90, 1),
-(82, 4),
-(82, 4),
-(92, 4),
-(92, 4),
-(92, 4),
-(92, 4),
-(92, 4),
-(92, 4),
-(92, 4),
-(82, 4),
-(82, 4),
-(82, 4),
-(92, 4),
-(93, 4),
-(93, 4),
-(93, 4),
-(93, 4),
-(93, 4),
-(93, 4),
-(93, 4),
-(93, 4),
-(93, 4),
-(93, 4),
-(92, 4),
-(92, 4),
-(92, 4),
-(92, 4),
-(92, 4);
+(123, 10),
+(123, 10),
+(123, 10),
+(123, 10),
+(123, 10),
+(123, 10);
 
 -- --------------------------------------------------------
 
@@ -332,13 +124,22 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `description`, `user_id`, `file_img`, `post_date`) VALUES
-(74, NULL, '', 2, 'IMG-62370ab08a24e3.20787137.png', '2022-03-20 11:06:24'),
-(75, NULL, 'hi nop', 2, 'IMG-62371d51ebcbc7.94318692.jpg', '2020-03-22 00:25:53'),
-(81, NULL, '', 3, 'IMG-6238149d3f93c8.86245307.jpg', '2021-03-21 18:01:01'),
-(82, NULL, 'heh boy', 4, 'IMG-623821cb663c06.34666504.png', '2021-03-21 18:57:15'),
-(90, NULL, '', 1, 'IMG-62387a4f886839.59184960.jpg', '2021-03-22 01:14:55'),
-(92, NULL, '', 4, 'IMG-62388d21f022a6.62370831.jpg', '2021-03-22 02:35:13'),
-(93, NULL, '', 4, 'IMG-62388da4e5d2a4.00358528.png', '2021-03-22 02:37:24');
+(123, NULL, '', 10, 'IMG-623aa404663206.34435058.jpg', '2023-03-22 04:37:24'),
+(125, NULL, '', 11, 'IMG-623b11b32592d2.08214320.png', '2023-03-22 00:25:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profiles`
+--
+
+CREATE TABLE `profiles` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `img` char(200) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `date_upload` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -363,10 +164,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `email`, `user_password`, `birthday`, `image`, `login`) VALUES
-(1, 'Tim', 'Bin', 'Male', 'tim.bin3819@gmail.com', 'tim@1234', '1999-02-08', 'shaut.png', 0),
-(2, 'Sauth', 'Phouek', 'Male', 'sauth.phouek@gmail.com', 'sauth@12345', '1999-04-12', 'handsom.png', 0),
-(3, 'Shaut', 'Phouek', 'M', 'sauth.phouek@gmail.com', '1234', '2022-03-20', NULL, 0),
-(4, 'Shaut', 'Phouek', 'M', 'timsave98@gmail.com', '1', '2022-03-04', NULL, 1);
+(10, 'TIM', 'XAM', 'M', 'tim@gmail.com', 'c4ca4238a0b923820dcc509a6f75849b', '2022-03-28', 'IMG-623aa5c66da629.97443154.jpg', 0),
+(11, 'Shaut', 'B', NULL, 'tim@gmail.com', 'b46664b842fb3c84da0674949f35e9ae', '2022-03-10', 'IMG-623b11fe0876a4.13882221.png', 1);
 
 -- --------------------------------------------------------
 
@@ -420,6 +219,13 @@ ALTER TABLE `posts`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userID` (`user_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -433,19 +239,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+
+--
+-- AUTO_INCREMENT for table `profiles`
+--
+ALTER TABLE `profiles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
@@ -470,13 +282,19 @@ ALTER TABLE `friendship`
 --
 ALTER TABLE `likes`
   ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `posts`
 --
 ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD CONSTRAINT `userID` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
