@@ -10,7 +10,8 @@ if (!isset($_SESSION['login'])){
  */
 
  // TO DO:
-   // Get the id of the item to update in query
+// UPDATE DATA ND GET DATA
+
 require_once("templates/header.php");
 require_once("models/post.php");
 $posts = information_users();
@@ -21,23 +22,20 @@ foreach($posts as $user){
     $_SESSION["user_id"] = $user["user_id"];
     $user_id =  $_SESSION["user_id"];
 }
-// Get user_profile image from database
+// USER INFORMATION
 $get_image = profile_user();
-// $user_image = "user-profile-icon.png";
-// if (!empty($get_image["image"])){
-//     $user_image = $get_image["image"];
-// }
+
 
 require_once("views/post_view.php");
 ?>
 
 <nav class="navbar_facebook opacity">
         <div class="container-fluid">
-            <!-- LOGO FB -->
+            <!-- LOGO -->
             <div class="navbar-header">
                 <a class="navbar-brand" href="#"><img src="../images/icon-facebook.webp" alt="" width="25%"></a>
             </div>
-            <!-- page home and group -->
+            <!-- LINK PAGE -->
             <div class="nav_pages">
                 <li id="active" class="fa fa-home" style="font-size:25px"></li>
                 <li class="fa fa-group" style="font-size:22px"></li>
@@ -45,7 +43,7 @@ require_once("views/post_view.php");
             <!-- ICON USER NAME -->
             <div class="nav_icons">
                 <div class="user_profile"><a href="views/profile.php" ><img src="images/uploads/<?=$get_image["image"] ?>" alt="" width=" 100%"></a> <span ><?=$FirstName?></span></div>
-                <a href="views/logout.php"><img src="images/log-out.png" alt="" width="10%">Sign Out</a>
+                <a href="views/logout.php"><img src="images/log-out.png" alt="" width="10%"></a>
             </div>
         </div>
   </nav>
@@ -92,7 +90,7 @@ require_once("views/post_view.php");
         <div class="card-header-icon">
             <i class="fa fa-ellipsis-h icon"></i>
         </div>
-        <!-- user edit and delete -->
+        <!-- USER AND DELETE -->
         <div class="card-activity" style="display:none">
             <li><a class="edit-post" href="views/edit_view.php?id=<?= $post['post_id'];?>"><i class='fas fa-user-edit' style='font-size:16px;color:blue'></i> Edit post</a></li>
             <li><a class="delete-post" href="controllers/delete_post.php?id=<?= $post['post_id'];?>"><i class='far fa-trash-alt' style='font-size:16px;color:red'></i> Remove</a></li>

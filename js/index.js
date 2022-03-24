@@ -7,7 +7,6 @@
 function cancel_post(){
     let cancel_post = document.querySelector(".container");
     document.body.style.overflow="visible";
-    // write_post.textContent = document.querySelector(".title").value;
     return hide(cancel_post);
 }
 
@@ -63,16 +62,14 @@ var uploadImage = function(event){
     displayImage();
 }
 
-
+// DISPLAY IMAGE IN POST-----------------
 function displayImage(){
     let box = document.querySelector(".user-post");
     box.style.height ="15rem";
     box.style.overflow = "auto";
 }
 
-
-
-// like and comment post 
+// LIKE AND COMMENT POST
 let count_likes = document.querySelectorAll(".count_like");
 let click_likes = document.querySelectorAll(".btn_likes");
 let show_likes = document.querySelectorAll(".like_post")
@@ -99,14 +96,9 @@ for (let each_post of click_likes){
     })
 }
 
-
-
-// like and comment post 
-// let count_comment = document.querySelectorAll(".count_comment");
 let click_comment = document.querySelectorAll(".click_comment");
 let show_comment = document.querySelectorAll(".comment_box")
 for (let each_post of click_comment){
-    // console.log(each_post.id);
     each_post.addEventListener("click",(e)=>{
         let click_on=e.target.id
             for (let each_show of show_comment){
@@ -116,11 +108,10 @@ for (let each_post of click_comment){
             }
     })
 }
-// let count_comment = document.querySelectorAll(".count_comment");
+
 let edit_comment = document.querySelectorAll(".edit_comment_post");
 let edit = document.querySelectorAll(".edit_comment");
 for (let each_post of edit_comment){
-    // console.log(each_post.id);
     each_post.addEventListener("click",(e)=>{
         let click_on = e.target.id
             for (let each_show of edit){

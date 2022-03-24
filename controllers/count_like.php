@@ -6,6 +6,3 @@ if (!empty($_POST["post_id"])){
     $postId = $_POST["post_id"];
     insert_likes($postId, $userId);
 }
-
-
-

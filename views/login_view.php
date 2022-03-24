@@ -80,8 +80,6 @@ isset($_SESSION['user_id']) ? header('Location: /index.php') : null;
     }
 ?>
 
-
-
 <div class="container_form_create">
     <!-- INCLUDES FOOTER -->
     <form action="../controllers/create_account.php" class="form_create" method="POST">

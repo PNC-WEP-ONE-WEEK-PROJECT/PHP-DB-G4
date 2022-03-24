@@ -548,8 +548,11 @@ form button{
 .rounded .cover{
   width: 100%;
   height: 40vh;
-  background-color:#4599FF;
+  /* background-color:#ff8818; */
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  background-image: url(../images/uploads/cover.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .profile-head{
@@ -560,6 +563,8 @@ form button{
   width: 30vh;
   height: 30vh;
   margin:auto;
+  background: rgba(58, 56, 56, 0.459);
+  border-radius: 50%;
   
 }
 .profile img{
@@ -647,9 +652,13 @@ li{
 }
 .span_edite{float: right;
   position: relative;
-  top: -8.5rem;
+  top: -2rem;
   right: 46%;
-  font-size: larger;
-  font-weight: bolder;
-  color: rgb(235, 233, 233);
+}
+
+.profile img{
+  width: 30vh;
+  height: 30vh;
+  border: none;
+  border-radius: 50%;
 }
