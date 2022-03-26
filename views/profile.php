@@ -38,53 +38,30 @@ require_once("post_view.php");
 
 <!-- BOOSTTRAP STYLE -->
 
-<div id="show_hide_profile">
-    <div class="contianer_profiles">
-        <div class="rounded">
-            <div class="cover">
-            <!-- IMG PROFILE -->
-                <div class="profile-head">
-                    <div class="profile"><img src="../images/uploads/<?= $profiles["image"]?>" alt=""></div>
-                    <!-- UPDATE PROFILE  -->
-                    <!-- UPLOAD IMG -->
-                    <div class="btn photo span_edite"  onclick="create_profile()" style="cursor:pointer">
-                        <span><img src="../images/camera.png" alt="" width="100%"></span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="mt-0 mb-0"><?= $profiles["first_name"] . " " . $profiles["last_name"];?></h4>
-                        <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i> New York</p>
-                    </div>
-                    <!-- USERNAME -->
-                </div>
-            </div>
-            <div class="contianer_prof">
-                <div class="about">
-                    <h5>About</h5>
-                    <div class="shadow-sm">
-                        <p class="font-italic mb-0"><span>Email: </span><span> <?= $profiles["email"]?></span></p>
-                        <p class="font-italic mb-0"><span>Date of birth: </span> <span> <?= $profiles["birthday"]?></span></p>
-                        <p class="font-italic mb-0"><span>Gender: </span><span> <?= $profiles["gender"]?></span></p>
-                    </div>
-                </div>
-                <div class="conection">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item">
-                            <h5 class="font-weight-bold mb-0 d-block">215</h5><small class="text-muted"> <i class="fas fa-image mr-1"></i>Photos</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 class="font-weight-bold mb-0 d-block">745</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Followers</small>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5 class="font-weight-bold mb-0 d-block">340</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Following</small>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- 
   UPLOAND IMAGES -->
+<div id="show_hide_profile">
+            <!-- IMG PROFILE -->
+    <img src= "" alt="" id="image-cover">
+    <div class="profile-head">
+        <div class="profile">
+            <img src="../images/uploads/<?= $profiles["image"]?>" alt="">
+            <div class="upload-profile"  onclick="create_profile()" style="cursor:pointer">
+                <img src="../images/camera.png" alt="" width="100%">
+            </div>
+            <h2 class="user-name" ><?= $profiles["first_name"] . " " . $profiles["last_name"];?></h2>
+        </div>
+    </div>
+    <label class="add-cover"  onclick ="check_list()">
+        <div><img src="../images/camera.png" alt="" width="20%">Add cover profile</div>
+    </label>
+    <div class="list-cover"​ style="display:none" >
+        <li><img src="../images/Picture.png" alt="" width="8%"> Select Photo</li>
+        <input type="file" name="upload_img_profile" style="display:none" id= "cover">
+        <label for= "cover"><li><img src="../images/upload.png" alt="" width="8%" > Upload Photo</li></label>
+    </div>
+</div>
 <div id ="content-profile"  style="display:none">
     <div class="contianer_uplaod_profile">
         <form action="../controllers/upload_profile.php" method="post" enctype="multipart/form-data">
@@ -107,6 +84,32 @@ require_once("post_view.php");
             </div> 
         </form>
     </div>
+</div>
+<div class="container-profile" style="margin-top: 10%">
+    <div class="contianer_information">
+        <div class="about">
+            <h5>About</h5>
+            <div class="shadow-sm">
+                <p class="font-italic mb-0"><span>Email: </span><span> <?= $profiles["email"]?></span></p>
+                <p class="font-italic mb-0"><span>Date of birth: </span> <span> <?= $profiles["birthday"]?></span></p>
+                <p class="font-italic mb-0"><span>Gender: </span><span> <?= $profiles["gender"]?></span></p>
+            </div>
+        </div>
+        <div class="conection">
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                    <h5 class="font-weight-bold mb-0 d-block">215</h5><small class="text-muted"> <i class="fas fa-image mr-1"></i>Photos</small>
+                </li>
+                <li class="list-inline-item">
+                    <h5 class="font-weight-bold mb-0 d-block">745</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Followers</small>
+                </li>
+                <li class="list-inline-item">
+                    <h5 class="font-weight-bold mb-0 d-block">340</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Following</small>
+                </li>
+            </ul>
+        </div>
+    </div>  
+
 </div>
 
 
@@ -135,7 +138,6 @@ require_once("post_view.php");
         if (add_contianer_post.style.display== "none"){
             document.body.style.overflow="hidden";
             show(add_contianer_post);
-            // hide(profile_users)
         }
     }
 
@@ -143,17 +145,25 @@ require_once("post_view.php");
         var upload_profile = function(event){
         var image = document.getElementById("image_upload");
         image.src = URL.createObjectURL(event.target.files[0]);
-        
-        displayImage();
         }
 
-        function displayImage(){
-            let box = document.querySelector(".user-uploand");
-            box.style.height ="10rem";
-            // box.style.width ="10rem";
-            // box.style.border-radius="50%";
-            box.style.overflow = "auto";
+        
+
+        let list = document.querySelector(".list-cover");
+        function check_list(){
+            show(list);
         }
+
+        const image_input = document.querySelector("#cover");
+        image_input.addEventListener("change", function() {
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            const uploaded_image = reader.result;
+            document.querySelector("#show_hide_profile").style.backgroundImage = `url(${uploaded_image})`;
+        });
+        reader.readAsDataURL(this.files[0]);
+        hide(list)
+        });
 </script>
     
 

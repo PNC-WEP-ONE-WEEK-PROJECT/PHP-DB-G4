@@ -7,7 +7,7 @@ body{
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  background: rgba(11, 169, 190, 0.192);
+  background: rgba(241, 241, 241, 0.945);
 }
 *{
   font-family: 'Poppins', sans-serif;
@@ -544,121 +544,136 @@ form button{
 }
 
 /* PROFILE */
-
-.rounded .cover{
-  width: 100%;
-  height: 40vh;
-  /* background-color:#ff8818; */
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+#show_hide_profile{
+  width: 80%;
+  margin:auto;
+  height: 50vh;
+  max-height: 100vh;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
   background-image: url(../images/uploads/cover.jpg);
   background-position: center;
   background-size: cover;
+  /* background-repeat: no-repeat; */
 }
 
 .profile-head{
- position: relative;
- bottom: -4rem;
+  position: relative;
+  height: auto;
+  width: 50%;
+}
+.add-cover{
+  width: 50%;
+  /* display: flex; */
+}
+.add-cover div{
+  background: #ddd;
+  padding: 6px;
+  width: 14%;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  position: absolute;
+  bottom: 42%;
+  right: 12%;
+
 }
 .profile-head .profile{
-  width: 30vh;
-  height: 30vh;
-  margin:auto;
-  background: rgba(58, 56, 56, 0.459);
+  width: 26vh;
+  height: 26vh;
+  background: rgba(255, 6, 6, 0.459);
   border-radius: 50%;
-  
+  position: absolute;
+  display: flex;
+  top: 300px;
+  left: 30px;
+  border: 4px solid #fff;
 }
-.profile img{
+.profile-head .profile img{
   width: 100%;
   border-radius: 50%;
 }
-
-.media-body{
-  text-align: center;
-  position: relative;
-}
-
-
-.bg-light{
-  position: relative;
-  top: 4rem;
-}
-.media-body h4{
-  color: black;
-}
-
-.contianer_prof{
-  margin-top: 8rem;
-  display: block;
-  justify-content: space-between;
-  color: black;
-}
-
-.conection{
-  margin: auto;
-  text-align: center;
-  margin-top: 1rem;
-}
-.conection .list-inline{
-  display: flex;
-  justify-content: space-evenly;
-}
-.list-inline-item .fas{
-  color: #4599FF;
-}
-
-.about h5{
-  background-color: #4599FF;
-  padding: 10px;
-  border-radius: 2px;
-}
-
-.contianer_profiles{
-  width: 40%;
-  margin: auto;
- 
-}
-
-li{
-  list-style: none;
-}
-
-/* UPLOAD PROFILE IMAGE */
-.contianer_uplaod_profile{
-  width: 40%;
+.profile-head .profile  .user-name{
+  width: 100%;
   position: absolute;
-  margin:0 auto;
-  top: 15%;
-  left: 30%;
+  left: 100%;
+  top: 20%;
+  text-align: center;
 }
-#image_upload{
-  width: 30vh;
-  height: 30vh;
-  border: none;
-  border-radius: 50%;
+.upload-profile{
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  
+} 
+
+#content-profile{
+  width: 100%;
+  margin: auto;
+  background: rgba(126, 125, 125, 0.356);
+  padding: 20px;
+  position: absolute;
+  height: 100vh;
+  top:0;
 }
-.user-upload .options{
-  background-color: white;
-  border: none;
-  height: 50vh;
+#content-profile .contianer_uplaod_profile{
+  padding: 0rem;
+  width: 40%;
+  margin: 80px auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 40px;
 }
-.user-upload .title_profile{
-  padding: 10px;
-  position: relative;
- bottom: -1rem;
-}
-.user-upload #upload_img_profile{
-  position: relative;
-  top:-1rem;
-}
-.span_edite{float: right;
-  position: relative;
-  top: -2rem;
-  right: 46%;
+#content-profile .contianer_uplaod_profile .add-icon{
+  height: auto;
+  max-height: 30vh;
+  overflow: auto;
 }
 
-.profile img{
-  width: 30vh;
-  height: 30vh;
-  border: none;
-  border-radius: 50%;
+.list-cover{
+  width: 40%;
+  background: #ddd;
+  position: relative;
+  height: 100px ;
+  border-radius: 8px;
+  top: 96%;
+  margin-right: 18px;
+
+}
+.list-cover li{
+  padding: 6px;
+  margin: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center ;
+}
+.list-cover li:hover{
+  background: rgb(233, 229, 229);
+
+}
+
+.container-profile{
+  display: flex;
+  /* background: rgb(226, 47, 47); */
+  height: 100vh;
+  width: 100%;
+}
+
+.container-profile .contianer_information{
+  width: 50%;
+  background: rgb(59, 240, 4);
+  height: 20vh;
+  margin: 30px;
 }
